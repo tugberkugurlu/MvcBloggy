@@ -1,7 +1,6 @@
 
 **/*.suo
 **/*.user
-**/*.sln*
 bin
 obj
 _ReSharper*
@@ -17,10 +16,11 @@ build
 
 *.suo
 
-*.dropbox
-desktop.ini
-
 *~
 
 *.swp
 TestResult.xml
+
+
+*.dropbox
+desktop.ini
