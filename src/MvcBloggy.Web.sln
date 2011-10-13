@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 11
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcBloggy.Web", "MvcBloggy.Web\MvcBloggy.Web.csproj", "{BFF785FC-CEE2-4B0C-99E7-8542B7589484}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcBloggy.Data", "..\..\MvcBloggy_\src\MvcBloggy.Data\MvcBloggy.Data.csproj", "{607536AC-76B2-400E-B147-6A9148B4F941}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcBloggy.Data", "MvcBloggy.Data\MvcBloggy.Data.csproj", "{607536AC-76B2-400E-B147-6A9148B4F941}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcBloggy.Extensions.MetaWeblog", "MvcBloggy.Extensions.MetaWeblog\MvcBloggy.Extensions.MetaWeblog.csproj", "{AFB17B4A-8F3F-40E4-BA32-1513951D5270}"
 EndProject
