@@ -1,1 +1,0 @@
-This is meant to be a blog engine (a baby blog engine). I created this project not for you all people, for myself. However, feel free to use it but don't come to my house and try to kill me if it does not work! There is no support for this application :)
