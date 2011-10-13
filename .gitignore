@@ -1,20 +1,14 @@
 
-**/*.suo
-**/*.user
 bin
+Bin
 obj
+*.user
+*.suo
+*.nupkg
 _ReSharper*
 dist
 output
 build
-
-*.csproj.user
-
-*.resharper.user
-*.ReSharper.user
-*.resharper
-
-*.suo
 
 *~
 
