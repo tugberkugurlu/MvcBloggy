@@ -48,6 +48,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.Preview.4.2.0.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.2\lib\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Json">
       <HintPath>..\packages\JsonValue.0.5.0\lib\40\Microsoft.Json.dll</HintPath>
@@ -226,6 +229,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcBloggy.Data\MvcBloggy.Data.csproj">
+      <Project>{607536ac-76b2-400e-b147-6a9148b4f941}</Project>
+      <Name>MvcBloggy.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcBloggy.Extensions.MetaWeblog\MvcBloggy.Extensions.MetaWeblog.csproj">
+      <Project>{afb17b4a-8f3f-40e4-ba32-1513951d5270}</Project>
+      <Name>MvcBloggy.Extensions.MetaWeblog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcBloggy.Infrastructure\MvcBloggy.Infrastructure.csproj">
+      <Project>{f7301f51-98c8-47c5-be94-1760c92aa7c9}</Project>
+      <Name>MvcBloggy.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
