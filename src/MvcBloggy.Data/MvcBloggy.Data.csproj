@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\Infrastructure\IBlogPostCommentRepository.cs" />
+    <Compile Include="DataAccess\Infrastructure\IBlogPostRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\Repository.cs" />
     <Compile Include="DataAccess\SqlServer\BlogPost.cs">
@@ -56,6 +58,8 @@
     <Compile Include="DataAccess\SqlServer\BlogPostComment.cs">
       <DependentUpon>MvcBloggy.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\SqlServer\BlogPostCommentRepository.cs" />
+    <Compile Include="DataAccess\SqlServer\BlogPostRepository.cs" />
     <Compile Include="DataAccess\SqlServer\DynamicPage.cs">
       <DependentUpon>MvcBloggy.tt</DependentUpon>
     </Compile>
