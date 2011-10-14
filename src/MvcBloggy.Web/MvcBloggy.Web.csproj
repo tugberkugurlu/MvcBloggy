@@ -191,6 +191,12 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery.chosen\chosen-sprite.png" />
+    <Content Include="Scripts\jquery.chosen\chosen.css" />
+    <Content Include="Scripts\jquery.chosen\chosen.jquery.js" />
+    <Content Include="Scripts\jquery.chosen\chosen.jquery.min.js" />
+    <Content Include="Scripts\jquery.chosen\chosen.proto.js" />
+    <Content Include="Scripts\jquery.chosen\chosen.proto.min.js" />
     <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
