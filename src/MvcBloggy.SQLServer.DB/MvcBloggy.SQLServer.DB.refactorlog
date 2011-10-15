@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0">
+  <Operation Name="Rename Refactor" Key="13651623-3248-4ae3-b44f-387bc248d888" ChangeDateTime="10/15/2011 22:48:31">
+    <Property Name="ElementName" Value="[dbo].[BlogPosts].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BlogPosts]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[BlogPostID]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ac1f8d2d-3ad8-4150-aff5-134fe80d4926" ChangeDateTime="10/15/2011 22:48:52">
+    <Property Name="ElementName" Value="[dbo].[BlogPosts].[[BlogPostID]]]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BlogPosts]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BlogPostID" />
+  </Operation>
+</Operations>

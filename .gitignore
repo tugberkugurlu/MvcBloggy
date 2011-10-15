@@ -2,6 +2,7 @@
 bin
 Bin
 obj
+sql
 *.user
 *.suo
 *.nupkg
@@ -18,3 +19,4 @@ TestResult.xml
 
 *.dropbox
 desktop.ini
+*.publish.xml
