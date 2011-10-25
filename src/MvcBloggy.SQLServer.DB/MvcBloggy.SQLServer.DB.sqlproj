@@ -160,7 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Permissions.sql" />
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Languages.table.sql">
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Languages.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\dbo\Tables\BlogPosts.sql" />

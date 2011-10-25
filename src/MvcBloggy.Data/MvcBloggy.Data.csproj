@@ -48,8 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AprovalStatus.cs" />
     <Compile Include="DataAccess\Infrastructure\IBlogPostCommentRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IBlogPostRepository.cs" />
+    <Compile Include="DataAccess\Infrastructure\IDynamicPageRepository.cs" />
+    <Compile Include="DataAccess\Infrastructure\ILanguageRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\Repository.cs" />
     <Compile Include="DataAccess\SqlServer\BlogPost.cs">
@@ -66,7 +69,13 @@
     <Compile Include="DataAccess\SqlServer\Language.cs">
       <DependentUpon>MvcBloggy.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataAccess\SqlServer\Model\BlogPostTag.cs" />
+    <Compile Include="DataAccess\SqlServer\LanguageRepository.cs" />
+    <Compile Include="DataAccess\SqlServer\Model\BlogPost.cs" />
+    <Compile Include="DataAccess\SqlServer\Model\BlogPostComment.cs" />
+    <Compile Include="DataAccess\SqlServer\Model\DynamicPage.cs" />
+    <Compile Include="DataAccess\SqlServer\Model\Language.cs" />
+    <Compile Include="DataAccess\SqlServer\Model\RestrictedPageName.cs" />
+    <Compile Include="DataAccess\SqlServer\Model\Tag.cs" />
     <Compile Include="DataAccess\SqlServer\MvcBloggy.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,12 +94,10 @@
     <Compile Include="DataAccess\SqlServer\RestrictedPageName.cs">
       <DependentUpon>MvcBloggy.tt</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\AccommPropertyTagCreator.cs" />
+    <Compile Include="TagHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enums\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EntityDeploy Include="DataAccess\SqlServer\MvcBloggyModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
