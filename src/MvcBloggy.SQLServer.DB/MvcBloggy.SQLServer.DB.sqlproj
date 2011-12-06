@@ -171,6 +171,8 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\FK_DynamicPages_Languages.sql" />
     <Build Include="Schema Objects\Schemas\dbo\Tables\RestrictedPageNames.sql" />
     <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\FK_RestrictedPageNames_Languages.sql" />
+    <Build Include="Schema Objects\Schemas\dbo\Tables\BlogRoll.sql" />
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\FK_BlogRolls_Languages.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug.publish.xml" />

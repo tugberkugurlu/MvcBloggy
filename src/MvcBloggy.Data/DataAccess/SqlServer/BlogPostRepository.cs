@@ -89,6 +89,11 @@ namespace MvcBloggy.Data.DataAccess.SqlServer {
             return query;
         }
 
+        public IQueryable<BlogPost> FindBy(System.Linq.Expressions.Expression<Func<BlogPost, bool>> predicate) {
+
+            throw new NotImplementedException();
+        }
+
         public void Add(BlogPost entity) {
 
             _entities.BlogPosts.Add(entity);

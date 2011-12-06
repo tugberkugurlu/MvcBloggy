@@ -11,7 +11,7 @@
 	[CreationIp] [nvarchar](50) NULL,
 	[CreatedOn] [datetime] NULL,
 	[LastUpdatedOn] [datetime] NULL,
-	[IsApproved] [bit] NULL,
+	[IsApproved] [bit] NOT NULL,
 	CONSTRAINT [PK_BlogPosts] PRIMARY KEY CLUSTERED (
 		[BlogPostID] ASC
 	) ON [PRIMARY]

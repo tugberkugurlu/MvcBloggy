@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\MvcBloggy\src\packages\EntityFramework.Preview.4.2.0.1\lib\net40\EntityFramework.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.4.2.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -52,6 +52,7 @@
     <Compile Include="DataAccess\Infrastructure\IBlogPostCommentRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IBlogPostRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IDynamicPageRepository.cs" />
+    <Compile Include="DataAccess\Infrastructure\IGenericRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\ILanguageRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\Repository.cs" />
