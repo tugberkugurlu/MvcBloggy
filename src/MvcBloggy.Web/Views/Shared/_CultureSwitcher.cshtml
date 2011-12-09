@@ -1,0 +1,24 @@
+﻿@{
+    Dictionary<string, object> routeValues = new Dictionary<string, object>();
+    
+    foreach (var item in ViewContext.RouteData.Values.Where(x => x.Key != "language")) {
+        routeValues.Add(item.Key, item.Value);
+    }
+    routeValues.Add("language", string.Empty);
+    
+    RouteValueDictionary routeValueDic = new RouteValueDictionary(
+        routeValues
+    );
+
+    var appLanguages = MvcBloggy.Web.Application.Utility.AppLanguage.GetAllBut(System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+}
+@if (appLanguages.Count() >= 1) { 
+<div id="culture-switcher">
+@foreach (var language in appLanguages) {
+    routeValueDic["language"] = language;
+    <a href="@Url.RouteUrl(routeValueDic)">
+        <img src="@Url.Content(string.Format("~/content/v2/icons/flags/{0}.png", language))" alt="@language" />
+    </a>
+}
+</div>
+}

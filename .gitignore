@@ -10,6 +10,7 @@ _ReSharper*
 dist
 output
 build
+*.dbmdl
 
 *~
 
@@ -20,3 +21,6 @@ TestResult.xml
 *.dropbox
 desktop.ini
 *.publish.xml
+
+MvcBloggy.me.xml
+info

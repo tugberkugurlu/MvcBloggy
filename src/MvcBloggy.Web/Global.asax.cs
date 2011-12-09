@@ -41,7 +41,7 @@ namespace MvcBloggy.Web {
 
         }
 
-        public static void RegisterBundles() {
+        public static void RegisterBundles(BundleCollection bundles) {
 
             var appTheme = ConfigurationManager.AppSettings["AppDefaultTheme"];
 
@@ -52,14 +52,23 @@ namespace MvcBloggy.Web {
                 typeof(CssMinify)
             );
 
-            //global ones
+            //before defaults
             globalCSSBundlev2.AddFile("~/content/v2/css/boilerplate-part1.css");
+            globalCSSBundlev2.AddFile("~/content/v2/css/boilerplate-part2.mvcbloggy.css");
+
+            //theme styles
             globalCSSBundlev2.AddFile(
                 string.Format("~/themes/{0}/default.css", appTheme)
             );
-            globalCSSBundlev2.AddFile("~/content/v2/css/boilerplate-part2.css");
+            globalCSSBundlev2.AddFile(
+                string.Format("~/themes/{0}/default.media.css", appTheme)
+            );
 
-            BundleTable.Bundles.Add(globalCSSBundlev2);
+            //after defaults
+            globalCSSBundlev2.AddFile("~/content/v2/css/boilerplate-part3.css");
+            globalCSSBundlev2.AddFile("~/content/v2/css/boilerplate-part4.print.css");
+
+            bundles.Add(globalCSSBundlev2);
 
             #endregion
 
@@ -69,7 +78,7 @@ namespace MvcBloggy.Web {
 
             modernizrJSBundlev2.AddFile("~/scripts/modernizr-2.0.6-development-only.js");
 
-            BundleTable.Bundles.Add(modernizrJSBundlev2);
+            bundles.Add(modernizrJSBundlev2);
 
             #endregion
 
@@ -77,12 +86,20 @@ namespace MvcBloggy.Web {
 
             var globalJSBundlev2 = new Bundle("~/scripts/v2/globaljs", typeof(JsMinify));
 
-            //global ones
-            globalJSBundlev2.AddFile("~/scripts/jquery-ui-1.8.11.min.js");
+            //before defaults
+            //globalJSBundlev2.AddFile("~/scripts/jquery-ui-1.8.11.min.js");
             globalJSBundlev2.AddFile("~/scripts/plugins.js");
             globalJSBundlev2.AddFile("~/scripts/script.js");
 
-            BundleTable.Bundles.Add(globalJSBundlev2);
+            //theme scripts
+            globalJSBundlev2.AddFile(
+                string.Format("~/themes/{0}/scripts/plugins.js", appTheme)
+            );
+            globalJSBundlev2.AddFile(
+                string.Format("~/themes/{0}/scripts/script.js", appTheme)
+            );
+
+            bundles.Add(globalJSBundlev2);
 
             #endregion
         }
@@ -96,7 +113,8 @@ namespace MvcBloggy.Web {
 
             ControllerBuilder.Current.SetControllerFactory(new LocalizedControllerFactory());
 
-            RegisterBundles();
+            RegisterBundles(BundleTable.Bundles);
         }
+
     }
 }

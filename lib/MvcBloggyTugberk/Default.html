@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <title></title>
+        <style type="text/css">
+        
+        /*Global Multiple Elements*/
+        body{font-family: Arial, Helvetica, sans-serif;font-size: 14px;line-height: 22px;
+             /*background-image: url('img/bg3.gif');*/
+             background-color:#F8F2DA;
+        }
+        a img{border:none;}
+        img{width: auto !important;height: auto !important;max-width: 100%;}
+        h1, h2, h3{color:#293852;}
+        /*Global Multiple Elements*/
+        
+        #mvcbloggy-wrapper{width:99%;position: relative;margin:10px auto 20px auto;}
+        #mvcbloggy-innerwrapper{background-color:#fff;padding:1%;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;}
+        header{width:96%;margin:20px 0;padding:2%;border:1px solid gray;border-top:2px solid #D0D0D0;
+            background-image:url('img/SDC11882.jpg');
+        }
+        #header-left{float:left;width:78%;padding:10px 1%;}
+        #header-right{float:right;width:18%;}
+        #mvcbloggy-feedburner{float:right;padding:10px 1%;}
+        #mvcbloggy-title{padding:0;margin:0;font-family: Georgia, "Times New Roman", Times, serif;font-size:30px;}
+        #mvcbloggy-slogan{font-style:italic;text-shadow: gray -1px 1px 2px;font: normal 13px Georgia, "Times New Roman", Times, serif;font-style:italic;}
+        
+        /* Menu */
+        nav {height:40px;margin:10px auto;padding:0;}
+        nav ul{margin: 0;padding: 0px 0px 0px 4px;list-style: none;line-height: normal;margin:0 0.5%;}
+        nav li {float:left;border-top:2px solid #D0D0D0;border-bottom:2px solid #D0D0D0;background-color:rgba(255, 255, 255, 0.55)}
+        nav li.mvcbloggy-current, nav li:hover{border-top:2px solid #293852;border-bottom:2px solid #293852;}
+        
+        nav a {display: block;margin-right: 1px;padding: 13px 20px 10px 20px;text-decoration: none;text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;font-size: 12px;font-weight: normal;color:#4E5B64;border:none;font-weight:bold;}
+        nav a:hover {text-decoration: none;}
+        /* Menu */
+        
+        #mvcbloggy-me{padding:0;margin:10px 0;}
+        #mvcbloggy-me li{padding:0;margin:4px 5px 4px 0;list-style:none;display:block;float:left;}
+        
+        .search-box{border:1px solid #D0D0D0;padding:2%;border-right:4px solid #D0D0D0;padding-right:10%;width:67%;font-size:14px; background-image:url('img/1319546597_magnifier_s.png');background-repeat:no-repeat; background-position:98% center;}
+        .search-box:focus{outline:none;}
+        .search-buton{background-color:#D0D0D0; border:1px solid #D0D0D0;padding:2%;font-size:14px;cursor:pointer;color:#fff;width:15%;font-weight:bold;}
+        .search-buton:hover{background-color:#575E5B;border:1px solid #575E5B;}
+        .left{float:left;border-right:1px solid #D0D0D0;width:69%;padding:10px 2% 10px 1%;}
+        .right{float:right;width:26%;padding:10px 0.5%;}
+        
+        .left h2 a{color:#293852;}
+        .mvcbloggy-postdetails{padding:10px;border:1px dashed #D0D0D0;margin:20px 0;}
+        
+        .code-wrapper {background-color: white;border: 1px solid gray;
+                       padding-left: 15px;padding-right: 150px;margin: 15px 0;
+                       font-size: 15px;/*word-wrap:break-word;*/overflow:scroll;}
+        .border-shadow-1 {-moz-box-shadow: 0 0 5px #888;-webkit-box-shadow: 0 0 5px#888;box-shadow: 0 0 5px #888;}
+        
+        footer{margin:10px 0;padding:1% 0;border-top:1px solid #D0D0D0;}
+        
+        @media screen and (max-width:1098px) {
+          
+          .search-box, .search-buton{padding:1%;}
+          .search-box{width:78%;}
+          
+          #mvcbloggy-title{font-size:18px;}
+          #mvcbloggy-slogan{font-size:9px;}
+          
+          .right{float:none;width:98%;padding:10px 1%;}
+          .left{width:98%;border-top:2px solid #D0D0D0;border-right:none;}
+          
+          #mvcbloggy-monthlyarchive{padding:0;margin:10px 0;}
+          #mvcbloggy-monthlyarchive li{padding:0;margin:4px 5px 4px 0;list-style:none;display:block;float:left;}
+          
+        }
+        </style>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        
+        <script>
+            
+            (function() { 
+                $(function() { 
+                
+                    //do not applly margin for the first icon
+                    //UPDATE: No need this one anymore...
+                    //$("#mvcbloggy-me li").first().css("margin-left", "0");
+                    
+                    var _designatedWindowWidthForRedisgn = 1098;
+                    var _designatedWindowWidthForNav = 673;
+                    var $_windowWidth = $(window).width();
+                    
+                    if($_windowWidth <= _designatedWindowWidthForRedisgn) { 
+                        appendSeperatorsForArchiveList();
+                    }
+                    
+                    if($_windowWidth <= _designatedWindowWidthForNav) { 
+                        buildNavSelectListFromUlList();
+                    }
+                    
+                    $(window).resize(function() { 
+                    
+                        var _windowWidth = $(window).width();
+                        if(_windowWidth <= _designatedWindowWidthForRedisgn && 
+                            $_windowWidth > _designatedWindowWidthForRedisgn && 
+                            getLengthSeperatorForArchiveList() <= 0) { 
+                            
+                            appendSeperatorsForArchiveList();
+                        }
+                        
+                        if(_windowWidth >= _designatedWindowWidthForRedisgn &&
+                            getLengthSeperatorForArchiveList() >= 1) { 
+                            
+                            removeSeperatorsForArchiveList();
+                        }
+                        
+                        if(_windowWidth <= _designatedWindowWidthForNav && 
+                            $_windowWidth > _designatedWindowWidthForNav && 
+                            !isNavSelectListExists()) { 
+                            
+                            buildNavSelectListFromUlList();
+                        }
+                        
+                        if(_windowWidth >= _designatedWindowWidthForNav &&
+                            $("nav:hidden").length === 1) { 
+                            
+                            reverseNavSelectListFromUlList();
+                        }
+                        
+                        $_windowWidth = $(window).width();
+                    });
+                    
+                    function appendSeperatorsForArchiveList() { 
+                        $("#mvcbloggy-monthlyarchive li a").
+                            after('<span class="mvcbloggy-monthlyarchiveseperator"> | </span>');
+                        $("#mvcbloggy-monthlyarchive span.mvcbloggy-monthlyarchiveseperator").last().remove();
+                    }
+                    
+                    function removeSeperatorsForArchiveList() { 
+                        $("#mvcbloggy-monthlyarchive span.mvcbloggy-monthlyarchiveseperator").remove();
+                    }
+                    
+                    function getLengthSeperatorForArchiveList() { 
+                        return $("#mvcbloggy-monthlyarchive span.mvcbloggy-monthlyarchiveseperator").length;
+                    }
+                    
+                    function buildNavSelectListFromUlList() { 
+                        
+                        var markUp = ["<select id='mvcbloggy-navselect'>"], $nav = $("nav"), $li, $a;
+                        markUp.push("<option value='' selected='selected'>Go to...</option>");
+                        
+                        $("nav ul li").each(function() { 
+                            $li = $(this);
+                            $a = $li.find("a");
+                            markUp.push("<option value='"+$a.attr("href")+"'>"+$a.text()+"</option>");
+                        });
+                        
+                        markUp.push("</select>");
+                        
+                        $nav.after(markUp.join(''));
+                        $("#mvcbloggy-navselect").css("margin-left", "1%");
+                        $("#mvcbloggy-navselect").change(function() { 
+                            window.location = $(this).val();
+                        });
+                        
+                        $nav.hide();
+                    }
+                    
+                    function  reverseNavSelectListFromUlList() { 
+                        
+                        $("#mvcbloggy-navselect").hide();
+                        $("nav").show();
+                    }
+                    
+                    function isNavSelectListExists() { 
+                    
+                        return ( 
+                            $("#mvcbloggy-navselect").length && 
+                            $("#mvcbloggy-navselect:hidden").length === 0
+                        ) ? true : false;
+                    }
+                    
+                    //buildNavSelectListFromUlList();
+                    
+                });
+            })();
+            
+        </script>
+        
+        <link rel="me" type="text/html" href="https://plus.google.com/114404472683655231726?rel=me" />
+        <link rel="me" type="text/html" href="http://feeds.feedburner.com/tugberkugurlu" />
+        <link rel="me" type="text/html" href="http://twitter.com/tourismgeek" />
+        <link rel="me" type="text/html" href="http://www.linkedin.com/in/tugberk" />
+        
+    </head>
+    <body>
+          
+          <div id="mvcbloggy-wrapper">
+              <header>
+                  <section id="header-left">
+                      <h2 id="mvcbloggy-title">Tugberk Ugurlu's Blog</h2>
+                      <span id="mvcbloggy-slogan">
+                          if life is an infinite loop, I am a read-only variable inside it...
+                      </span>
+                  </section>
+                  <section id="header-right">
+                      <table id="mvcbloggy-feedburner">
+                          <tbody>
+                              <tr>
+                                  <td>
+                                    <a class="no-border-img-link" href="http://feeds.feedburner.com/TugberkUgurlu">
+                                        <img alt="rss" title="Subscribe Rss Feed !" src="http://www.tugberkugurlu.com/Content/App_Icons/icon-feed-28x28.png" />
+                                    </a>
+                                  </td>
+                                  <td>
+                                    <a href="http://feeds.feedburner.com/tugberkugurlu">
+                                        <img src="http://feeds.feedburner.com/~fc/TugberkUgurlu?bg=FF6600&amp;fg=FFFFFF&amp;anim=1" height="26" width="88" style="border:0" alt="" />
+                                    </a>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      
+                  </section>
+                  <div style="clear:both;"></div>
+                  
+                  <nav>
+                      <ul>
+                          <li class="mvcbloggy-current"><a href="#">Home</a></li>
+                          <li><a href="#">ASP.NET MVC</a></li>
+                          <li><a href="#">Archives</a></li>
+                          <li><a href="#">About Me</a></li>
+                          <li><a href="#">Resume</a></li>
+                          <li><a href="#">Contact Me</a></li>
+                      </ul>
+                  </nav>
+                  <div style="clear:both;"></div>
+                  
+              </header>
+              
+              <section id="mvcbloggy-innerwrapper">
+
+              <div class="right">
+              
+                  <input class="search-box" type="text" placeholder="ASP.NET MVC, JQuery, Ajax, etc." />
+                  <input class="search-buton" type="submit" value="Go" />
+                  
+                  <div class="mvcbloggy-rightsection">
+                  
+                      <ul id="mvcbloggy-me">
+                          <li>
+                              <a href="http://twitter.com/tourismgeek" title="Tugberk is on Twitter">
+                                  <img src="img/32/twitter2.png" alt="Twitter" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="https://plus.google.com/114404472683655231726?rel=author" title="Tugberk is on Google+" rel="author">
+                                  <img src="img/32/googleplusalt.png" alt="Google+" width="16" height="16" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://www.linkedin.com/in/tugberk" title="Tugberk is on Linkedin">
+                                  <img src="img/32/linkedin.png" alt="Linkedin" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://github.com/tugberkugurlu" title="Tugberk is on GitHub">
+                                  <img src="img/32/github.png" alt="GitHub" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://stackoverflow.com/users/463785/tugberk" title="Tugberk is on Stackoverflow">
+                                  <img src="img/32/stackoverflow.png" alt="Stackoverflow" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://www.youtube.com/tugberkug" title="Tugberk is on YouTube">
+                                  <img src="img/32/youtube.png" alt="YouTube" />
+                              </a>
+                          </li>
+                          <li>
+                              <a href="http://www.flickr.com/people/tugberk" title="Tugberk is on Flickr">
+                                  <img src="img/32/flickr.png" alt="Flickr" />
+                              </a>
+                          </li>
+                          
+                      </ul>
+                      <div style="clear:both;"></div>
+                  
+                  </div>
+                  
+                  <div class="mvcbloggy-rightsection">
+                  
+                    <h3>Archive</h3>
+                  
+                    <ul id="mvcbloggy-monthlyarchive">
+                        <li><a href="/archive/10/2011">October, 2011 (3)</a></li>
+                        <li><a href="/archive/9/2011">September, 2011 (4)</a></li>
+                        <li><a href="/archive/5/2011">May, 2011 (4)</a></li>
+                        <li><a href="/archive/4/2011">April, 2011 (2)</a></li>
+                        <li><a href="/archive/3/2011">March, 2011 (3)</a></li>
+                        <li><a href="/archive/2/2011">February, 2011 (3)</a></li>
+                        <li><a href="/archive/1/2011">January, 2011 (1)</a></li>
+                        <li><a href="/archive/12/2010">December, 2010 (5)</a></li>
+                        <li><a href="/archive/11/2010">November, 2010 (3)</a></li>
+                        <li><a href="/archive/10/2010">October, 2010 (1)</a></li>
+                        <li><a href="/archive/9/2010">September, 2010 (4)</a></li>
+                        <li><a href="/archive/8/2010">August, 2010 (2)</a></li>
+                        <li><a href="/archive/5/2010">May, 2010 (3)</a></li>
+                        <li><a href="/archive/3/2010">March, 2010 (4)</a></li>
+                        <li><a href="/archive/4/2010">April, 2010 (5)</a></li>
+                    </ul>
+                    <div style="clear:both;"></div>
+                  
+                  </div>
+                  
+              </div>
+              
+              <div class="left">
+              
+                <h2>
+                    <a rel="bookmark" href="#">
+                        ASP.NET MVC Remote Validation For Multiple Fields With AdditionalFields Property
+                    </a>
+                </h2>
+                
+                <div class="mvcbloggy-postdetails">
+                        
+                </div>
+
+    <p><a href="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/why-wont-you-validate-me-hrrrr.png"><img style="background-image: none; margin: 0px 15px 10px 0px; padding-left: 0px; padding-right: 0px; display: inline; float: left; padding-top: 0px; border-width: 0px;" title="why-wont-you-validate-me-hrrrr" border="0" alt="why-wont-you-validate-me-hrrrr" align="left" src="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/why-wont-you-validate-me-hrrrr_thumb.png" width="244" height="200" /></a></p>
+    <p>I blogged about <a title="http://www.tugberkugurlu.com/archive/check-instantly-if-username-exists-asp-net-mvc-remote-validation" href="http://www.tugberkugurlu.com/archive/check-instantly-if-username-exists-asp-net-mvc-remote-validation" target="_blank">ASP.NET MVC Remote Validation</a> couple of days ago by showing a simple scenario for how to use it. That blog post simply covers everything about remote validation except for properties of <a title="http://msdn.microsoft.com/en-us/library/system.web.mvc.remoteattribute(v=vs.98).aspx" href="http://msdn.microsoft.com/en-us/library/system.web.mvc.remoteattribute(v=vs.98).aspx" target="_blank">RemoteAttribute Class</a>.</p>
+    <p>In that blog post, we covered validating user inputs uniqueness for one field in order to alert the user before the form is posted. This is a quite nice built-in feature which takes basically not more 5 minutes to implement.</p>
+    <p>But we as in all human beings tend not to be happy with the current situation and want more. It is in our nature, we can&rsquo;t help that. So, as soon as I use this feature I ask myself <em><strong>"What if I would like to check the uniqueness of product name inside the chosen category?"</strong></em>.<em><strong> </strong></em>Well, it turns out that <a title="http://asp.net/mvc" href="http://asp.net/mvc" target="_blank">ASP.NET MVC</a> team asked this question themselves way earlier than me and added a support for this kind of situations.</p>
+    <p><a title="http://msdn.microsoft.com/en-us/library/system.web.mvc.remoteattribute.additionalfields(v=vs.98).aspx" href="http://msdn.microsoft.com/en-us/library/system.web.mvc.remoteattribute.additionalfields(v=vs.98).aspx" target="_blank">RemoteAttribute.AdditionalFields Property</a> gets or sets the additional fields that are required for validation. <strong>AdditionalFields</strong> property is <strong>string</strong> property and can be provided for multiple fields.</p>
+    <p>Probably another question pops up on your mind : <em>"How does ASP.NET MVC Framework relate the fields, which we will provide for <strong>AdditionalFields</strong> property, with <strong>form elements</strong> and pass them our <strong>controller</strong>?" </em>If we need to ask this question in plain English, that would be this : <em>"How the heck does it know in which category I trying to check the uniqueness of the product name?"</em>. Here, ASP.NET MVC Model Binding feature plays a huge role here as much as <a title="http://jquery.com/" href="http://jquery.com/" target="_blank">JQuery</a>.</p>
+    <p><strong>Simple Scenario</strong></p>
+    <p>Assume that we need to store products under a category inside our database and we need every each product name to be unique under the chosen category.</p>
+    <blockquote>
+    <p>In order to stick with the topic here, I have already built the necessary stuff (database, repos, etc.). I used SQL Server Compact Version 4 here. As sample database, you won&rsquo;t believe what I used : <strong>Northwind </strong><img style="border-style: none;" class="wlEmoticon wlEmoticon-winkingsmile" alt="Winking smile" src="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/wlEmoticon-winkingsmile.png" /> I also used Entity Framework to reach out to the data. You can see all of the code from my <a title="https://github.com" href="https://github.com" target="_blank">GitHub</a> Repo : <a href="https://github.com/tugberkugurlu/MvcRemoteValidationSample">https://github.com/tugberkugurlu/MvcRemoteValidationSample</a></p>
+    </blockquote>
+    <p>Our create form looks like below :</p>
+    <p><a href="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" border="0" alt="image" src="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_thumb.png" width="644" height="383" /></a></p>
+    <p>The product model class looks like this :</p>
+    <div class="code-wrapper border-shadow-1">
+    <div style="background-color: white; color: black;">
+    <pre><span style="color: blue;">public</span> <span style="color: blue;">partial</span> <span style="color: blue;">class</span> Product
+    {
+        <span style="color: blue;">public</span> Product()
+        {
+            <span style="color: blue;">this</span>.Order_Details = <span style="color: blue;">new</span> HashSet&lt;Order_Detail&gt;();
+        }
+
+        <span style="color: blue;">public</span> <span style="color: blue;">int</span> Product_ID { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+        <span style="color: blue;">public</span> Nullable&lt;<span style="color: blue;">int</span>&gt; Supplier_ID { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+        <span style="color: blue;">public</span> Nullable&lt;<span style="color: blue;">int</span>&gt; Category_ID { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+        <span style="color: blue;">public</span> <span style="color: blue;">string</span> Product_Name { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+        <span style="color: blue;">public</span> <span style="color: blue;">string</span> English_Name { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+        <span style="color: blue;">public</span> <span style="color: blue;">string</span> Quantity_Per_Unit { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+        <span style="color: blue;">public</span> Nullable&lt;<span style="color: blue;">decimal</span>&gt; Unit_Price { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+        <span style="color: blue;">public</span> Nullable&lt;<span style="color: blue;">short</span>&gt; Units_In_Stock { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+        <span style="color: blue;">public</span> Nullable&lt;<span style="color: blue;">short</span>&gt; Units_On_Order { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+        <span style="color: blue;">public</span> Nullable&lt;<span style="color: blue;">short</span>&gt; Reorder_Level { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+        <span style="color: blue;">public</span> <span style="color: blue;">bool</span> Discontinued { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+
+        <span style="color: blue;">public</span> <span style="color: blue;">virtual</span> Category Category { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+        <span style="color: blue;">public</span> <span style="color: blue;">virtual</span> ICollection&lt;Order_Detail&gt; Order_Details { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+        <span style="color: blue;">public</span> <span style="color: blue;">virtual</span> Supplier Supplier { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+    }</pre>
+    </div>
+    </div>
+    <p>Here is my additional partial class under the same namespace of my <strong>Product</strong> class :</p>
+    <div class="code-wrapper border-shadow-1">
+    <div style="background-color: white; color: black;">
+    <pre>[MetadataType(<span style="color: blue;">typeof</span>(Product.MetaData))]
+    <span style="color: blue;">public</span> <span style="color: blue;">partial</span> <span style="color: blue;">class</span> Product {
+
+        <span style="color: blue;">private</span> <span style="color: blue;">class</span> MetaData {
+
+            [Remote(
+                <span style="color: #a31515;">"doesProductNameExistUnderCategory"</span>, 
+                <span style="color: #a31515;">"Northwind"</span>, 
+                AdditionalFields = <span style="color: #a31515;">"Category_ID"</span>,
+                ErrorMessage = <span style="color: #a31515;">"Product name already exists under the chosen category. Please enter a different product name."</span>,
+                HttpMethod = <span style="color: #a31515;">"POST"</span>
+            )]
+            [Required]
+            <span style="color: blue;">public</span> <span style="color: blue;">string</span> Product_Name { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+            
+            [Required]
+            <span style="color: blue;">public</span> <span style="color: blue;">int</span>? Supplier_ID { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+
+            [Required]
+            <span style="color: blue;">public</span> <span style="color: blue;">int</span>? Category_ID { <span style="color: blue;">get</span>; <span style="color: blue;">set</span>; }
+
+        }
+
+    }</pre>
+    </div>
+    </div>
+    <p>As you see there, we have decorated <strong>Product_Name</strong> property with <a title="http://msdn.microsoft.com/en-us/library/system.web.mvc.remoteattribute(v=vs.98).aspx" href="http://msdn.microsoft.com/en-us/library/system.web.mvc.remoteattribute(v=vs.98).aspx" target="_blank">RemoteAttribute</a>. What we need to point our here is AdditionalFields property of RemoteAttribute. Simply we are saying here that : '<em>Pass Category_ID value to the controller action when you try validate the Product_Name</em>'. So, <strong>Ajax Request </strong>will send two form inputs to our action : <em>Product_Name</em> and <em>Category_ID</em>.<em> </em>As we have already seen on my previous blog post on <a title="http://www.tugberkugurlu.com/archive/check-instantly-if-username-exists-asp-net-mvc-remote-validation" href="http://www.tugberkugurlu.com/archive/check-instantly-if-username-exists-asp-net-mvc-remote-validation" target="_blank">ASP.NET MVC Remote Validation</a>, Model Binder will bind those inputs to our action parameters in order to allow us to easily pick them.</p>
+    <p>Our main goal here is to check the uniqueness of the product name under the chosen category and that&rsquo;s why we need <em>Category_ID </em>value inside our controller action. Check controller action code below and you will get what I am trying to say :</p>
+    <div class="code-wrapper border-shadow-1">
+    <div style="background-color: white; color: black;">
+    <pre><span style="color: blue;">public</span> JsonResult doesProductNameExistUnderCategory(<span style="color: blue;">int</span>? Category_ID, <span style="color: blue;">string</span> Product_Name) {
+
+        <span style="color: blue;">var</span> model = _entities.Products.Where(x =&gt; (Category_ID.HasValue) ? 
+                (x.Category_ID == Category_ID &amp;&amp; x.Product_Name == Product_Name) : 
+                (x.Product_Name == Product_Name)
+            );
+
+        <span style="color: blue;">return</span> Json(model.Count() == 0);
+
+    }</pre>
+    </div>
+    </div>
+    <p>Inside this action, we are checking if the user name already exists under the chosen category or not. For the real purpose of this blog post, we only need to focus what we are returning here. The other part of this code mostly depends on your application&rsquo;s business logic.</p>
+    <p>We are basically done here. I will run the app and see it in action but please firstly see the below screenshot :</p>
+    <p><a href="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_3.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" border="0" alt="image" src="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_thumb_3.png" width="644" height="383" /></a></p>
+    <p>This table show the list of products inside our database. On the first row, we see that there is a product named <strong>Chai</strong> under Category_ID&nbsp;<strong>1</strong> whose Category_Name is <strong>Beverages</strong> (you don&rsquo;t see the Category_Name here but don&rsquo;t worry, just trust me). We will demonstrate our sample with this product values.</p>
+    <p>First, select the category from the select list :</p>
+    <p><a href="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_4.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" border="0" alt="image" src="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_thumb_4.png" width="644" height="383" /></a></p>
+    <p>Then, type Chai for <strong>Product_Name </strong>:</p>
+    <p><a href="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_5.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" border="0" alt="image" src="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_thumb_5.png" width="644" height="383" /></a></p>
+    <p>Then, simply hit Tab key :</p>
+    <p><a href="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_6.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" border="0" alt="image" src="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_thumb_6.png" width="644" height="383" /></a></p>
+    <p>All done but I would like to go a little deeper here. Let&rsquo;s put a break point on <strong>doesProductNameExistUnderCategory </strong>method and start a debug session.</p>
+    <p><a href="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_7.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" border="0" alt="image" src="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_thumb_7.png" width="644" height="379" /></a></p>
+    <p>When we follow the above steps again, we should end up like this :</p>
+    <p><a href="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_8.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" border="0" alt="image" src="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_thumb_8.png" width="644" height="379" /></a></p>
+    <p>Let&rsquo;s look what we got here :</p>
+    <p><a href="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_9.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" border="0" alt="image" src="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/image_thumb_9.png" width="644" height="379" /></a></p>
+    <p>We have all the necessary values to check if the value is legitimate or not.</p>
+    <p>Again, you can see all of the code from my GitHub Repo : <a href="https://github.com/tugberkugurlu/MvcRemoteValidationSample">https://github.com/tugberkugurlu/MvcRemoteValidationSample</a></p>
+    <p>Hope you enjoy the post <img style="border-style: none;" class="wlEmoticon wlEmoticon-smile" alt="Smile" src="http://www.tugberkugurlu.com/Content/images/Uploadedbyauthors/wlw/560581a7261c_92FF/wlEmoticon-smile.png" /></p>
+              
+              </div>
+              <div style="clear:both;"></div>
+              
+              <footer>
+                  Copyright &copy; 2011 - 2011 Tugberk / Nihan | Created, Designed, Coded &amp; Done By Tugberk Ugurlu
+              </footer>
+              
+              </section>
+
+          </div>
+    </body>
+</html>

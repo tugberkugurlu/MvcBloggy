@@ -175,7 +175,6 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\FK_BlogRolls_Languages.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Debug.publish.xml" />
     <None Include="Release.publish.xml" />
   </ItemGroup>
   <ItemGroup>

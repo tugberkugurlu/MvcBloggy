@@ -1,0 +1,8 @@
+﻿<div id="mvcbloggy-footerLeft">
+    &copy; 2009 - @DateTime.Today.Year @Html.Raw(Strings.FooterCopyrightText)
+</div>
+<div id="mvcbloggy-footerRight">
+    @Html.ActionLink(Strings.Home, "index", new { controller = "default", area = string.Empty }) - 
+    @Html.ActionLink(Strings.AboutMe, "index", new { controller = "dynamicPage", page = "about",  area = string.Empty }) -
+    @Html.ActionLink(Strings.ContactMe, "index", new { controller = "contact", area = string.Empty })
+</div>

@@ -113,9 +113,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Application.cs" />
     <Compile Include="Application\LocalizedControllerFactory.cs" />
+    <Compile Include="Application\MvcBloggy.cs" />
+    <Compile Include="Application\Profile.cs" />
+    <Compile Include="Application\Resources\AppInfoStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppInfoStrings.resx</DependentUpon>
+    </Compile>
     <Compile Include="Application\RouteConstraints\LanguageRouteConstraint.cs" />
     <Compile Include="Application\Utility\AppLanguage.cs" />
+    <Compile Include="Application\Utility\AppSettings.cs" />
     <Compile Include="App_Start\NinjectMVC3.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Global.asax.cs">
@@ -124,6 +133,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MvcBloggy.me.xml" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -152,10 +162,20 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Content\v2\css\boilerplate-part1.css" />
-    <Content Include="Content\v2\css\boilerplate-part2.css" />
+    <Content Include="Content\v2\css\boilerplate-part3.css" />
+    <Content Include="Content\v2\css\boilerplate-part2.mvcbloggy.css" />
+    <Content Include="Content\v2\css\boilerplate-part4.print.css" />
+    <Content Include="Content\v2\icons\flags\en.png" />
+    <Content Include="Content\v2\icons\flags\tr.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="robots.txt" />
+    <Content Include="Scripts\chosen\chosen-sprite.png" />
+    <Content Include="Scripts\chosen\chosen.css" />
+    <Content Include="Scripts\chosen\chosen.jquery.js" />
+    <Content Include="Scripts\chosen\chosen.jquery.min.js" />
+    <Content Include="Scripts\chosen\chosen.proto.js" />
+    <Content Include="Scripts\chosen\chosen.proto.min.js" />
     <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -172,8 +192,19 @@
     <Content Include="Scripts\knockout-1.3.0beta.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
     <Content Include="Scripts\plugins.js" />
+    <Content Include="Scripts\respond\respond.min.js" />
+    <Content Include="Scripts\respond\respond.src.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Themes\tugberk\default.css" />
+    <Content Include="Themes\tugberk\default.media.css" />
+    <Content Include="Themes\tugberk\img\1319546597_magnifier_s.png" />
+    <Content Include="Themes\tugberk\img\bg.gif" />
+    <Content Include="Themes\tugberk\img\bg2.gif" />
+    <Content Include="Themes\tugberk\img\bg3.gif" />
+    <Content Include="Themes\tugberk\img\bg_gray.png" />
+    <Content Include="Themes\tugberk\img\SDC11882.JPG" />
+    <Content Include="Themes\tugberk\scripts\plugins.js" />
+    <Content Include="Themes\tugberk\scripts\script.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -187,9 +218,20 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="_bin_deployableAssemblies\System.Web.Mvc.dll" />
+    <None Include="_bin_deployableAssemblies\WebMatrix.WebData.dll" />
+    <None Include="_bin_deployableAssemblies\WebMatrix.Security.dll" />
+    <None Include="_bin_deployableAssemblies\WebMatrix.Data.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Razor.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Deployment.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Administration.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.Razor.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.Helpers.dll" />
+    <None Include="_bin_deployableAssemblies\NuGet.Core.dll" />
+    <None Include="_bin_deployableAssemblies\Microsoft.Web.Infrastructure.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -200,9 +242,32 @@
       <Project>{607536ac-76b2-400e-b147-6a9148b4f941}</Project>
       <Name>MvcBloggy.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MvcBloggy.Resources\MvcBloggy.Resources.csproj">
+      <Project>{d60dc23f-a919-47fb-9ac9-540b39098ec7}</Project>
+      <Name>MvcBloggy.Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Default\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Application\Resources\AppInfoStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppInfoStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Resources\AppInfoStrings.tr.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\LayoutHeaderRight.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\LayoutHeaderLeft.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\LayoutFooter.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_CultureSwitcher.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
