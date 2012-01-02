@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\Application.cs" />
+    <Compile Include="Application\CSRazorViewEngine.cs" />
     <Compile Include="Application\LocalizedControllerFactory.cs" />
     <Compile Include="Application\MvcBloggy.cs" />
     <Compile Include="Application\Profile.cs" />
@@ -123,12 +124,18 @@
       <DependentUpon>AppInfoStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="Application\RouteConstraints\LanguageRouteConstraint.cs" />
+    <Compile Include="Application\TwoLevelViewCache.cs" />
     <Compile Include="Application\Utility\AppLanguage.cs" />
     <Compile Include="Application\Utility\AppSettings.cs" />
+    <Compile Include="App_Start\Bootstrapper.cs" />
+    <Compile Include="App_Start\Bundles.cs" />
+    <Compile Include="App_Start\Filters.cs" />
     <Compile Include="App_Start\NinjectMVC3.cs" />
+    <Compile Include="App_Start\Routes.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -167,8 +174,8 @@
     <Content Include="Content\v2\css\boilerplate-part4.print.css" />
     <Content Include="Content\v2\icons\flags\en.png" />
     <Content Include="Content\v2\icons\flags\tr.png" />
-    <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\chosen\chosen-sprite.png" />
     <Content Include="Scripts\chosen\chosen.css" />

@@ -1,15 +1,15 @@
 [assembly: WebActivator.PreApplicationStartMethod(typeof(MvcBloggy.Web.App_Start.NinjectMVC3), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(MvcBloggy.Web.App_Start.NinjectMVC3), "Stop")]
 
-namespace MvcBloggy.Web.App_Start
-{
+namespace MvcBloggy.Web.App_Start {
+
     using System.Reflection;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
     using Ninject;
     using Ninject.Web.Mvc;
 
-    public static class NinjectMVC3 
-    {
+    public static class NinjectMVC3  {
+
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
         /// <summary>

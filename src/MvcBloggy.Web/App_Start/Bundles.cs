@@ -3,16 +3,11 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
 using Microsoft.Web.Optimization;
-using MvcBloggy.Web.Application;
-using MvcBloggy.Web.Application.RouteConstraints;
-using MvcBloggy.Web.Application.Utility;
 
 namespace MvcBloggy.Web {
 
-    public class MvcApplication : System.Web.HttpApplication {
+    public class Bundles {
 
         public static void RegisterBundles(BundleCollection bundles) {
 
@@ -75,11 +70,6 @@ namespace MvcBloggy.Web {
             bundles.Add(globalJSBundlev2);
 
             #endregion
-        }
-
-        protected void Application_Start() {
-
-            RegisterBundles(BundleTable.Bundles);
         }
 
     }
