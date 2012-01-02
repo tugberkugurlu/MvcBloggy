@@ -113,6 +113,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\ActionFilters\RemoveWhitespacesAttribute.cs" />
     <Compile Include="Application\Application.cs" />
     <Compile Include="Application\CSRazorViewEngine.cs" />
     <Compile Include="Application\LocalizedControllerFactory.cs" />
