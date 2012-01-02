@@ -21,6 +21,7 @@ TestResult.xml
 *.dropbox
 desktop.ini
 *.publish.xml
+*.refactorlog
 
 MvcBloggy.me.xml
 info
