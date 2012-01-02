@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c3c17dc4f290488e86569078702a31a9" Name="Diagram1">
+        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.BlogPostComment" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.BlogPost" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.BlogRoll" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.DynamicPage" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.Language" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.RestrictedPageName" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_BlogPostComments_BlogPosts" ManuallyRouted="false" />
+        <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_BlogPosts_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_BlogRolls_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_DynamicPages_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_RestrictedPageNames_Languages" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

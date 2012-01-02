@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
 namespace MvcBloggy.Data.DataAccess.SqlServer
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class BlogPost
     {
         public BlogPost()
@@ -29,11 +29,12 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
         public string BlogPostTags { get; set; }
         public string BlogPostImagePath { get; set; }
         public string CreationIp { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
-        public Nullable<System.DateTime> UpdatedOn { get; set; }
-        public Nullable<bool> IsApproved { get; set; }
+        public Nullable<System.DateTimeOffset> CreatedOn { get; set; }
+        public Nullable<System.DateTimeOffset> LastUpdatedOn { get; set; }
+        public bool IsApproved { get; set; }
     
         public virtual ICollection<BlogPostComment> BlogPostComments { get; set; }
         public virtual Language Language { get; set; }
     }
+    
 }

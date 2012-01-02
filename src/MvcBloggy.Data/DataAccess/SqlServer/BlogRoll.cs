@@ -12,12 +12,16 @@ using System.Collections.Generic;
 
 namespace MvcBloggy.Data.DataAccess.SqlServer
 {
-    public partial class RestrictedPageName
+    public partial class BlogRoll
     {
-        public int RestrictedPageNameID { get; set; }
-        public int LanguageID { get; set; }
-        public string RestrictedPageTerm { get; set; }
-        public Nullable<System.DateTimeOffset> CreatedOn { get; set; }
+        public int BlogRollId { get; set; }
+        public int LanguageId { get; set; }
+        public string BlogName { get; set; }
+        public string BlogAuthor { get; set; }
+        public string BlogUrl { get; set; }
+        public string FeedUrl { get; set; }
+        public Nullable<int> Order { get; set; }
+        public bool IsApproved { get; set; }
     
         public virtual Language Language { get; set; }
     }

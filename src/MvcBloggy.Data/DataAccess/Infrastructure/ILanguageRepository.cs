@@ -11,7 +11,6 @@ namespace MvcBloggy.Data.DataAccess.Infrastructure {
         IEnumerable<Language> GetAll(ApprovalStatus approvalStatus = ApprovalStatus.All);
 
         Language GetSingle(int languageID, ApprovalStatus approvalStatus = ApprovalStatus.All);
-        Language GetSingle(Guid languageGUID, ApprovalStatus approvalStatus = ApprovalStatus.All);
         Language GetSingle(string languageCultureOne, ApprovalStatus approvalStatus = ApprovalStatus.All);
 
         void Add(Language entity);

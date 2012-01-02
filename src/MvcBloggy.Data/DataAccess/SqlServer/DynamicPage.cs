@@ -7,25 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
 namespace MvcBloggy.Data.DataAccess.SqlServer
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class DynamicPage
     {
         public int DynamicPageID { get; set; }
         public int LanguageID { get; set; }
-        public System.Guid DynamicPageGUID { get; set; }
         public string PageTitle { get; set; }
         public string PageBriefInfo { get; set; }
         public string PageContent { get; set; }
-        public string PageTags { get; set; }
-        public string PageUrlPortion { get; set; }
-        public Nullable<bool> IsApproved { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
-        public Nullable<System.DateTime> UpdatedOn { get; set; }
+        public bool IsApproved { get; set; }
+        public Nullable<System.DateTimeOffset> CreatedOn { get; set; }
+        public Nullable<System.DateTimeOffset> LastUpdatedOn { get; set; }
     
         public virtual Language Language { get; set; }
     }
+    
 }

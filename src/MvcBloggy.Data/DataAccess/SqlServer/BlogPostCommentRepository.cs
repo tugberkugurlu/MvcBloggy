@@ -7,9 +7,7 @@ using MvcBloggy.Data.DataAccess.Infrastructure;
 
 namespace MvcBloggy.Data.DataAccess.SqlServer {
 
-    public class BlogPostCommentRepository : IBlogPostCommentRepository {
-
-        private readonly MvcBloggyEntities _entities = new MvcBloggyEntities();
+    public class BlogPostCommentRepository : GenericRepository<MvcBloggyEntities, BlogPostComment>, IBlogPostCommentRepository {
 
     }
 }

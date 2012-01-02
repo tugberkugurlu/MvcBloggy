@@ -7,27 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
 namespace MvcBloggy.Data.DataAccess.SqlServer
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class BlogPostComment
     {
         public int BlogCommentID { get; set; }
         public int BlogPostID { get; set; }
-        public Nullable<System.Guid> BlogCommentGUID { get; set; }
         public string CommenterName { get; set; }
         public string CommenterEmail { get; set; }
         public string CommenterWebSite { get; set; }
         public string CommenterAuthType { get; set; }
-        public Nullable<bool> IsAuthor { get; set; }
+        public bool IsAuthor { get; set; }
         public string CommentSubject { get; set; }
         public string CommentContent { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
+        public System.DateTimeOffset CreatedOn { get; set; }
         public string CreationIp { get; set; }
-        public Nullable<bool> IsApproved { get; set; }
+        public bool IsApproved { get; set; }
     
         public virtual BlogPost BlogPost { get; set; }
     }
+    
 }

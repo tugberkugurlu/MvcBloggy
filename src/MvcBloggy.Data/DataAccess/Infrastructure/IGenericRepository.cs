@@ -6,8 +6,8 @@ using System.Text;
 
 namespace MvcBloggy.Data.DataAccess.Infrastructure {
 
-    public interface IGenericRepository<T> where T : class {
-        
+    public interface IGenericRepository<T> : IDisposable where T : class {
+
         IQueryable<T> FindBy(Expression<Func<T, bool>> predicate);
         void Add(T entity);
         void Delete(T entity);

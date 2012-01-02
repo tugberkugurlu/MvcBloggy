@@ -6,13 +6,11 @@ using MvcBloggy.Data.DataAccess.Infrastructure;
 
 namespace MvcBloggy.Data.DataAccess.SqlServer {
 
-    public class BlogPostRepository : IBlogPostRepository {
-
-        private readonly MvcBloggyEntities _entities = new MvcBloggyEntities();
+    public class BlogPostRepository : GenericRepository<MvcBloggyEntities, BlogPost>, IBlogPostRepository {
 
         public IEnumerable<BlogPost> GetAll(ApprovalStatus approvalStatus = ApprovalStatus.All) {
 
-            IEnumerable<BlogPost> query = _entities.BlogPosts;
+            IEnumerable<BlogPost> query = Context.BlogPosts;
 
             switch (approvalStatus) {
 
@@ -94,24 +92,5 @@ namespace MvcBloggy.Data.DataAccess.SqlServer {
             throw new NotImplementedException();
         }
 
-        public void Add(BlogPost entity) {
-
-            _entities.BlogPosts.Add(entity);
-        }
-
-        public void Delete(BlogPost entity) {
-
-            _entities.BlogPosts.Remove(entity);
-        }
-
-        public void Edit(BlogPost entity) {
-
-            _entities.Entry<BlogPost>(entity).State = System.Data.EntityState.Modified;
-        }
-
-        public void Save() {
-
-            _entities.SaveChanges();
-        }
     }
 }

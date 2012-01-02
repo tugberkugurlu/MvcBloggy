@@ -7,7 +7,7 @@ using MvcBloggy.Data.DataAccess.SqlServer;
 
 namespace MvcBloggy.Data.DataAccess.Infrastructure {
 
-    public interface IBlogPostCommentRepository {
+    public interface IBlogPostCommentRepository : IGenericRepository<BlogPostComment> {
 
     }
 }
