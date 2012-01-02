@@ -1,17 +1,14 @@
 ﻿CREATE TABLE [dbo].[DynamicPages](
-	[DynamicPageID] [int] IDENTITY(1000,1) NOT NULL,
-	[LanguageID] [int] NOT NULL,
-	[DynamicPageGUID] [uniqueidentifier] NOT NULL,
-	[PageTitle] [nvarchar](500) NULL,
-	[PageBriefInfo] [nvarchar](500) NULL,
-	[PageContent] [nvarchar](max) NULL,
-	[PageTags] [nvarchar](1000) NULL,
-	[PageUrlPortion] [nvarchar](300) NULL,
-	[IsApproved] [bit] NULL,
-	[CreatedOn] [datetime] NULL,
-	[LastUpdatedOn] [datetime] NULL,
+	[DynamicPageId] INT IDENTITY(1000,1) NOT NULL,
+	[LanguageId] INT NOT NULL,
+	[PageTitle] NVARCHAR(500) NOT NULL,
+	[PageBriefInfo] NVARCHAR(500) NOT NULL,
+	[PageContent] NVARCHAR(max) NULL,
+	[IsApproved] BIT NOT NULL,
+	[CreatedOn] DATETIMEOFFSET NULL,
+	[LastUpdatedOn] DATETIMEOFFSET NULL,
 	CONSTRAINT [PK_DynamicPages] PRIMARY KEY CLUSTERED (
-		[DynamicPageID] ASC
+		[DynamicPageId] ASC
 	) ON [PRIMARY]
 
 ) ON [PRIMARY]

@@ -173,6 +173,12 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\FK_RestrictedPageNames_Languages.sql" />
     <Build Include="Schema Objects\Schemas\dbo\Tables\BlogRoll.sql" />
     <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\FK_BlogRolls_Languages.sql" />
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\UK_DynamicPages_PageTitle.sql" />
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\fn_CheckDynamicPageTitleValidity.sql" />
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\UrlReplace.sql" />
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\Trim.sql" />
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\CC_DynamicPages_PageTitle.sql" />
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\UK_BlogPosts_BlogPostTitle.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Release.publish.xml" />
