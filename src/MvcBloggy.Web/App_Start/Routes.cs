@@ -20,7 +20,7 @@ namespace MvcBloggy.Web {
                 "{language}/{controller}/{action}",
                 new { controller = "default", action = "index" },
                 new { language = new LanguageRouteConstraint() },
-                new[] { "MvcBloggy.Web.Controllers" }
+                new string[] { "MvcBloggy.Web.Controllers" }
             );
 
             routes.MapRoute(
@@ -28,7 +28,7 @@ namespace MvcBloggy.Web {
                 "{controller}/{action}",
                 new { controller = "default", action = "index", language = AppLanguage.GetDefault() },
                 new { },
-                new[] { "MvcBloggy.Web.Controllers" }
+                new string[] { "MvcBloggy.Web.Controllers" }
             );
 
         }

@@ -16,7 +16,6 @@ namespace MvcBloggy.Web {
         public static void PreStart() {
 
             Filters.RegisterGlobalFilters(GlobalFilters.Filters);
-            Routes.RegisterRoutes(RouteTable.Routes);
 
             ControllerBuilder.Current.SetControllerFactory(new LocalizedControllerFactory());
 
@@ -25,6 +24,9 @@ namespace MvcBloggy.Web {
         }
 
         public static void PostStart() {
+
+            AreaRegistration.RegisterAllAreas();
+            Routes.RegisterRoutes(RouteTable.Routes);
 
             Bundles.RegisterBundles(BundleTable.Bundles);
         }

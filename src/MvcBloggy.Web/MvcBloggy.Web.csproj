@@ -119,9 +119,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\ActionFilters\RemoveWhitespacesAttribute.cs" />
+    <Compile Include="Application\Filters\RemoveWhitespacesAttribute.cs" />
     <Compile Include="Application\Application.cs" />
     <Compile Include="Application\CSRazorViewEngine.cs" />
+    <Compile Include="Application\Filters\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Application\Filters\BypassAuthorizationAttribute.cs" />
     <Compile Include="Application\LocalizedControllerFactory.cs" />
     <Compile Include="Application\MvcBloggy.cs" />
     <Compile Include="Application\Profile.cs" />
@@ -140,6 +142,9 @@
     <Compile Include="App_Start\MiniProfiler.cs" />
     <Compile Include="App_Start\NinjectMVC3.cs" />
     <Compile Include="App_Start\Routes.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -237,6 +242,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Default\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Auth\LogOn.cshtml" />
     <None Include="_bin_deployableAssemblies\System.Web.Mvc.dll" />
     <None Include="_bin_deployableAssemblies\WebMatrix.WebData.dll" />
     <None Include="_bin_deployableAssemblies\WebMatrix.Security.dll" />
@@ -251,6 +261,7 @@
     <None Include="_bin_deployableAssemblies\Microsoft.Web.Infrastructure.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
