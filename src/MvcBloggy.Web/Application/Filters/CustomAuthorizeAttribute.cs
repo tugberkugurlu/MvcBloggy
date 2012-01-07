@@ -15,7 +15,7 @@ namespace MvcBloggy.Web.Application.Filters {
             var authRequired = !filterContext.ActionDescriptor.IsDefined(typeof(BypassAuthorizationAttribute), true) ||
                 filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(BypassAuthorizationAttribute), true);
 
-            if (authRequired)
+            if (authRequired && !filterContext.RequestContext.HttpContext.Request.IsLocal)
                 base.OnAuthorization(filterContext);
         }
     }

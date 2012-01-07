@@ -145,6 +145,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -181,10 +182,12 @@
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\v2\css\admin\bootstrap.min.css" />
     <Content Include="Content\v2\css\boilerplate-part1.css" />
     <Content Include="Content\v2\css\boilerplate-part3.css" />
     <Content Include="Content\v2\css\boilerplate-part2.mvcbloggy.css" />
     <Content Include="Content\v2\css\boilerplate-part4.print.css" />
+    <Content Include="Content\v2\css\admin\mvcbloggy.admin.css" />
     <Content Include="Content\v2\icons\flags\en.png" />
     <Content Include="Content\v2\icons\flags\tr.png" />
     <Content Include="Content\Site.css" />
