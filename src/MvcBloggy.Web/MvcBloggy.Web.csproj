@@ -56,6 +56,12 @@
     <Reference Include="Microsoft.Web.Optimization">
       <HintPath>..\..\packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="MvcMiniProfiler">
+      <HintPath>..\..\packages\MiniProfiler.1.9\lib\net40\MvcMiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcMiniProfiler.EntityFramework">
+      <HintPath>..\..\packages\MiniProfiler.EF.1.9.1\lib\net40\MvcMiniProfiler.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject">
       <HintPath>..\..\packages\Ninject.2.2.1.4\lib\net40-Full\Ninject.dll</HintPath>
     </Reference>
@@ -131,6 +137,7 @@
     <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\Bundles.cs" />
     <Compile Include="App_Start\Filters.cs" />
+    <Compile Include="App_Start\MiniProfiler.cs" />
     <Compile Include="App_Start\NinjectMVC3.cs" />
     <Compile Include="App_Start\Routes.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -203,6 +210,10 @@
     <Content Include="Scripts\respond\respond.min.js" />
     <Content Include="Scripts\respond\respond.src.js" />
     <Content Include="Scripts\script.js" />
+    <Content Include="Themes\default\default.css" />
+    <Content Include="Themes\default\default.media.css" />
+    <Content Include="Themes\default\scripts\plugins.js" />
+    <Content Include="Themes\default\scripts\script.js" />
     <Content Include="Themes\tugberk\default.css" />
     <Content Include="Themes\tugberk\default.media.css" />
     <Content Include="Themes\tugberk\img\1319546597_magnifier_s.png" />

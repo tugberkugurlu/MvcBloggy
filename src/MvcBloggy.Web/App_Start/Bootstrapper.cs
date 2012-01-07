@@ -7,12 +7,13 @@ using System.Web.Routing;
 using Microsoft.Web.Optimization;
 using MvcBloggy.Web.Application;
 
-[assembly: WebActivator.PreApplicationStartMethod(typeof(MvcBloggy.Web.Bootstrapper), "Start")]
+[assembly: WebActivator.PreApplicationStartMethod(typeof(MvcBloggy.Web.Bootstrapper), "PreStart")]
+[assembly: WebActivator.PostApplicationStartMethod(typeof(MvcBloggy.Web.Bootstrapper), "PostStart")]
 namespace MvcBloggy.Web {
 
     public class Bootstrapper {
 
-        public static void Start() {
+        public static void PreStart() {
 
             Filters.RegisterGlobalFilters(GlobalFilters.Filters);
             Routes.RegisterRoutes(RouteTable.Routes);
@@ -21,6 +22,11 @@ namespace MvcBloggy.Web {
 
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new CSRazorViewEngine());
+        }
+
+        public static void PostStart() {
+
+            Bundles.RegisterBundles(BundleTable.Bundles);
         }
     }
 }

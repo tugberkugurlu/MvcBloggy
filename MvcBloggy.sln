@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 11
-Project("{00000000-0000-0000-0000-000000000000}") = "MvcBloggy.Web", "src\MvcBloggy.Web\MvcBloggy.Web.csproj", "{6FFD39A6-1F2D-4B6E-BDA7-DF542CE88409}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcBloggy.Web", "src\MvcBloggy.Web\MvcBloggy.Web.csproj", "{6FFD39A6-1F2D-4B6E-BDA7-DF542CE88409}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcBloggy.Data", "src\MvcBloggy.Data\MvcBloggy.Data.csproj", "{607536AC-76B2-400E-B147-6A9148B4F941}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MvcBloggy.SQLServer.DB", "src\MvcBloggy.SQLServer.DB\MvcBloggy.SQLServer.DB.sqlproj", "{C4DAF606-9757-41F9-8DED-6383A24637B9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcBloggy.Resources", "src\MvcBloggy.Resources\MvcBloggy.Resources.csproj", "{D60DC23F-A919-47FB-9AC9-540B39098EC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcBloggy.Services", "Src\MvcBloggy.Services\MvcBloggy.Services.csproj", "{640E2ECD-044F-4DBF-8A62-EFAC6D11ED88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,10 @@ Global
 		{607536AC-76B2-400E-B147-6A9148B4F941}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{607536AC-76B2-400E-B147-6A9148B4F941}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{607536AC-76B2-400E-B147-6A9148B4F941}.Release|Any CPU.Build.0 = Release|Any CPU
+		{640E2ECD-044F-4DBF-8A62-EFAC6D11ED88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{640E2ECD-044F-4DBF-8A62-EFAC6D11ED88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{640E2ECD-044F-4DBF-8A62-EFAC6D11ED88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{640E2ECD-044F-4DBF-8A62-EFAC6D11ED88}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6FFD39A6-1F2D-4B6E-BDA7-DF542CE88409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6FFD39A6-1F2D-4B6E-BDA7-DF542CE88409}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FFD39A6-1F2D-4B6E-BDA7-DF542CE88409}.Release|Any CPU.ActiveCfg = Release|Any CPU

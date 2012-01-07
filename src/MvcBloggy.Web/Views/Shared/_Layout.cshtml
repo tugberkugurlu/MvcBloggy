@@ -55,7 +55,7 @@
     <script>window.jQuery || document.write('<script src="scripts/jquery-1.7.min.js"><\/script>')</script>
     <script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/scripts/v2/globaljs")"></script>
     @RenderSection("scripts", false)
-
+    @MvcMiniProfiler.MiniProfiler.RenderIncludes()
     @*<script>
       window._gaq = [['_setAccount', 'UAXXXXXXXX1'], ['_trackPageview'], ['_trackPageLoadTime']];
       Modernizr.load({

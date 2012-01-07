@@ -1,0 +1,15 @@
+﻿/* ==|== primary styles =====================================================
+   Author: Tugberk Ugurlu, http://www.tugberkugurlu.com
+   ========================================================================== */
+body {
+    
+}
+
+#mvcbloggy-wrapper{
+    width:99%;
+    margin:10px auto 20px auto;
+}
+
+#mvcbloggy-innerwrapper{
+    padding:1%;
+}
