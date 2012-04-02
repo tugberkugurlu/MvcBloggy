@@ -10,6 +10,7 @@ dist
 output
 build
 *.dbmdl
+[Ss]andbox
 
 *~
 

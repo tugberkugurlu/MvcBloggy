@@ -24,7 +24,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{c4daf606-9757-41f9-8ded-6383a24637b9}</ProjectGuid>
     <GenerateDatabaseFile>False</GenerateDatabaseFile>
-    <GenerateCreateScript>False</GenerateCreateScript>
+    <GenerateCreateScript>True</GenerateCreateScript>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SqlServerVerification>False</SqlServerVerification>
     <TargetLanguage>CS</TargetLanguage>
@@ -70,7 +70,8 @@
     <IsEncryptionOn>False</IsEncryptionOn>
     <IsBrokerPriorityHonored>False</IsBrokerPriorityHonored>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
-    <PostConversionRemoveFromScc>;D:\Dropbox\Tugberk\MvcBloggy\src\MvcBloggy.SQLServer.DB\Properties\Database.sqldeployment;D:\Dropbox\Tugberk\MvcBloggy\src\MvcBloggy.SQLServer.DB\Properties\Database.sqlsettings;Properties\Database.sqlsettings;Properties\Database.sqldeployment;Properties\Database.sqlcmdvars;Properties\Database.sqlpermissions;D:\Dropbox\Tugberk\MvcBloggy\src\MvcBloggy.SQLServer.DB\MvcBloggy.SQLServer.DB.dbproj</PostConversionRemoveFromScc>
+    <PostConversionRemoveFromScc>
+    </PostConversionRemoveFromScc>
     <PostConversionAddToScc>
     </PostConversionAddToScc>
   </PropertyGroup>
