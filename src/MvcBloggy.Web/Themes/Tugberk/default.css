@@ -26,6 +26,7 @@ h1, h2, h3{
 #mvcbloggy-wrapper{
     width:99%;
     margin:10px auto 20px auto;
+    max-width: 1250px;
 }
 #mvcbloggy-innerwrapper{
     background-color:#fff;

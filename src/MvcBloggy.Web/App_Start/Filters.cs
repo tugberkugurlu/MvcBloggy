@@ -5,8 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using MvcBloggy.Web.Application.Filters;
 
-namespace MvcBloggy.Web
-{
+namespace MvcBloggy.Web {
+
     public class Filters {
 
         public static void RegisterGlobalFilters(GlobalFilterCollection filters) {
