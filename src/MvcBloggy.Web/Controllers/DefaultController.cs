@@ -8,7 +8,7 @@ namespace MvcBloggy.Web.Controllers {
 
     public class DefaultController : Controller {
 
-        public ActionResult Index() {
+        public ViewResult Index() {
 
             return View();
         }

@@ -8,13 +8,8 @@ namespace MvcBloggy.Tests {
 
     public class DefaultControllerTests {
 
-        [Fact]
-        public void pass_you_son_of_a_bitch_fucking_bastard() {
+        //home page (DefaultController Index method) should list the latest 5 posts
+        //the pagination should be implemented on home page with only next and previous
 
-            Assert.Equal(1, 1);
-        }
-
-        //home page should list the latest 5 posts
-        //the pagination should be implemented
     }
 }
