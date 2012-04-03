@@ -57,11 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AprovalStatus.cs" />
-    <Compile Include="DataAccess\Infrastructure\GenericRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IBlogPostCommentRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IBlogPostRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IDynamicPageRepository.cs" />
-    <Compile Include="DataAccess\Infrastructure\IGenericRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\ILanguageRepository.cs" />
     <Compile Include="DataAccess\SqlServer\BlogPost.cs">
       <DependentUpon>MvcBloggy.Model.tt</DependentUpon>

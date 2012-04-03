@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using GenericRepository.EF;
 using MvcBloggy.Data.DataAccess.Infrastructure;
 
 namespace MvcBloggy.Data.DataAccess.SqlServer {
 
-    public class BlogPostRepository : GenericRepository<MvcBloggyEntities, BlogPost>, IBlogPostRepository {
+    public class BlogPostRepository : Repository<MvcBloggyEntities, BlogPost>, IBlogPostRepository {
 
         public IEnumerable<BlogPost> GetAll(ApprovalStatus approvalStatus = ApprovalStatus.All) {
 

@@ -9,9 +9,6 @@ using GenericRepository;
 
 namespace MvcBloggy.Data.DataAccess.Infrastructure {
 
-    //Haven't found a way to mock the DbContext. So, I am skiping that part for now.
-    //public interface IBlogPostRepository<C> : IRepository<BlogPost, C> where C : DbContext {
-
     public interface IBlogPostRepository : IRepository<BlogPost> {
 
         IEnumerable<BlogPost> GetAll(ApprovalStatus approvalStatus = ApprovalStatus.All);
