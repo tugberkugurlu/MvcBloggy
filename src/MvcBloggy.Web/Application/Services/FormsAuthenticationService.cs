@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Web.Security;
 
-namespace MvcBloggy.Web.Application.Services.Authentication {
+namespace MvcBloggy.Web.Application.Services {
 
     public class FormsAuthenticationService : IFormsAuthenticationService {
 
@@ -16,7 +13,7 @@ namespace MvcBloggy.Web.Application.Services.Authentication {
         }
 
         public void SignOut() {
-
+            
             FormsAuthentication.SignOut();
         }
     }
