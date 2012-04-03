@@ -9,9 +9,9 @@ namespace MvcBloggy.Data.DataAccess.Infrastructure {
 
     public interface ILanguageRepository : IRepository<Language> {
 
-        IEnumerable<Language> GetAll(ApprovalStatus approvalStatus = ApprovalStatus.All);
+        IEnumerable<Language> GetAll(bool includeUnapprovedEntries = false);
 
-        Language GetSingle(int languageID, ApprovalStatus approvalStatus = ApprovalStatus.All);
-        Language GetSingle(string languageCultureOne, ApprovalStatus approvalStatus = ApprovalStatus.All);
+        Language GetSingle(int languageID, bool includeUnapprovedEntries = false);
+        Language GetSingle(string languageCultureOne, bool includeUnapprovedEntries = false);
     }
 }

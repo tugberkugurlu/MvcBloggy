@@ -9,34 +9,28 @@ namespace MvcBloggy.Data.DataAccess.SqlServer {
 
     public class LanguageRepository : Repository<MvcBloggyEntities, Language>, ILanguageRepository {
 
-        public IEnumerable<Language> GetAll(ApprovalStatus approvalStatus = ApprovalStatus.All) {
+        public override IQueryable<Language> GetAll() {
 
-            IEnumerable<Language> query = Context.Languages.OrderBy(x => x.LanguageOrder);
-
-            switch (approvalStatus) {
-
-                case ApprovalStatus.Approved:
-                    query = query.Where(x => x.IsApproved == true);
-                    break;
-
-                case ApprovalStatus.NotApproved:
-                    query = query.Where(x => x.IsApproved == false);
-                    break;
-            }
-
-            return query;
+            return All.Where(x => x.IsApproved == true);
         }
 
-        public Language GetSingle(int languageID, ApprovalStatus approvalStatus = ApprovalStatus.All) {
+        public IEnumerable<Language> GetAll(bool includeUnapprovedEntries = false) {
 
-            var query = this.GetAll(approvalStatus).FirstOrDefault(x => x.LanguageID == languageID);
-            return query;
+            return includeUnapprovedEntries ? All : GetAll();
         }
 
-        public Language GetSingle(string languageCultureOne, ApprovalStatus approvalStatus = ApprovalStatus.All) {
+        public Language GetSingle(int languageID, bool includeUnapprovedEntries = false) {
 
-            var query = this.GetAll(approvalStatus).FirstOrDefault(x => x.LanguageCultureOne == languageCultureOne);
-            return query;
+            return GetAll(includeUnapprovedEntries).FirstOrDefault(x => 
+                x.LanguageID == languageID
+            );
+        }
+
+        public Language GetSingle(string languageCultureOne, bool includeUnapprovedEntries = false) {
+
+            return GetAll(includeUnapprovedEntries).FirstOrDefault(x => 
+                x.LanguageCultureOne == languageCultureOne
+            );
         }
     }
 }

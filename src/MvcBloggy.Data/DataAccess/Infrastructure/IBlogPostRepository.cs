@@ -11,14 +11,14 @@ namespace MvcBloggy.Data.DataAccess.Infrastructure {
 
     public interface IBlogPostRepository : IRepository<BlogPost> {
 
-        IEnumerable<BlogPost> GetAll(ApprovalStatus approvalStatus = ApprovalStatus.All);
-        IEnumerable<BlogPost> GetAll(int languageID, ApprovalStatus approvalStatus = ApprovalStatus.All);
-        IEnumerable<BlogPost> GetAll(string tag, ApprovalStatus approvalStatus = ApprovalStatus.All);
-        IEnumerable<BlogPost> GetAll(string[] tags, ApprovalStatus approvalStatus = ApprovalStatus.All);
+        IEnumerable<BlogPost> GetAll(bool includeUnapprovedEntries = false);
+        IEnumerable<BlogPost> GetAll(int languageID, bool includeUnapprovedEntries = false);
+        IEnumerable<BlogPost> GetAll(string tag, bool includeUnapprovedEntries = false);
+        IEnumerable<BlogPost> GetAll(string[] tags, bool includeUnapprovedEntries = false);
 
-        BlogPost GetSingle(int blogPostID, ApprovalStatus approvalStatus = ApprovalStatus.All);
-        BlogPost GetSingle(Guid blogPostGUID, ApprovalStatus approvalStatus = ApprovalStatus.All);
-        BlogPost GetSingle(string generatedLinkPart, ApprovalStatus approvalStatus = ApprovalStatus.All);
-        BlogPost GetSingleBySecondaryID(int secondaryID, ApprovalStatus approvalStatus = ApprovalStatus.All);
+        BlogPost GetSingle(int blogPostID, bool includeUnapprovedEntries = false);
+        BlogPost GetSingle(Guid blogPostGUID, bool includeUnapprovedEntries = false);
+        BlogPost GetSingle(string generatedLinkPart, bool includeUnapprovedEntries = false);
+        BlogPost GetSingleBySecondaryID(int secondaryID, bool includeUnapprovedEntries = false);
     }
 }

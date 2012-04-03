@@ -9,88 +9,63 @@ namespace MvcBloggy.Data.DataAccess.SqlServer {
 
     public class BlogPostRepository : Repository<MvcBloggyEntities, BlogPost>, IBlogPostRepository {
 
-        public IEnumerable<BlogPost> GetAll(ApprovalStatus approvalStatus = ApprovalStatus.All) {
+        public override IQueryable<BlogPost> GetAll() {
 
-            IEnumerable<BlogPost> query = Context.BlogPosts;
-
-            switch (approvalStatus) {
-
-                case ApprovalStatus.Approved:
-                    query = query.Where(x => x.IsApproved == true);
-                    break;
-
-                case ApprovalStatus.NotApproved:
-                    query = query.Where(x => x.IsApproved == false);
-                    break;
-            }
-
-            return query;
+            return GetAll(false).AsQueryable();
         }
 
-        public IEnumerable<BlogPost> GetAll(int languageID, ApprovalStatus approvalStatus = ApprovalStatus.All) {
+        public IEnumerable<BlogPost> GetAll(bool includeUnapprovedEntries = false) {
 
-            var query = this.GetAll(approvalStatus).Where(x => x.LanguageID == languageID);
-            return query;
+            return includeUnapprovedEntries ? All : All.Where(x => x.IsApproved == true);
         }
 
-        public IEnumerable<BlogPost> GetAll(string tag, ApprovalStatus approvalStatus = ApprovalStatus.All) {
+        public IEnumerable<BlogPost> GetAll(int languageID, bool includeUnapprovedEntries = false) {
 
-            var query = this.GetAll(approvalStatus).
-                ToList<BlogPost>().Where(x => 
-                    x.Tags.Where(y => y == tag).Count() >= 1
-                );
-
-            return query;
+            return GetAll(includeUnapprovedEntries).Where(x => x.LanguageID == languageID);
         }
 
-        public IEnumerable<BlogPost> GetAll(string[] tags, ApprovalStatus approvalStatus = ApprovalStatus.All) {
+        public IEnumerable<BlogPost> GetAll(string tag, bool includeUnapprovedEntries = false) {
 
-            var query = this.GetAll(approvalStatus).
-                ToList<BlogPost>();
+            return GetAll(includeUnapprovedEntries).ToList<BlogPost>().Where(x => 
+                x.Tags.Any(t => t == tag)
+            );
+        }
 
+        public IEnumerable<BlogPost> GetAll(string[] tags, bool includeUnapprovedEntries = false) {
+        
             foreach (var tag in tags) {
 
-                query = query.Where(x =>
-                    x.Tags.Where(y => y == tag).Count() >= 1
-                ).ToList();
+                foreach (var blogPost in GetAll(includeUnapprovedEntries).ToList().Where(x => x.Tags.Any(t => t == tag))) {
 
-                if (query.Count <= 0)
-                    break;
+                    yield return blogPost;
+                }
             }
-
-            return query;
         }
 
-        public BlogPost GetSingle(int blogPostID, ApprovalStatus approvalStatus = ApprovalStatus.All) {
+        public BlogPost GetSingle(int blogPostID, bool includeUnapprovedEntries = false) {
 
-            var query = this.GetAll(approvalStatus).
-                FirstOrDefault(x => x.BlogPostID == blogPostID);
-
-            return query;
+            return GetAll(includeUnapprovedEntries).FirstOrDefault(x => 
+                x.BlogPostID == blogPostID
+            );
         }
 
-        public BlogPost GetSingle(Guid blogPostGUID, ApprovalStatus approvalStatus = ApprovalStatus.All) {
+        public BlogPost GetSingle(Guid blogPostGUID, bool includeUnapprovedEntries = false) {
 
-            var query = this.GetAll(approvalStatus).
-                FirstOrDefault(x => x.BlogPostGUID == blogPostGUID);
-
-            return query;
+            return GetAll(includeUnapprovedEntries).FirstOrDefault(x => 
+                x.BlogPostGUID == blogPostGUID
+            );
         }
 
-        public BlogPost GetSingle(string generatedLinkPart, ApprovalStatus approvalStatus = ApprovalStatus.All) {
+        public BlogPost GetSingle(string generatedLinkPart, bool includeUnapprovedEntries = false) {
 
             throw new NotImplementedException();
         }
 
-        public BlogPost GetSingleBySecondaryID(int secondaryID, ApprovalStatus approvalStatus = ApprovalStatus.All) {
+        public BlogPost GetSingleBySecondaryID(int secondaryID, bool includeUnapprovedEntries = false) {
 
-            var query = this.GetAll(approvalStatus).FirstOrDefault(x => x.SecondaryID == secondaryID);
-            return query;
-        }
-
-        public IQueryable<BlogPost> FindBy(System.Linq.Expressions.Expression<Func<BlogPost, bool>> predicate) {
-
-            throw new NotImplementedException();
+            return GetAll(includeUnapprovedEntries).FirstOrDefault(x => 
+                x.SecondaryID == secondaryID
+            );
         }
 
     }

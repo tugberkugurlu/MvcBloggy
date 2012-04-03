@@ -56,7 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AprovalStatus.cs" />
     <Compile Include="DataAccess\Infrastructure\IBlogPostCommentRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IBlogPostRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IDynamicPageRepository.cs" />
