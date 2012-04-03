@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Microsoft.Web.Optimization;
 using MvcBloggy.Web.Application;
-using TugberkUg.UrlShrinker.Web.Application;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(MvcBloggy.Web.Bootstrapper), "PreStart")]
 [assembly: WebActivator.PostApplicationStartMethod(typeof(MvcBloggy.Web.Bootstrapper), "PostStart")]

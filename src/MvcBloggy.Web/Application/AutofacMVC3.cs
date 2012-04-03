@@ -10,7 +10,7 @@ using MvcBloggy.Data.DataAccess.SqlServer;
 using MvcBloggy.Web;
 using MvcBloggy.Web.Application.Services;
 
-namespace TugberkUg.UrlShrinker.Web.Application {
+namespace MvcBloggy.Web.Application {
 
     internal class AutofacMVC3 {
 
