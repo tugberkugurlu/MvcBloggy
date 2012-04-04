@@ -9,7 +9,7 @@ using MvcBloggy.Data.DataAccess.Infrastructure;
 namespace MvcBloggy.Data.DataAccess.SqlServer {
 
     public class BlogPostCommentRepository : 
-        Repository<MvcBloggyEntities, BlogPostComment>, IBlogPostCommentRepository {
+        Repository<MvcBloggyContext, BlogPostComment>, IBlogPostCommentRepository {
 
         public override IQueryable<BlogPostComment> GetAll() {
 
@@ -23,12 +23,12 @@ namespace MvcBloggy.Data.DataAccess.SqlServer {
 
         public IEnumerable<BlogPostComment> GetAll(int blogPostId, bool includeUnapprovedEntries = false) {
 
-            return GetAll(includeUnapprovedEntries).Where(x => x.BlogPostID == blogPostId);
+            return GetAll(includeUnapprovedEntries).Where(x => x.BlogPostId == blogPostId);
         }
 
         public BlogPostComment GetSingle(int blogPostCommentId, bool includeUnapprovedEntries = false) {
 
-            return GetAll(includeUnapprovedEntries).FirstOrDefault(x => x.BlogCommentID == blogPostCommentId);
+            return GetAll(includeUnapprovedEntries).FirstOrDefault(x => x.BlogCommentId == blogPostCommentId);
         }
     }
 }

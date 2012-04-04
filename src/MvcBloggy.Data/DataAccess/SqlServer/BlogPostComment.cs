@@ -14,18 +14,18 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
 {
     public partial class BlogPostComment
     {
-        public int BlogCommentID { get; set; }
-        public int BlogPostID { get; set; }
+        public int BlogCommentId { get; set; }
+        public int BlogPostId { get; set; }
         public string CommenterName { get; set; }
         public string CommenterEmail { get; set; }
         public string CommenterWebSite { get; set; }
         public string CommenterAuthType { get; set; }
         public bool IsAuthor { get; set; }
-        public string CommentSubject { get; set; }
-        public string CommentContent { get; set; }
+        public string Subject { get; set; }
+        public string Content { get; set; }
+        public bool IsApproved { get; set; }
         public System.DateTimeOffset CreatedOn { get; set; }
         public string CreationIp { get; set; }
-        public bool IsApproved { get; set; }
     
         public virtual BlogPost BlogPost { get; set; }
     }

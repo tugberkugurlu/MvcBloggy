@@ -17,24 +17,24 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
         public BlogPost()
         {
             this.BlogPostComments = new HashSet<BlogPostComment>();
+            this.Tags = new HashSet<Tag>();
         }
     
-        public int BlogPostID { get; set; }
-        public int LanguageID { get; set; }
-        public System.Guid BlogPostGUID { get; set; }
+        public int BlogPostId { get; set; }
+        public int LanguageId { get; set; }
         public Nullable<int> SecondaryID { get; set; }
-        public string BlogPostTitle { get; set; }
-        public string BlogPostBriefInfo { get; set; }
-        public string BlogPostContent { get; set; }
-        public string BlogPostTags { get; set; }
-        public string BlogPostImagePath { get; set; }
+        public string Title { get; set; }
+        public string BriefInfo { get; set; }
+        public string Content { get; set; }
+        public string ImagePath { get; set; }
+        public bool IsApproved { get; set; }
         public string CreationIp { get; set; }
         public Nullable<System.DateTimeOffset> CreatedOn { get; set; }
         public Nullable<System.DateTimeOffset> LastUpdatedOn { get; set; }
-        public bool IsApproved { get; set; }
     
         public virtual ICollection<BlogPostComment> BlogPostComments { get; set; }
         public virtual Language Language { get; set; }
+        public virtual ICollection<Tag> Tags { get; set; }
     }
     
 }

@@ -7,7 +7,7 @@ using MvcBloggy.Data.DataAccess.Infrastructure;
 
 namespace MvcBloggy.Data.DataAccess.SqlServer {
 
-    public class LanguageRepository : Repository<MvcBloggyEntities, Language>, ILanguageRepository {
+    public class LanguageRepository : Repository<MvcBloggyContext, Language>, ILanguageRepository {
 
         public override IQueryable<Language> GetAll() {
 
@@ -19,17 +19,17 @@ namespace MvcBloggy.Data.DataAccess.SqlServer {
             return includeUnapprovedEntries ? All : GetAll();
         }
 
-        public Language GetSingle(int languageID, bool includeUnapprovedEntries = false) {
+        public Language GetSingle(int languageId, bool includeUnapprovedEntries = false) {
 
             return GetAll(includeUnapprovedEntries).FirstOrDefault(x => 
-                x.LanguageID == languageID
+                x.LanguageId == languageId
             );
         }
 
         public Language GetSingle(string languageCultureOne, bool includeUnapprovedEntries = false) {
 
             return GetAll(includeUnapprovedEntries).FirstOrDefault(x => 
-                x.LanguageCultureOne == languageCultureOne
+                x.CultureOne == languageCultureOne
             );
         }
     }

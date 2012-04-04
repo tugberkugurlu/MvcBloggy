@@ -4,15 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c3c17dc4f290488e86569078702a31a9" Name="Diagram1">
+      <Diagram DiagramId="d68facba1f844876b7458075e2bfdc9f" Name="Diagram1">
         <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.BlogPostComment" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.BlogPost" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.BlogRoll" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.DynamicPage" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.Language" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.RestrictedPageName" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.BlogPost" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.BlogRoll" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.DynamicPage" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.Language" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.RestrictedPageName" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.Tag" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
         <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_BlogPostComments_BlogPosts" ManuallyRouted="false" />
         <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_BlogPosts_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_Tags_BlogPosts" ManuallyRouted="false" />
         <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_BlogRolls_Languages" ManuallyRouted="false" />
         <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_DynamicPages_Languages" ManuallyRouted="false" />
         <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_RestrictedPageNames_Languages" ManuallyRouted="false" />

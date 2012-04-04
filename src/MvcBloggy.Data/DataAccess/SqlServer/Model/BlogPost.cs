@@ -9,13 +9,6 @@ namespace MvcBloggy.Data.DataAccess.SqlServer {
     [MetadataType(typeof(BlogPost.MetaData))]
     public partial class BlogPost {
 
-        public virtual ICollection<string> Tags {
-
-            get {
-                return TagHelper.CreateStringListFromString(this.BlogPostTags);
-            }
-        }
-
         private class MetaData { 
 
         }

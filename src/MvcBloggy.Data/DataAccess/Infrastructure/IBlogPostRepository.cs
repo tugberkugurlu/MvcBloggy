@@ -12,13 +12,12 @@ namespace MvcBloggy.Data.DataAccess.Infrastructure {
     public interface IBlogPostRepository : IRepository<BlogPost> {
 
         IEnumerable<BlogPost> GetAll(bool includeUnapprovedEntries = false);
-        IEnumerable<BlogPost> GetAll(int languageID, bool includeUnapprovedEntries = false);
+        IEnumerable<BlogPost> GetAll(int languageId, bool includeUnapprovedEntries = false);
         IEnumerable<BlogPost> GetAll(string tag, bool includeUnapprovedEntries = false);
         IEnumerable<BlogPost> GetAll(string[] tags, bool includeUnapprovedEntries = false);
 
-        BlogPost GetSingle(int blogPostID, bool includeUnapprovedEntries = false);
-        BlogPost GetSingle(Guid blogPostGUID, bool includeUnapprovedEntries = false);
+        BlogPost GetSingle(int blogPostId, bool includeUnapprovedEntries = false);
         BlogPost GetSingle(string generatedLinkPart, bool includeUnapprovedEntries = false);
-        BlogPost GetSingleBySecondaryID(int secondaryID, bool includeUnapprovedEntries = false);
+        BlogPost GetSingleBySecondaryID(int secondaryId, bool includeUnapprovedEntries = false);
     }
 }

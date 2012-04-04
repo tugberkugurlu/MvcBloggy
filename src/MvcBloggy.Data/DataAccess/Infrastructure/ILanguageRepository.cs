@@ -11,7 +11,7 @@ namespace MvcBloggy.Data.DataAccess.Infrastructure {
 
         IEnumerable<Language> GetAll(bool includeUnapprovedEntries = false);
 
-        Language GetSingle(int languageID, bool includeUnapprovedEntries = false);
+        Language GetSingle(int languageId, bool includeUnapprovedEntries = false);
         Language GetSingle(string languageCultureOne, bool includeUnapprovedEntries = false);
     }
 }

@@ -7,7 +7,7 @@ using MvcBloggy.Data.DataAccess.Infrastructure;
 
 namespace MvcBloggy.Data.DataAccess.SqlServer {
 
-    public class BlogPostRepository : Repository<MvcBloggyEntities, BlogPost>, IBlogPostRepository {
+    public class BlogPostRepository : Repository<MvcBloggyContext, BlogPost>, IBlogPostRepository {
 
         public override IQueryable<BlogPost> GetAll() {
 
@@ -19,40 +19,25 @@ namespace MvcBloggy.Data.DataAccess.SqlServer {
             return includeUnapprovedEntries ? All : All.Where(x => x.IsApproved == true);
         }
 
-        public IEnumerable<BlogPost> GetAll(int languageID, bool includeUnapprovedEntries = false) {
+        public IEnumerable<BlogPost> GetAll(int languageId, bool includeUnapprovedEntries = false) {
 
-            return GetAll(includeUnapprovedEntries).Where(x => x.LanguageID == languageID);
+            return GetAll(includeUnapprovedEntries).Where(x => x.LanguageId == languageId);
         }
 
         public IEnumerable<BlogPost> GetAll(string tag, bool includeUnapprovedEntries = false) {
 
-            return GetAll(includeUnapprovedEntries).ToList<BlogPost>().Where(x => 
-                x.Tags.Any(t => t == tag)
-            );
+            throw new NotImplementedException();
         }
 
         public IEnumerable<BlogPost> GetAll(string[] tags, bool includeUnapprovedEntries = false) {
-        
-            foreach (var tag in tags) {
 
-                foreach (var blogPost in GetAll(includeUnapprovedEntries).ToList().Where(x => x.Tags.Any(t => t == tag))) {
-
-                    yield return blogPost;
-                }
-            }
+            throw new NotImplementedException();
         }
 
-        public BlogPost GetSingle(int blogPostID, bool includeUnapprovedEntries = false) {
+        public BlogPost GetSingle(int blogPostId, bool includeUnapprovedEntries = false) {
 
             return GetAll(includeUnapprovedEntries).FirstOrDefault(x => 
-                x.BlogPostID == blogPostID
-            );
-        }
-
-        public BlogPost GetSingle(Guid blogPostGUID, bool includeUnapprovedEntries = false) {
-
-            return GetAll(includeUnapprovedEntries).FirstOrDefault(x => 
-                x.BlogPostGUID == blogPostGUID
+                x.BlogPostId == blogPostId
             );
         }
 
@@ -61,10 +46,10 @@ namespace MvcBloggy.Data.DataAccess.SqlServer {
             throw new NotImplementedException();
         }
 
-        public BlogPost GetSingleBySecondaryID(int secondaryID, bool includeUnapprovedEntries = false) {
+        public BlogPost GetSingleBySecondaryID(int secondaryId, bool includeUnapprovedEntries = false) {
 
             return GetAll(includeUnapprovedEntries).FirstOrDefault(x => 
-                x.SecondaryID == secondaryID
+                x.SecondaryID == secondaryId
             );
         }
 

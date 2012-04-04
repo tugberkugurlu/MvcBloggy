@@ -22,14 +22,13 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
             this.RestrictedPageNames = new HashSet<RestrictedPageName>();
         }
     
-        public int LanguageID { get; set; }
+        public int LanguageId { get; set; }
         public string DisplayName { get; set; }
-        public string LanguageCulture { get; set; }
-        public string LanguageCultureOne { get; set; }
-        public Nullable<int> LanguageOrder { get; set; }
+        public string Culture { get; set; }
+        public string CultureOne { get; set; }
+        public Nullable<int> Order { get; set; }
         public Nullable<bool> IsApproved { get; set; }
         public Nullable<System.DateTimeOffset> CreatedOn { get; set; }
-        public Nullable<System.DateTimeOffset> LastUpdatedOn { get; set; }
     
         public virtual ICollection<BlogPost> BlogPosts { get; set; }
         public virtual ICollection<BlogRoll> BlogRolls { get; set; }

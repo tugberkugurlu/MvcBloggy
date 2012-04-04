@@ -13,10 +13,10 @@ using System.Data.Entity.Infrastructure;
 
 namespace MvcBloggy.Data.DataAccess.SqlServer
 {
-    public partial class MvcBloggyEntities : DbContext
+    public partial class MvcBloggyContext : DbContext
     {
-        public MvcBloggyEntities()
-            : base("name=MvcBloggyEntities")
+        public MvcBloggyContext()
+            : base("name=MvcBloggyContext")
         {
         }
     
@@ -31,5 +31,6 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
         public DbSet<DynamicPage> DynamicPages { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<RestrictedPageName> RestrictedPageNames { get; set; }
+        public DbSet<Tag> Tags { get; set; }
     }
 }

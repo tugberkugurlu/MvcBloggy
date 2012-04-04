@@ -14,11 +14,11 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
 {
     public partial class DynamicPage
     {
-        public int DynamicPageID { get; set; }
-        public int LanguageID { get; set; }
-        public string PageTitle { get; set; }
-        public string PageBriefInfo { get; set; }
-        public string PageContent { get; set; }
+        public int DynamicPageId { get; set; }
+        public int LanguageId { get; set; }
+        public string Title { get; set; }
+        public string BriefInfo { get; set; }
+        public string Content { get; set; }
         public bool IsApproved { get; set; }
         public Nullable<System.DateTimeOffset> CreatedOn { get; set; }
         public Nullable<System.DateTimeOffset> LastUpdatedOn { get; set; }
