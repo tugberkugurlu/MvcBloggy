@@ -1,21 +1,16 @@
-﻿CREATE TABLE [dbo].[BlogPosts](
-	[BlogPostId] INT IDENTITY(1000,1) NOT NULL,
+﻿CREATE TABLE [dbo].[BlogPosts] (
+
+	[BlogPostId] INT IDENTITY NOT NULL,
 	[LanguageId] INT NOT NULL,
-	[BlogPostGUID] UNIQUEIDENTIFIER NOT NULL,
 	[SecondaryID] INT NULL,
-	[BlogPostTitle] NVARCHAR(300) NULL,
-	[BlogPostBriefInfo] NVARCHAR(200) NULL,
-	[BlogPostContent] NVARCHAR(max) NULL,
-	[BlogPostTags] NVARCHAR(500) NULL,
-	[BlogPostImagePath] NVARCHAR(300) NULL,
+	[Title] NVARCHAR(300) NOT NULL,
+	[BriefInfo] NVARCHAR(200) NULL,
+	[Content] NVARCHAR(max) NULL,
+	[ImagePath] NVARCHAR(300) NULL,
+	[IsApproved] BIT NOT NULL,
 	[CreationIp] NVARCHAR(50) NULL,
 	[CreatedOn] DATETIMEOFFSET NULL,
 	[LastUpdatedOn] DATETIMEOFFSET NULL,
-	[IsApproved] BIT NOT NULL,
-	CONSTRAINT [PK_BlogPosts] PRIMARY KEY CLUSTERED (
-		[BlogPostId] ASC
-	) ON [PRIMARY]
+	CONSTRAINT [PK_BlogPosts] PRIMARY KEY ([BlogPostId])
 
-) ON [PRIMARY]
-
-GO
+)

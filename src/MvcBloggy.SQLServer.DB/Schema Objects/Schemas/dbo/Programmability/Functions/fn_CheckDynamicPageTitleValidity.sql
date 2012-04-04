@@ -11,7 +11,7 @@ BEGIN
 		@retrivedVal = COUNT(rpn.RestrictedPageNameId) 
 	FROM dbo.RestrictedPageNames rpn
 	WHERE 
-		dbo.UrlReplace(rpn.RestrictedPageTerm) = dbo.UrlReplace(@input);
+		dbo.UrlReplace(rpn.Term) = dbo.UrlReplace(@input);
 
 	RETURN @retrivedVal;
 

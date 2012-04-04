@@ -1,13 +1,10 @@
 ﻿
-CREATE TABLE [dbo].[RestrictedPageNames](
-	[RestrictedPageNameId] INT IDENTITY(1000,1) NOT NULL,
+CREATE TABLE [dbo].[RestrictedPageNames] (
+
+	[RestrictedPageNameId] INT IDENTITY NOT NULL,
 	[LanguageId] INT NOT NULL,
-	[RestrictedPageTerm] NVARCHAR(300) NULL,
+	[Term] NVARCHAR(300) NOT NULL,
 	[CreatedOn] DATETIMEOFFSET NULL,
-	CONSTRAINT [PK_RestrictedPageNames] PRIMARY KEY CLUSTERED  (
-		[RestrictedPageNameId] ASC
-	) ON [PRIMARY]
+	CONSTRAINT [PK_RestrictedPageNames] PRIMARY KEY ([RestrictedPageNameId])
 
-) ON [PRIMARY]
-
-GO
+)

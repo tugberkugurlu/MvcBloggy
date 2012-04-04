@@ -1,16 +1,12 @@
 ﻿CREATE TABLE [dbo].[Languages] (
 	
-	[LanguageId] INT IDENTITY(1000,1) NOT NULL,
+	[LanguageId] INT IDENTITY NOT NULL,
 	[DisplayName] NVARCHAR (50) NULL,
-	[LanguageCulture] NVARCHAR (10) NULL,
-	[LanguageCultureOne] NVARCHAR (10) NULL,
-	[LanguageOrder] INT NULL,
+	[Culture] NVARCHAR (10) NOT NULL,
+	[CultureOne] NVARCHAR (10) NOT NULL,
+	[Order] INT NULL,
 	[IsApproved] BIT NULL,
 	[CreatedOn] DATETIMEOFFSET NULL,
-	CONSTRAINT [PK_Languages] PRIMARY KEY CLUSTERED( 
-		[LanguageId] ASC
-	) ON [PRIMARY]
+	CONSTRAINT [PK_Languages] PRIMARY KEY ([LanguageId])
 
-) ON [PRIMARY]
-
-GO
+)
