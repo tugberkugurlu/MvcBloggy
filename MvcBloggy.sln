@@ -17,6 +17,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{79D751
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F223FCD4-EF51-4C8B-AEA1-97830BC8019D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{77EA7308-861E-4C4A-811E-FC00718516E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "db", "db", "{57DFC1AD-4EB4-4B04-BCB0-2D3C4CD329CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +54,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0F5C61A2-A470-4871-972B-C8E9138EFEF2} = {F223FCD4-EF51-4C8B-AEA1-97830BC8019D}
+		{607536AC-76B2-400E-B147-6A9148B4F941} = {77EA7308-861E-4C4A-811E-FC00718516E4}
+		{6FFD39A6-1F2D-4B6E-BDA7-DF542CE88409} = {77EA7308-861E-4C4A-811E-FC00718516E4}
+		{C4DAF606-9757-41F9-8DED-6383A24637B9} = {57DFC1AD-4EB4-4B04-BCB0-2D3C4CD329CB}
+		{D60DC23F-A919-47FB-9AC9-540B39098EC7} = {77EA7308-861E-4C4A-811E-FC00718516E4}
 	EndGlobalSection
 EndGlobal
