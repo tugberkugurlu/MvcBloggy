@@ -2,6 +2,7 @@
 
 	[UserId] INT IDENTITY NOT NULL,
 	[UserName] NVARCHAR(50) NOT NULL,
+	[Email] NVARCHAR(300) NOT NULL,
 	[Password] NVARCHAR(1000) NOT NULL,
 	[HashAlgorithm] NVARCHAR(10) NOT NULL,
 	[IsApproved] BIT NOT NULL,

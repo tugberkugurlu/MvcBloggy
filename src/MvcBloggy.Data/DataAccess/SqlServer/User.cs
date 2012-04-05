@@ -19,6 +19,7 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
         public string Password { get; set; }
         public string HashAlgorithm { get; set; }
         public bool IsApproved { get; set; }
+        public string Email { get; set; }
     }
     
 }

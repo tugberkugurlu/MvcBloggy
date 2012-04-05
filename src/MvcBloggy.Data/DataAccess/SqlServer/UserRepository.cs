@@ -9,10 +9,10 @@ namespace MvcBloggy.Data.DataAccess.SqlServer {
 
     public class UserRepository : Repository<MvcBloggyContext, User>, IUserRepository {
 
-        public User GetSingle(string userName, string password) {
+        public User GetSingle(string userName) {
 
             return All.FirstOrDefault(x =>
-                x.IsApproved == true && x.UserName == userName && x.Password == password
+                x.IsApproved == true && x.UserName == userName
             );
         }
     }

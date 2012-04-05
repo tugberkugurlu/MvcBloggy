@@ -9,6 +9,6 @@ namespace MvcBloggy.Data.DataAccess.Infrastructure {
 
     public interface IUserRepository : IRepository<User> {
 
-        User GetSingle(string userName, string password);
+        User GetSingle(string userName);
     }
 }

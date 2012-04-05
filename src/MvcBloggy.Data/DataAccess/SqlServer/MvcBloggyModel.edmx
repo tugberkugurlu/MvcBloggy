@@ -133,6 +133,7 @@
           </Key>
           <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="300" />
           <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="1000" />
           <Property Name="HashAlgorithm" Type="nvarchar" Nullable="false" MaxLength="10" />
           <Property Name="IsApproved" Type="bit" Nullable="false" />
@@ -452,6 +453,7 @@
           <Property Type="String" Name="Password" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="HashAlgorithm" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -557,6 +559,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="TugberkUg.MvcBloggy_RC1Model.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
                 <ScalarProperty Name="HashAlgorithm" ColumnName="HashAlgorithm" />
                 <ScalarProperty Name="Password" ColumnName="Password" />

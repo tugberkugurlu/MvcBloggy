@@ -24,10 +24,14 @@ namespace MvcBloggy.Web.Application {
 
             builder.RegisterControllers(typeof(MvcApplication).Assembly).PropertiesAutowired();
 
-            builder.RegisterType<FormsAuthenticationService>().As<IFormsAuthenticationService>().SingleInstance();
-            builder.RegisterType<AuthorizationService>().As<IAuthorizationService>().SingleInstance();
-
             builder.RegisterType<BlogPostRepository>().As<IBlogPostRepository>().SingleInstance();
+            builder.RegisterType<UserRepository>().As<IUserRepository>().SingleInstance();
+
+            builder.RegisterType<FormsAuthenticationService>().As<IFormsAuthenticationService>().SingleInstance();
+            builder.RegisterType<AuthorizationService>()
+                .As<IAuthorizationService>()
+                .UsingConstructor(typeof(IUserRepository))
+                .SingleInstance();
 
             return
                 builder.Build();
