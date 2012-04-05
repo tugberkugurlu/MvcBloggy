@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TugberkUg.MvcBloggy_RC1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="TugberkUg.MvcBloggy_RC1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="TugberkUgMvcBloggy_RC1ModelStoreContainer">
           <EntitySet Name="BlogPostComments" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.BlogPostComments" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="BlogPosts" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.BlogPosts" store:Type="Tables" Schema="dbo" />
@@ -13,6 +13,7 @@
           <EntitySet Name="Languages" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.Languages" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="RestrictedPageNames" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.RestrictedPageNames" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Tags" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.Tags" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.Users" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_BlogPostComments_BlogPosts" Association="TugberkUg.MvcBloggy_RC1Model.Store.FK_BlogPostComments_BlogPosts">
             <End Role="BlogPosts" EntitySet="BlogPosts" />
             <End Role="BlogPostComments" EntitySet="BlogPostComments" />
@@ -126,6 +127,16 @@
           <Property Name="BlogPostId" Type="int" Nullable="false" />
           <Property Name="TagName" Type="nvarchar" Nullable="false" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="HashAlgorithm" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+        </EntityType>
         <Association Name="FK_BlogPostComments_BlogPosts">
           <End Role="BlogPosts" Type="TugberkUg.MvcBloggy_RC1Model.Store.BlogPosts" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -210,8 +221,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TugberkUg.MvcBloggy_RC1Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -247,6 +257,7 @@
             <End Role="Languages" EntitySet="Languages" />
             <End Role="RestrictedPageNames" EntitySet="RestrictedPageNames" />
           </AssociationSet>
+          <EntitySet Name="Users" EntityType="TugberkUg.MvcBloggy_RC1Model.User" />
         </EntityContainer>
         <EntityType Name="BlogPostComment">
           <Key>
@@ -432,6 +443,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HashAlgorithm" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -530,6 +551,17 @@
                 <ScalarProperty Name="TagId" ColumnName="TagId" />
                 <ScalarProperty Name="BlogPostId" ColumnName="BlogPostId" />
                 <ScalarProperty Name="TagName" ColumnName="TagName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TugberkUg.MvcBloggy_RC1Model.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="HashAlgorithm" ColumnName="HashAlgorithm" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

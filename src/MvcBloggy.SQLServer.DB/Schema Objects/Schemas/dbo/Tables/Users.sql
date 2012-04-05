@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[Users] (
+
+	[UserId] INT IDENTITY NOT NULL,
+	[UserName] NVARCHAR(50) NOT NULL,
+	[Password] NVARCHAR(1000) NOT NULL,
+	[HashAlgorithm] NVARCHAR(10) NOT NULL,
+	[IsApproved] BIT NOT NULL,
+	CONSTRAINT [PK_Users] PRIMARY KEY ([UserId])
+
+)

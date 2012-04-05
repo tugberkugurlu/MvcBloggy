@@ -94,8 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DefaultControllerTests.cs" />
-    <Compile Include="Fakes\FakeBlogRepository.cs" />
-    <Compile Include="Fakes\FakeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

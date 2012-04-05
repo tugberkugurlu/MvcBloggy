@@ -18,6 +18,7 @@
         <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_BlogRolls_Languages" ManuallyRouted="false" />
         <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_DynamicPages_Languages" ManuallyRouted="false" />
         <AssociationConnector Association="TugberkUg.MvcBloggy_RC1Model.FK_RestrictedPageNames_Languages" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TugberkUg.MvcBloggy_RC1Model.User" Width="1.5" PointX="10.434904256106774" PointY="28.656557260386904" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

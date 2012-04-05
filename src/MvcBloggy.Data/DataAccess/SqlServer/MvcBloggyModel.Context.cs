@@ -32,5 +32,6 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
         public DbSet<Language> Languages { get; set; }
         public DbSet<RestrictedPageName> RestrictedPageNames { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

@@ -182,6 +182,7 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\UK_BlogPosts_LanguageId_Title.sql" />
     <Build Include="Schema Objects\Schemas\dbo\Tables\Tags.sql" />
     <Build Include="Schema Objects\Schemas\dbo\Tables\Constraints\FK_Tags_BlogPosts.sql" />
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Users.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Release.publish.xml" />
