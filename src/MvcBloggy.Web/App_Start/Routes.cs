@@ -15,6 +15,10 @@ namespace MvcBloggy.Web {
 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //http://www.cookcomputing.com/blog/archives/xml-rpc-and-asp-net-mvc
+            routes.MapLowerCaseRoute("wlwmanifest.xml", new { controller = "MetaWeblog", action = "WlwManifest" });
+
+            //default routes
             routes.MapRoute(
                 "DefaultRoute",
                 "{language}/{controller}/{action}",

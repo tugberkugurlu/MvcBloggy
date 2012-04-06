@@ -147,10 +147,10 @@
     <Compile Include="Application\Mvc\CSRazorViewEngine.cs" />
     <Compile Include="Application\Mvc\Filters\CustomAuthorizeAttribute.cs" />
     <Compile Include="Application\Mvc\Filters\BypassAuthorizationAttribute.cs" />
-    <Compile Include="Application\MetaBlog\IMetaWeblog.cs" />
+    <Compile Include="Application\MetaWeblog\IMetaWeblog.cs" />
     <Compile Include="Application\Mvc\LocalizedControllerFactory.cs" />
-    <Compile Include="Application\MetaBlog\MetaWeblog.cs" />
-    <Compile Include="Application\MetaBlog\MetaWeblogStructs.cs" />
+    <Compile Include="Application\MetaWeblog\MetaWeblog.cs" />
+    <Compile Include="Application\MetaWeblog\MetaWeblogStructs.cs" />
     <Compile Include="Application\MvcBloggy.cs" />
     <Compile Include="Application\Mvc\RouteCollectionExtensions.cs" />
     <Compile Include="Application\Mvc\LowercaseRoute.cs" />
@@ -187,6 +187,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Application\MetaWeblog\wlwmanifest.xml" />
     <Content Include="App_Data\MvcBloggy.me.xml" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />

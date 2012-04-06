@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>MvcBloggy.SqlServer</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{5633ae58-cadc-45b1-9340-a78109021690}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>MvcBloggy.SqlServer</RootNamespace>
+    <AssemblyName>MvcBloggy.SqlServer</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <GenerateCreateScript>True</GenerateCreateScript>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Schema" />
+    <Folder Include="Schema\Tables" />
+    <Folder Include="Schema\Tables\Keys" />
+    <Folder Include="Schema\Tables\Constraints" />
+    <Folder Include="Schema\Functions" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\Post-Deployment" />
+    <Folder Include="Scripts\Pre-Deployment" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schema\Tables\BlogPostComments.sql" />
+    <Build Include="Schema\Tables\BlogPosts.sql" />
+    <Build Include="Schema\Tables\BlogRolls.sql" />
+    <Build Include="Schema\Tables\DynamicPages.sql" />
+    <Build Include="Schema\Tables\Languages.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema\Tables\Tags.sql" />
+    <Build Include="Schema\Tables\Users.sql" />
+    <Build Include="Schema\Tables\RestrictedPageNames.sql" />
+    <Build Include="Schema\Tables\Keys\UK_BlogPosts_LanguageId_Title.sql" />
+    <Build Include="Schema\Tables\Keys\UK_DynamicPages_PageTitle.sql" />
+    <Build Include="Schema\Tables\Constraints\CC_DynamicPages_PageTitle.sql" />
+    <Build Include="Schema\Tables\Constraints\FK_BlogPostComments_BlogPosts.sql" />
+    <Build Include="Schema\Tables\Constraints\FK_BlogPosts_Languages.sql" />
+    <Build Include="Schema\Tables\Constraints\FK_BlogRolls_Languages.sql" />
+    <Build Include="Schema\Tables\Constraints\FK_DynamicPages_Languages.sql" />
+    <Build Include="Schema\Tables\Constraints\FK_RestrictedPageNames_Languages.sql" />
+    <Build Include="Schema\Tables\Constraints\FK_Tags_BlogPosts.sql" />
+    <Build Include="Schema\Functions\fn_CheckDynamicPageTitleValidity.sql" />
+    <Build Include="Schema\Functions\Trim.sql" />
+    <Build Include="Schema\Functions\UrlReplace.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Post-Deployment\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Scripts\Pre-Deployment\Script.PreDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MvcBloggy.SqlServer.publish.xml" />
+  </ItemGroup>
+</Project>
