@@ -56,6 +56,9 @@
     <Reference Include="Autofac.Integration.Mvc">
       <HintPath>..\..\packages\Autofac.Mvc3.2.6.1.841\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="CookComputing.XmlRpc">
+      <HintPath>..\..\lib\CookComputing.XmlRpc\CookComputing.XmlRpc.dll</HintPath>
+    </Reference>
     <Reference Include="Elmah">
       <HintPath>..\..\packages\elmah.corelibrary.1.2\lib\Elmah.dll</HintPath>
     </Reference>
@@ -144,7 +147,10 @@
     <Compile Include="Application\CSRazorViewEngine.cs" />
     <Compile Include="Application\Filters\CustomAuthorizeAttribute.cs" />
     <Compile Include="Application\Filters\BypassAuthorizationAttribute.cs" />
+    <Compile Include="Application\IMetaWeblog.cs" />
     <Compile Include="Application\LocalizedControllerFactory.cs" />
+    <Compile Include="Application\MetaWeblog.cs" />
+    <Compile Include="Application\MetaWeblogStructs.cs" />
     <Compile Include="Application\MvcBloggy.cs" />
     <Compile Include="Application\Profile.cs" />
     <Compile Include="Application\Resources\AppInfoStrings.Designer.cs">
@@ -318,6 +324,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_CultureSwitcher.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Services\MetaWeblogAPI.ashx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
