@@ -166,6 +166,7 @@
     <Compile Include="Application\TwoLevelViewCache.cs" />
     <Compile Include="Application\Utility\AppLanguage.cs" />
     <Compile Include="Application\Utility\AppSettings.cs" />
+    <Compile Include="Application\Utility\StringExtensions.cs" />
     <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\Bundles.cs" />
     <Compile Include="App_Start\Filters.cs" />
