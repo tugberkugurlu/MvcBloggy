@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MvcBloggy.Web.Application {
+namespace MvcBloggy.Web.Application.Mvc {
 
     public class CSRazorViewEngine : RazorViewEngine {
 

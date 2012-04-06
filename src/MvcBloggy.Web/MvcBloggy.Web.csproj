@@ -142,28 +142,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\AutofacMVC3.cs" />
-    <Compile Include="Application\Filters\RemoveWhitespacesAttribute.cs" />
+    <Compile Include="Application\Mvc\Filters\RemoveWhitespacesAttribute.cs" />
     <Compile Include="Application\Application.cs" />
-    <Compile Include="Application\CSRazorViewEngine.cs" />
-    <Compile Include="Application\Filters\CustomAuthorizeAttribute.cs" />
-    <Compile Include="Application\Filters\BypassAuthorizationAttribute.cs" />
-    <Compile Include="Application\IMetaWeblog.cs" />
-    <Compile Include="Application\LocalizedControllerFactory.cs" />
-    <Compile Include="Application\MetaWeblog.cs" />
-    <Compile Include="Application\MetaWeblogStructs.cs" />
+    <Compile Include="Application\Mvc\CSRazorViewEngine.cs" />
+    <Compile Include="Application\Mvc\Filters\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Application\Mvc\Filters\BypassAuthorizationAttribute.cs" />
+    <Compile Include="Application\MetaBlog\IMetaWeblog.cs" />
+    <Compile Include="Application\Mvc\LocalizedControllerFactory.cs" />
+    <Compile Include="Application\MetaBlog\MetaWeblog.cs" />
+    <Compile Include="Application\MetaBlog\MetaWeblogStructs.cs" />
     <Compile Include="Application\MvcBloggy.cs" />
+    <Compile Include="Application\Mvc\RouteCollectionExtensions.cs" />
+    <Compile Include="Application\Mvc\LowercaseRoute.cs" />
     <Compile Include="Application\Profile.cs" />
     <Compile Include="Application\Resources\AppInfoStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppInfoStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Application\RouteConstraints\LanguageRouteConstraint.cs" />
+    <Compile Include="Application\Mvc\LanguageRouteConstraint.cs" />
     <Compile Include="Application\Services\AuthorizationService.cs" />
     <Compile Include="Application\Services\FormsAuthenticationService.cs" />
     <Compile Include="Application\Services\IAuthorizationService.cs" />
     <Compile Include="Application\Services\IFormsAuthenticationService.cs" />
-    <Compile Include="Application\TwoLevelViewCache.cs" />
+    <Compile Include="Application\Mvc\TwoLevelViewCache.cs" />
     <Compile Include="Application\Utility\AppLanguage.cs" />
     <Compile Include="Application\Utility\AppSettings.cs" />
     <Compile Include="Application\Utility\StringExtensions.cs" />
@@ -177,6 +179,7 @@
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\MetaWeblogController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
       <SubType>Code</SubType>

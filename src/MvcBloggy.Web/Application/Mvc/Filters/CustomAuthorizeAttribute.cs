@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MvcBloggy.Web.Application.Filters {
+namespace MvcBloggy.Web.Application.Mvc.Filters {
 
     public class CustomAuthorizeAttribute : AuthorizeAttribute {
 

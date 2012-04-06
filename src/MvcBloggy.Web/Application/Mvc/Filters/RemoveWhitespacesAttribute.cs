@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MvcBloggy.Web.Application.Filters {
+namespace MvcBloggy.Web.Application.Mvc.Filters {
 
     public class RemoveWhitespacesAttribute : ActionFilterAttribute {
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Routing;
 
-namespace MvcBloggy.Web.Application.RouteConstraints
+namespace MvcBloggy.Web.Application.Mvc
 {
     public class LanguageRouteConstraint : IRouteConstraint {
 

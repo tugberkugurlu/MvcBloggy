@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Routing;
 using System.Web.Mvc;
-using MvcBloggy.Web.Application.RouteConstraints;
+using MvcBloggy.Web.Application.Mvc;
 using MvcBloggy.Web.Application.Utility;
 
 namespace MvcBloggy.Web {

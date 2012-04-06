@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Microsoft.Web.Optimization;
 using MvcBloggy.Web.Application;
+using MvcBloggy.Web.Application.Mvc;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(MvcBloggy.Web.Bootstrapper), "PreStart")]
 [assembly: WebActivator.PostApplicationStartMethod(typeof(MvcBloggy.Web.Bootstrapper), "PostStart")]
