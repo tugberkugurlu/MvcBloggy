@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcBloggy>  
+  <application>
+    <appName>Tugberk's Blog</appName>
+    <appTitle>Tugberk Ugurlu's Blog</appTitle>
+    <appSlogan>if life is an infinite loop, I am a read-only variable inside it...</appSlogan>
+    <userAlias>Tugberk</userAlias>
+  </application>
+  
+  <meProfiles>
+    <profile>
+      <name>twitter</name>
+      <link>http://twitter.com/tourismgeek</link>
+    </profile>
+    <profile>
+      <name>googlePlus</name>
+      <link>https://plus.google.com/114404472683655231726?rel=me</link>
+    </profile>
+    <profile>
+      <name>linkedin</name>
+      <link>http://www.linkedin.com/in/tugberk</link>
+    </profile>
+    <profile>
+      <name>feedburner</name>
+      <link>http://feeds.feedburner.com/tugberkugurlu</link>
+    </profile>
+  </meProfiles>
+  
+  <socialProfiles>
+    <profile>
+      <name>twitter</name>
+      <link>http://twitter.com/tourismgeek</link>
+    </profile>
+    <profile>
+      <name>googlePlus</name>
+      <link>https://plus.google.com/114404472683655231726?rel=author</link>
+    </profile>
+    <profile>
+      <name>linkedin</name>
+      <link>http://www.linkedin.com/in/tugberk</link>
+    </profile>
+    <profile>
+      <name>github</name>
+      <link>http://github.com/tugberkugurlu</link>
+    </profile>
+  </socialProfiles>
+  
+</mvcBloggy>
