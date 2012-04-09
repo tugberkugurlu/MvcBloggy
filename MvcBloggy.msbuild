@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+         ToolsVersion="4.0"
+         DefaultTargets="Compile">
+  
+  <PropertyGroup>
+    <!--We are putting condition here.
+        This means that this is only going to be set if this condition true. -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <OutputDir Include=".\Output" />
+    <MainSolutionfile Include=".\MvcBloggy.sln" />
+    <DatabaseSolutionfile Include=".\MvcBloggy.SQLServer.sln" />
+  </ItemGroup>
+
+  <!--Clean the OutputDir dir.
+      This will be the dir we will use to put all of our builds's bits and pieces -->
+  <Target Name="Clean">
+    <RemoveDir Directories="@(OutputDir)" />
+  </Target>
+  
+  <!--This is the target which will create the dir which we have deleted.
+      Also we are telling it that it depends on Clean target.
+      So, this will start after the Clean target is finished.-->
+  <Target Name="Init" DependsOnTargets="Clean">
+    <MakeDir Directories="@(OutputDir)" />
+  </Target>
+  
+  <Target Name="Compile" DependsOnTargets="Init">
+    <MSBuild Projects="@(MainSolutionfile)" Targets="Rebuild" Properties="OutDir=%(OutputDir.FullPath);Configuration=$(Configuration)" />
+  </Target>
+
+</Project>

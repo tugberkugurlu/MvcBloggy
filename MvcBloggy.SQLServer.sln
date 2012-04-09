@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MvcBloggy.SqlServer", "src\MvcBloggy.SqlServer\MvcBloggy.SqlServer.sqlproj", "{5633AE58-CADC-45B1-9340-A78109021690}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5633AE58-CADC-45B1-9340-A78109021690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5633AE58-CADC-45B1-9340-A78109021690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5633AE58-CADC-45B1-9340-A78109021690}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5633AE58-CADC-45B1-9340-A78109021690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5633AE58-CADC-45B1-9340-A78109021690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5633AE58-CADC-45B1-9340-A78109021690}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
