@@ -24,14 +24,23 @@ namespace MvcBloggy.Web.Application {
 
             builder.RegisterControllers(typeof(MvcApplication).Assembly).PropertiesAutowired();
 
-            builder.RegisterType<BlogPostRepository>().As<IBlogPostRepository>().SingleInstance();
-            builder.RegisterType<UserRepository>().As<IUserRepository>().SingleInstance();
-
+            //services
             builder.RegisterType<FormsAuthenticationService>().As<IFormsAuthenticationService>().SingleInstance();
             builder.RegisterType<AuthorizationService>()
                 .As<IAuthorizationService>()
                 .UsingConstructor(typeof(IUserRepository))
-                .SingleInstance();
+                .InstancePerLifetimeScope();
+
+            //repositories
+            builder.RegisterType<BlogPostRepository>().As<IBlogPostRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<BlogPostCommentRepository>().As<IBlogPostCommentRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<TagRepository>().As<ITagRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<DynamicPageRepository>().As<IDynamicPageRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<LanguageRepository>().As<ILanguageRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerLifetimeScope();
+
+            //core
+            builder.RegisterType<MetaWeblog>().As<IMetaWeblog>().InstancePerLifetimeScope();
 
             return
                 builder.Build();

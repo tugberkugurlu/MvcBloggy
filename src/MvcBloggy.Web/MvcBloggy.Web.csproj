@@ -56,8 +56,9 @@
     <Reference Include="Autofac.Integration.Mvc">
       <HintPath>..\..\packages\Autofac.Mvc3.2.6.1.841\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="CookComputing.XmlRpc">
-      <HintPath>..\..\lib\CookComputing.XmlRpc\CookComputing.XmlRpc.dll</HintPath>
+    <Reference Include="CookComputing.XmlRpcV2, Version=2.5.0.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\xmlrpcnet.2.5.0\CookComputing.XmlRpcV2.dll</HintPath>
     </Reference>
     <Reference Include="Elmah">
       <HintPath>..\..\packages\elmah.corelibrary.1.2\lib\Elmah.dll</HintPath>
@@ -142,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\AutofacMVC3.cs" />
+    <Compile Include="Application\MetaWeblog\MetaWeblogRouteHandler.cs" />
     <Compile Include="Application\Mvc\Filters\RemoveWhitespacesAttribute.cs" />
     <Compile Include="Application\Application.cs" />
     <Compile Include="Application\Mvc\CSRazorViewEngine.cs" />

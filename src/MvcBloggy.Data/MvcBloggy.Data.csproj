@@ -60,6 +60,7 @@
     <Compile Include="DataAccess\Infrastructure\IBlogPostRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IDynamicPageRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\ILanguageRepository.cs" />
+    <Compile Include="DataAccess\Infrastructure\ITagRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IUserRepository.cs" />
     <Compile Include="DataAccess\SqlServer\BlogPost.cs">
       <DependentUpon>MvcBloggyModel.tt</DependentUpon>
@@ -75,6 +76,7 @@
     <Compile Include="DataAccess\SqlServer\DynamicPage.cs">
       <DependentUpon>MvcBloggyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\SqlServer\DynamicPageRepository.cs" />
     <Compile Include="DataAccess\SqlServer\Language.cs">
       <DependentUpon>MvcBloggyModel.tt</DependentUpon>
     </Compile>
@@ -105,6 +107,7 @@
     <Compile Include="DataAccess\SqlServer\Tag.cs">
       <DependentUpon>MvcBloggyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\SqlServer\TagRepository.cs" />
     <Compile Include="DataAccess\SqlServer\User.cs">
       <DependentUpon>MvcBloggyModel.tt</DependentUpon>
     </Compile>
