@@ -13,6 +13,7 @@
     <OutputDir Include=".\Output" />
     <MainSolutionfile Include=".\MvcBloggy.sln" />
     <DatabaseSolutionfile Include=".\MvcBloggy.SQLServer.sln" />
+    <DBScriptOutputDir Include=".\Output\SQLScript" />
   </ItemGroup>
 
   <!--Clean the OutputDir dir.
@@ -30,6 +31,7 @@
   
   <Target Name="Compile" DependsOnTargets="Init">
     <MSBuild Projects="@(MainSolutionfile)" Targets="Rebuild" Properties="OutDir=%(OutputDir.FullPath);Configuration=$(Configuration)" />
+    <MSBuild Projects="@(DatabaseSolutionfile)" Targets="Rebuild" Properties="OutDir=%(DBScriptOutputDir.FullPath);Configuration=$(Configuration)" />
   </Target>
 
 </Project>
