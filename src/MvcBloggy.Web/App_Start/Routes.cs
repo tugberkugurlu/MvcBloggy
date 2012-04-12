@@ -18,7 +18,8 @@ namespace MvcBloggy.Web {
 
             //http://www.cookcomputing.com/blog/archives/xml-rpc-and-asp-net-mvc
             routes.MapLowerCaseRoute("wlwmanifest.xml", new { controller = "MetaWeblog", action = "WlwManifest" });
-            routes.Add(new Route("{weblog}", null, new RouteValueDictionary(new { weblog = "blogapi" }), new MetaWeblogRouteHandler()));
+            routes.Add(new Route("{weblog}", new RouteValueDictionary(new { language = AppLanguage.GetDefault() }), new RouteValueDictionary(new { weblog = "blogapi" }), new MetaWeblogRouteHandler()));
+            routes.Add(new Route("{weblog}/{language}", null, new RouteValueDictionary(new { weblog = "blogapi", language = new LanguageRouteConstraint() }), new MetaWeblogRouteHandler()));
 
             //default routes
             routes.MapRoute(

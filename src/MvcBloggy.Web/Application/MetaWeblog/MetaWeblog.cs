@@ -13,6 +13,7 @@ namespace MvcBloggy.Web.Application {
         private readonly IAuthorizationService _authorizationService;
         private readonly IBlogPostRepository _blogPostRepo;
         private readonly ITagRepository _tagRepository;
+        private readonly string language;
 
         public MetaWeblog(IAuthorizationService authorizationService, 
             IBlogPostRepository blogPostRepo,
@@ -21,15 +22,17 @@ namespace MvcBloggy.Web.Application {
             _authorizationService = authorizationService;
             _blogPostRepo = blogPostRepo;
             _tagRepository = tagRepository;
+            
+            language = HttpContext.Current.Request.RequestContext.RouteData.Values["language"].ToString();
         }
 
         public string AddPost(string blogid, string username, string password, Post post, bool publish) {
-
+            
             throw new NotImplementedException();
         }
 
         public bool UpdatePost(string postid, string username, string password, Post post, bool publish) {
-
+            
             throw new NotImplementedException();
         }
 
