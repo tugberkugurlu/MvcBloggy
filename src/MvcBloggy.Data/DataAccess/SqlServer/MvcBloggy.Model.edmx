@@ -4,39 +4,53 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="TugberkUg.MvcBloggy_RC1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="TugberkUgMvcBloggy_RC1ModelStoreContainer">
-          <EntitySet Name="BlogPostComments" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.BlogPostComments" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BlogPosts" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.BlogPosts" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BlogRolls" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.BlogRolls" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DynamicPages" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.DynamicPages" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Languages" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.Languages" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="RestrictedPageNames" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.RestrictedPageNames" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Tags" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.Tags" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Users" EntityType="TugberkUg.MvcBloggy_RC1Model.Store.Users" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_BlogPostComments_BlogPosts" Association="TugberkUg.MvcBloggy_RC1Model.Store.FK_BlogPostComments_BlogPosts">
+      <Schema Namespace="MvcBloggy.SqlServerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MvcBloggySqlServerModelStoreContainer">
+          <EntitySet Name="BlogPostComments" EntityType="MvcBloggy.SqlServerModel.Store.BlogPostComments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BlogPosts" EntityType="MvcBloggy.SqlServerModel.Store.BlogPosts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BlogRolls" EntityType="MvcBloggy.SqlServerModel.Store.BlogRolls" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DynamicPages" EntityType="MvcBloggy.SqlServerModel.Store.DynamicPages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Languages" EntityType="MvcBloggy.SqlServerModel.Store.Languages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RestrictedPageNames" EntityType="MvcBloggy.SqlServerModel.Store.RestrictedPageNames" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="MvcBloggy.SqlServerModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw$LiveBlogPosts" EntityType="MvcBloggy.SqlServerModel.Store.vw$LiveBlogPosts" store:Type="Views" store:Schema="dbo" store:Name="vw$LiveBlogPosts">
+            <DefiningQuery>SELECT 
+      [vw$LiveBlogPosts].[BlogPostId] AS [BlogPostId], 
+      [vw$LiveBlogPosts].[LanguageId] AS [LanguageId], 
+      [vw$LiveBlogPosts].[SecondaryId] AS [SecondaryId], 
+      [vw$LiveBlogPosts].[Title] AS [Title], 
+      [vw$LiveBlogPosts].[BriefInfo] AS [BriefInfo], 
+      [vw$LiveBlogPosts].[Content] AS [Content], 
+      [vw$LiveBlogPosts].[Tags] AS [Tags], 
+      [vw$LiveBlogPosts].[ImagePath] AS [ImagePath], 
+      [vw$LiveBlogPosts].[URLString] AS [URLString], 
+      [vw$LiveBlogPosts].[CreationIp] AS [CreationIp], 
+      [vw$LiveBlogPosts].[CreatedOn] AS [CreatedOn], 
+      [vw$LiveBlogPosts].[LastUpdatedOn] AS [LastUpdatedOn], 
+      [vw$LiveBlogPosts].[DisplayName] AS [DisplayName], 
+      [vw$LiveBlogPosts].[Culture] AS [Culture], 
+      [vw$LiveBlogPosts].[CultureOne] AS [CultureOne]
+      FROM [dbo].[vw$LiveBlogPosts] AS [vw$LiveBlogPosts]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_BlogPostComments_BlogPosts" Association="MvcBloggy.SqlServerModel.Store.FK_BlogPostComments_BlogPosts">
             <End Role="BlogPosts" EntitySet="BlogPosts" />
             <End Role="BlogPostComments" EntitySet="BlogPostComments" />
           </AssociationSet>
-          <AssociationSet Name="FK_BlogPosts_Languages" Association="TugberkUg.MvcBloggy_RC1Model.Store.FK_BlogPosts_Languages">
+          <AssociationSet Name="FK_BlogPosts_Languages" Association="MvcBloggy.SqlServerModel.Store.FK_BlogPosts_Languages">
             <End Role="Languages" EntitySet="Languages" />
             <End Role="BlogPosts" EntitySet="BlogPosts" />
           </AssociationSet>
-          <AssociationSet Name="FK_BlogRolls_Languages" Association="TugberkUg.MvcBloggy_RC1Model.Store.FK_BlogRolls_Languages">
+          <AssociationSet Name="FK_BlogRolls_Languages" Association="MvcBloggy.SqlServerModel.Store.FK_BlogRolls_Languages">
             <End Role="Languages" EntitySet="Languages" />
             <End Role="BlogRolls" EntitySet="BlogRolls" />
           </AssociationSet>
-          <AssociationSet Name="FK_DynamicPages_Languages" Association="TugberkUg.MvcBloggy_RC1Model.Store.FK_DynamicPages_Languages">
+          <AssociationSet Name="FK_DynamicPages_Languages" Association="MvcBloggy.SqlServerModel.Store.FK_DynamicPages_Languages">
             <End Role="Languages" EntitySet="Languages" />
             <End Role="DynamicPages" EntitySet="DynamicPages" />
           </AssociationSet>
-          <AssociationSet Name="FK_RestrictedPageNames_Languages" Association="TugberkUg.MvcBloggy_RC1Model.Store.FK_RestrictedPageNames_Languages">
+          <AssociationSet Name="FK_RestrictedPageNames_Languages" Association="MvcBloggy.SqlServerModel.Store.FK_RestrictedPageNames_Languages">
             <End Role="Languages" EntitySet="Languages" />
             <End Role="RestrictedPageNames" EntitySet="RestrictedPageNames" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tags_BlogPosts" Association="TugberkUg.MvcBloggy_RC1Model.Store.FK_Tags_BlogPosts">
-            <End Role="BlogPosts" EntitySet="BlogPosts" />
-            <End Role="Tags" EntitySet="Tags" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="BlogPostComments">
@@ -62,14 +76,15 @@
           </Key>
           <Property Name="BlogPostId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="LanguageId" Type="int" Nullable="false" />
-          <Property Name="SecondaryID" Type="int" />
+          <Property Name="SecondaryId" Type="int" />
           <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
           <Property Name="BriefInfo" Type="nvarchar" MaxLength="200" />
           <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="Tags" Type="nvarchar" Nullable="false" MaxLength="1000" />
           <Property Name="ImagePath" Type="nvarchar" MaxLength="300" />
           <Property Name="IsApproved" Type="bit" Nullable="false" />
           <Property Name="CreationIp" Type="nvarchar" MaxLength="50" />
-          <Property Name="CreatedOn" Type="datetimeoffset" />
+          <Property Name="CreatedOn" Type="datetimeoffset" Nullable="false" />
           <Property Name="LastUpdatedOn" Type="datetimeoffset" />
         </EntityType>
         <EntityType Name="BlogRolls">
@@ -119,14 +134,6 @@
           <Property Name="Term" Type="nvarchar" Nullable="false" MaxLength="300" />
           <Property Name="CreatedOn" Type="datetimeoffset" />
         </EntityType>
-        <EntityType Name="Tags">
-          <Key>
-            <PropertyRef Name="TagId" />
-          </Key>
-          <Property Name="TagId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="BlogPostId" Type="int" Nullable="false" />
-          <Property Name="TagName" Type="nvarchar" Nullable="false" MaxLength="50" />
-        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="UserId" />
@@ -138,11 +145,40 @@
           <Property Name="HashAlgorithm" Type="nvarchar" Nullable="false" MaxLength="10" />
           <Property Name="IsApproved" Type="bit" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'MvcBloggy.SqlServer.dbo.vw$LiveBlogPosts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw$LiveBlogPosts">
+          <Key>
+            <PropertyRef Name="BlogPostId" />
+            <PropertyRef Name="LanguageId" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Tags" />
+            <PropertyRef Name="CreatedOn" />
+            <PropertyRef Name="Culture" />
+            <PropertyRef Name="CultureOne" />
+          </Key>
+          <Property Name="BlogPostId" Type="int" Nullable="false" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="SecondaryId" Type="int" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="BriefInfo" Type="nvarchar" MaxLength="200" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="Tags" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="300" />
+          <Property Name="URLString" Type="varchar(max)" />
+          <Property Name="CreationIp" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetimeoffset" Nullable="false" />
+          <Property Name="LastUpdatedOn" Type="datetimeoffset" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Culture" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="CultureOne" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
         <Association Name="FK_BlogPostComments_BlogPosts">
-          <End Role="BlogPosts" Type="TugberkUg.MvcBloggy_RC1Model.Store.BlogPosts" Multiplicity="1">
+          <End Role="BlogPosts" Type="MvcBloggy.SqlServerModel.Store.BlogPosts" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BlogPostComments" Type="TugberkUg.MvcBloggy_RC1Model.Store.BlogPostComments" Multiplicity="*" />
+          <End Role="BlogPostComments" Type="MvcBloggy.SqlServerModel.Store.BlogPostComments" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BlogPosts">
               <PropertyRef Name="BlogPostId" />
@@ -153,10 +189,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BlogPosts_Languages">
-          <End Role="Languages" Type="TugberkUg.MvcBloggy_RC1Model.Store.Languages" Multiplicity="1">
+          <End Role="Languages" Type="MvcBloggy.SqlServerModel.Store.Languages" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BlogPosts" Type="TugberkUg.MvcBloggy_RC1Model.Store.BlogPosts" Multiplicity="*" />
+          <End Role="BlogPosts" Type="MvcBloggy.SqlServerModel.Store.BlogPosts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Languages">
               <PropertyRef Name="LanguageId" />
@@ -167,10 +203,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BlogRolls_Languages">
-          <End Role="Languages" Type="TugberkUg.MvcBloggy_RC1Model.Store.Languages" Multiplicity="1">
+          <End Role="Languages" Type="MvcBloggy.SqlServerModel.Store.Languages" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BlogRolls" Type="TugberkUg.MvcBloggy_RC1Model.Store.BlogRolls" Multiplicity="*" />
+          <End Role="BlogRolls" Type="MvcBloggy.SqlServerModel.Store.BlogRolls" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Languages">
               <PropertyRef Name="LanguageId" />
@@ -181,10 +217,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DynamicPages_Languages">
-          <End Role="Languages" Type="TugberkUg.MvcBloggy_RC1Model.Store.Languages" Multiplicity="1">
+          <End Role="Languages" Type="MvcBloggy.SqlServerModel.Store.Languages" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="DynamicPages" Type="TugberkUg.MvcBloggy_RC1Model.Store.DynamicPages" Multiplicity="*" />
+          <End Role="DynamicPages" Type="MvcBloggy.SqlServerModel.Store.DynamicPages" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Languages">
               <PropertyRef Name="LanguageId" />
@@ -195,10 +231,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RestrictedPageNames_Languages">
-          <End Role="Languages" Type="TugberkUg.MvcBloggy_RC1Model.Store.Languages" Multiplicity="1">
+          <End Role="Languages" Type="MvcBloggy.SqlServerModel.Store.Languages" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="RestrictedPageNames" Type="TugberkUg.MvcBloggy_RC1Model.Store.RestrictedPageNames" Multiplicity="*" />
+          <End Role="RestrictedPageNames" Type="MvcBloggy.SqlServerModel.Store.RestrictedPageNames" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Languages">
               <PropertyRef Name="LanguageId" />
@@ -208,57 +244,40 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Tags_BlogPosts">
-          <End Role="BlogPosts" Type="TugberkUg.MvcBloggy_RC1Model.Store.BlogPosts" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Tags" Type="TugberkUg.MvcBloggy_RC1Model.Store.Tags" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BlogPosts">
-              <PropertyRef Name="BlogPostId" />
-            </Principal>
-            <Dependent Role="Tags">
-              <PropertyRef Name="BlogPostId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="TugberkUg.MvcBloggy_RC1Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <Schema Namespace="MvcBloggy.SqlServerModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="MvcBloggyContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BlogPostComments" EntityType="TugberkUg.MvcBloggy_RC1Model.BlogPostComment" />
-          <EntitySet Name="BlogPosts" EntityType="TugberkUg.MvcBloggy_RC1Model.BlogPost" />
-          <EntitySet Name="BlogRolls" EntityType="TugberkUg.MvcBloggy_RC1Model.BlogRoll" />
-          <EntitySet Name="DynamicPages" EntityType="TugberkUg.MvcBloggy_RC1Model.DynamicPage" />
-          <EntitySet Name="Languages" EntityType="TugberkUg.MvcBloggy_RC1Model.Language" />
-          <EntitySet Name="RestrictedPageNames" EntityType="TugberkUg.MvcBloggy_RC1Model.RestrictedPageName" />
-          <EntitySet Name="Tags" EntityType="TugberkUg.MvcBloggy_RC1Model.Tag" />
-          <AssociationSet Name="FK_BlogPostComments_BlogPosts" Association="TugberkUg.MvcBloggy_RC1Model.FK_BlogPostComments_BlogPosts">
+          <EntitySet Name="BlogPostComments" EntityType="MvcBloggy.SqlServerModel.BlogPostComment" />
+          <EntitySet Name="BlogPosts" EntityType="MvcBloggy.SqlServerModel.BlogPost" />
+          <EntitySet Name="BlogRolls" EntityType="MvcBloggy.SqlServerModel.BlogRoll" />
+          <EntitySet Name="DynamicPages" EntityType="MvcBloggy.SqlServerModel.DynamicPage" />
+          <EntitySet Name="Languages" EntityType="MvcBloggy.SqlServerModel.Language" />
+          <EntitySet Name="RestrictedPageNames" EntityType="MvcBloggy.SqlServerModel.RestrictedPageName" />
+          <EntitySet Name="Users" EntityType="MvcBloggy.SqlServerModel.User" />
+          <EntitySet Name="vw_LiveBlogPosts" EntityType="MvcBloggy.SqlServerModel.vw_LiveBlogPosts" />
+          <AssociationSet Name="FK_BlogPostComments_BlogPosts" Association="MvcBloggy.SqlServerModel.FK_BlogPostComments_BlogPosts">
             <End Role="BlogPosts" EntitySet="BlogPosts" />
             <End Role="BlogPostComments" EntitySet="BlogPostComments" />
           </AssociationSet>
-          <AssociationSet Name="FK_BlogPosts_Languages" Association="TugberkUg.MvcBloggy_RC1Model.FK_BlogPosts_Languages">
+          <AssociationSet Name="FK_BlogPosts_Languages" Association="MvcBloggy.SqlServerModel.FK_BlogPosts_Languages">
             <End Role="Languages" EntitySet="Languages" />
             <End Role="BlogPosts" EntitySet="BlogPosts" />
           </AssociationSet>
-          <AssociationSet Name="FK_Tags_BlogPosts" Association="TugberkUg.MvcBloggy_RC1Model.FK_Tags_BlogPosts">
-            <End Role="BlogPosts" EntitySet="BlogPosts" />
-            <End Role="Tags" EntitySet="Tags" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BlogRolls_Languages" Association="TugberkUg.MvcBloggy_RC1Model.FK_BlogRolls_Languages">
+          <AssociationSet Name="FK_BlogRolls_Languages" Association="MvcBloggy.SqlServerModel.FK_BlogRolls_Languages">
             <End Role="Languages" EntitySet="Languages" />
             <End Role="BlogRolls" EntitySet="BlogRolls" />
           </AssociationSet>
-          <AssociationSet Name="FK_DynamicPages_Languages" Association="TugberkUg.MvcBloggy_RC1Model.FK_DynamicPages_Languages">
+          <AssociationSet Name="FK_DynamicPages_Languages" Association="MvcBloggy.SqlServerModel.FK_DynamicPages_Languages">
             <End Role="Languages" EntitySet="Languages" />
             <End Role="DynamicPages" EntitySet="DynamicPages" />
           </AssociationSet>
-          <AssociationSet Name="FK_RestrictedPageNames_Languages" Association="TugberkUg.MvcBloggy_RC1Model.FK_RestrictedPageNames_Languages">
+          <AssociationSet Name="FK_RestrictedPageNames_Languages" Association="MvcBloggy.SqlServerModel.FK_RestrictedPageNames_Languages">
             <End Role="Languages" EntitySet="Languages" />
             <End Role="RestrictedPageNames" EntitySet="RestrictedPageNames" />
           </AssociationSet>
-          <EntitySet Name="Users" EntityType="TugberkUg.MvcBloggy_RC1Model.User" />
         </EntityContainer>
         <EntityType Name="BlogPostComment">
           <Key>
@@ -276,7 +295,7 @@
           <Property Name="IsApproved" Type="Boolean" Nullable="false" />
           <Property Name="CreatedOn" Type="DateTimeOffset" Nullable="false" Precision="7" />
           <Property Name="CreationIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="BlogPost" Relationship="TugberkUg.MvcBloggy_RC1Model.FK_BlogPostComments_BlogPosts" FromRole="BlogPostComments" ToRole="BlogPosts" />
+          <NavigationProperty Name="BlogPost" Relationship="MvcBloggy.SqlServerModel.FK_BlogPostComments_BlogPosts" FromRole="BlogPostComments" ToRole="BlogPosts" />
         </EntityType>
         <EntityType Name="BlogPost">
           <Key>
@@ -284,18 +303,18 @@
           </Key>
           <Property Name="BlogPostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LanguageId" Type="Int32" Nullable="false" />
-          <Property Name="SecondaryID" Type="Int32" />
+          <Property Name="SecondaryId" Type="Int32" />
           <Property Name="Title" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
           <Property Name="BriefInfo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
           <Property Name="Content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Tags" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
           <Property Name="ImagePath" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
           <Property Name="IsApproved" Type="Boolean" Nullable="false" />
           <Property Name="CreationIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CreatedOn" Type="DateTimeOffset" Precision="7" />
+          <Property Name="CreatedOn" Type="DateTimeOffset" Nullable="false" Precision="7" />
           <Property Name="LastUpdatedOn" Type="DateTimeOffset" Precision="7" />
-          <NavigationProperty Name="BlogPostComments" Relationship="TugberkUg.MvcBloggy_RC1Model.FK_BlogPostComments_BlogPosts" FromRole="BlogPosts" ToRole="BlogPostComments" />
-          <NavigationProperty Name="Language" Relationship="TugberkUg.MvcBloggy_RC1Model.FK_BlogPosts_Languages" FromRole="BlogPosts" ToRole="Languages" />
-          <NavigationProperty Name="Tags" Relationship="TugberkUg.MvcBloggy_RC1Model.FK_Tags_BlogPosts" FromRole="BlogPosts" ToRole="Tags" />
+          <NavigationProperty Name="BlogPostComments" Relationship="MvcBloggy.SqlServerModel.FK_BlogPostComments_BlogPosts" FromRole="BlogPosts" ToRole="BlogPostComments" />
+          <NavigationProperty Name="Language" Relationship="MvcBloggy.SqlServerModel.FK_BlogPosts_Languages" FromRole="BlogPosts" ToRole="Languages" />
         </EntityType>
         <EntityType Name="BlogRoll">
           <Key>
@@ -309,7 +328,7 @@
           <Property Name="FeedUrl" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
           <Property Name="Order" Type="Int32" />
           <Property Name="IsApproved" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Language" Relationship="TugberkUg.MvcBloggy_RC1Model.FK_BlogRolls_Languages" FromRole="BlogRolls" ToRole="Languages" />
+          <NavigationProperty Name="Language" Relationship="MvcBloggy.SqlServerModel.FK_BlogRolls_Languages" FromRole="BlogRolls" ToRole="Languages" />
         </EntityType>
         <EntityType Name="DynamicPage">
           <Key>
@@ -323,7 +342,7 @@
           <Property Name="IsApproved" Type="Boolean" Nullable="false" />
           <Property Name="CreatedOn" Type="DateTimeOffset" Precision="7" />
           <Property Name="LastUpdatedOn" Type="DateTimeOffset" Precision="7" />
-          <NavigationProperty Name="Language" Relationship="TugberkUg.MvcBloggy_RC1Model.FK_DynamicPages_Languages" FromRole="DynamicPages" ToRole="Languages" />
+          <NavigationProperty Name="Language" Relationship="MvcBloggy.SqlServerModel.FK_DynamicPages_Languages" FromRole="DynamicPages" ToRole="Languages" />
         </EntityType>
         <EntityType Name="Language">
           <Key>
@@ -336,10 +355,10 @@
           <Property Name="Order" Type="Int32" />
           <Property Name="IsApproved" Type="Boolean" />
           <Property Name="CreatedOn" Type="DateTimeOffset" Precision="7" />
-          <NavigationProperty Name="BlogPosts" Relationship="TugberkUg.MvcBloggy_RC1Model.FK_BlogPosts_Languages" FromRole="Languages" ToRole="BlogPosts" />
-          <NavigationProperty Name="BlogRolls" Relationship="TugberkUg.MvcBloggy_RC1Model.FK_BlogRolls_Languages" FromRole="Languages" ToRole="BlogRolls" />
-          <NavigationProperty Name="DynamicPages" Relationship="TugberkUg.MvcBloggy_RC1Model.FK_DynamicPages_Languages" FromRole="Languages" ToRole="DynamicPages" />
-          <NavigationProperty Name="RestrictedPageNames" Relationship="TugberkUg.MvcBloggy_RC1Model.FK_RestrictedPageNames_Languages" FromRole="Languages" ToRole="RestrictedPageNames" />
+          <NavigationProperty Name="BlogPosts" Relationship="MvcBloggy.SqlServerModel.FK_BlogPosts_Languages" FromRole="Languages" ToRole="BlogPosts" />
+          <NavigationProperty Name="BlogRolls" Relationship="MvcBloggy.SqlServerModel.FK_BlogRolls_Languages" FromRole="Languages" ToRole="BlogRolls" />
+          <NavigationProperty Name="DynamicPages" Relationship="MvcBloggy.SqlServerModel.FK_DynamicPages_Languages" FromRole="Languages" ToRole="DynamicPages" />
+          <NavigationProperty Name="RestrictedPageNames" Relationship="MvcBloggy.SqlServerModel.FK_RestrictedPageNames_Languages" FromRole="Languages" ToRole="RestrictedPageNames" />
         </EntityType>
         <EntityType Name="RestrictedPageName">
           <Key>
@@ -349,22 +368,50 @@
           <Property Name="LanguageId" Type="Int32" Nullable="false" />
           <Property Name="Term" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
           <Property Name="CreatedOn" Type="DateTimeOffset" Precision="7" />
-          <NavigationProperty Name="Language" Relationship="TugberkUg.MvcBloggy_RC1Model.FK_RestrictedPageNames_Languages" FromRole="RestrictedPageNames" ToRole="Languages" />
+          <NavigationProperty Name="Language" Relationship="MvcBloggy.SqlServerModel.FK_RestrictedPageNames_Languages" FromRole="RestrictedPageNames" ToRole="Languages" />
         </EntityType>
-        <EntityType Name="Tag">
+        <EntityType Name="User">
           <Key>
-            <PropertyRef Name="TagId" />
+            <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="TagId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="HashAlgorithm" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_LiveBlogPosts">
+          <Key>
+            <PropertyRef Name="BlogPostId" />
+            <PropertyRef Name="LanguageId" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Tags" />
+            <PropertyRef Name="CreatedOn" />
+            <PropertyRef Name="Culture" />
+            <PropertyRef Name="CultureOne" />
+          </Key>
           <Property Name="BlogPostId" Type="Int32" Nullable="false" />
-          <Property Name="TagName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="BlogPost" Relationship="TugberkUg.MvcBloggy_RC1Model.FK_Tags_BlogPosts" FromRole="Tags" ToRole="BlogPosts" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="SecondaryId" Type="Int32" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="BriefInfo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Tags" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="URLString" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CreationIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTimeOffset" Nullable="false" Precision="7" />
+          <Property Name="LastUpdatedOn" Type="DateTimeOffset" Precision="7" />
+          <Property Name="DisplayName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Culture" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="CultureOne" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
         </EntityType>
         <Association Name="FK_BlogPostComments_BlogPosts">
-          <End Role="BlogPosts" Type="TugberkUg.MvcBloggy_RC1Model.BlogPost" Multiplicity="1">
+          <End Role="BlogPosts" Type="MvcBloggy.SqlServerModel.BlogPost" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BlogPostComments" Type="TugberkUg.MvcBloggy_RC1Model.BlogPostComment" Multiplicity="*" />
+          <End Role="BlogPostComments" Type="MvcBloggy.SqlServerModel.BlogPostComment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BlogPosts">
               <PropertyRef Name="BlogPostId" />
@@ -375,10 +422,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BlogPosts_Languages">
-          <End Role="Languages" Type="TugberkUg.MvcBloggy_RC1Model.Language" Multiplicity="1">
+          <End Role="Languages" Type="MvcBloggy.SqlServerModel.Language" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BlogPosts" Type="TugberkUg.MvcBloggy_RC1Model.BlogPost" Multiplicity="*" />
+          <End Role="BlogPosts" Type="MvcBloggy.SqlServerModel.BlogPost" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Languages">
               <PropertyRef Name="LanguageId" />
@@ -388,25 +435,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Tags_BlogPosts">
-          <End Role="BlogPosts" Type="TugberkUg.MvcBloggy_RC1Model.BlogPost" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Tags" Type="TugberkUg.MvcBloggy_RC1Model.Tag" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BlogPosts">
-              <PropertyRef Name="BlogPostId" />
-            </Principal>
-            <Dependent Role="Tags">
-              <PropertyRef Name="BlogPostId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_BlogRolls_Languages">
-          <End Role="Languages" Type="TugberkUg.MvcBloggy_RC1Model.Language" Multiplicity="1">
+          <End Role="Languages" Type="MvcBloggy.SqlServerModel.Language" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BlogRolls" Type="TugberkUg.MvcBloggy_RC1Model.BlogRoll" Multiplicity="*" />
+          <End Role="BlogRolls" Type="MvcBloggy.SqlServerModel.BlogRoll" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Languages">
               <PropertyRef Name="LanguageId" />
@@ -417,10 +450,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DynamicPages_Languages">
-          <End Role="Languages" Type="TugberkUg.MvcBloggy_RC1Model.Language" Multiplicity="1">
+          <End Role="Languages" Type="MvcBloggy.SqlServerModel.Language" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="DynamicPages" Type="TugberkUg.MvcBloggy_RC1Model.DynamicPage" Multiplicity="*" />
+          <End Role="DynamicPages" Type="MvcBloggy.SqlServerModel.DynamicPage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Languages">
               <PropertyRef Name="LanguageId" />
@@ -431,10 +464,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RestrictedPageNames_Languages">
-          <End Role="Languages" Type="TugberkUg.MvcBloggy_RC1Model.Language" Multiplicity="1">
+          <End Role="Languages" Type="MvcBloggy.SqlServerModel.Language" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="RestrictedPageNames" Type="TugberkUg.MvcBloggy_RC1Model.RestrictedPageName" Multiplicity="*" />
+          <End Role="RestrictedPageNames" Type="MvcBloggy.SqlServerModel.RestrictedPageName" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Languages">
               <PropertyRef Name="LanguageId" />
@@ -444,25 +477,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="User">
-          <Key>
-            <PropertyRef Name="UserId" />
-          </Key>
-          <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="HashAlgorithm" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
-          <Property Type="String" Name="Email" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TugberkUgMvcBloggy_RC1ModelStoreContainer" CdmEntityContainer="MvcBloggyContext">
+        <EntityContainerMapping StorageEntityContainer="MvcBloggySqlServerModelStoreContainer" CdmEntityContainer="MvcBloggyContext">
           <EntitySetMapping Name="BlogPostComments">
-            <EntityTypeMapping TypeName="TugberkUg.MvcBloggy_RC1Model.BlogPostComment">
+            <EntityTypeMapping TypeName="MvcBloggy.SqlServerModel.BlogPostComment">
               <MappingFragment StoreEntitySet="BlogPostComments">
                 <ScalarProperty Name="BlogCommentId" ColumnName="BlogCommentId" />
                 <ScalarProperty Name="BlogPostId" ColumnName="BlogPostId" />
@@ -480,14 +502,15 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BlogPosts">
-            <EntityTypeMapping TypeName="TugberkUg.MvcBloggy_RC1Model.BlogPost">
+            <EntityTypeMapping TypeName="MvcBloggy.SqlServerModel.BlogPost">
               <MappingFragment StoreEntitySet="BlogPosts">
                 <ScalarProperty Name="BlogPostId" ColumnName="BlogPostId" />
                 <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
-                <ScalarProperty Name="SecondaryID" ColumnName="SecondaryID" />
+                <ScalarProperty Name="SecondaryId" ColumnName="SecondaryId" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="BriefInfo" ColumnName="BriefInfo" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Tags" ColumnName="Tags" />
                 <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
                 <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
                 <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
@@ -497,7 +520,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BlogRolls">
-            <EntityTypeMapping TypeName="TugberkUg.MvcBloggy_RC1Model.BlogRoll">
+            <EntityTypeMapping TypeName="MvcBloggy.SqlServerModel.BlogRoll">
               <MappingFragment StoreEntitySet="BlogRolls">
                 <ScalarProperty Name="BlogRollId" ColumnName="BlogRollId" />
                 <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
@@ -511,7 +534,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DynamicPages">
-            <EntityTypeMapping TypeName="TugberkUg.MvcBloggy_RC1Model.DynamicPage">
+            <EntityTypeMapping TypeName="MvcBloggy.SqlServerModel.DynamicPage">
               <MappingFragment StoreEntitySet="DynamicPages">
                 <ScalarProperty Name="DynamicPageId" ColumnName="DynamicPageId" />
                 <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
@@ -525,7 +548,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Languages">
-            <EntityTypeMapping TypeName="TugberkUg.MvcBloggy_RC1Model.Language">
+            <EntityTypeMapping TypeName="MvcBloggy.SqlServerModel.Language">
               <MappingFragment StoreEntitySet="Languages">
                 <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
                 <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
@@ -538,7 +561,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RestrictedPageNames">
-            <EntityTypeMapping TypeName="TugberkUg.MvcBloggy_RC1Model.RestrictedPageName">
+            <EntityTypeMapping TypeName="MvcBloggy.SqlServerModel.RestrictedPageName">
               <MappingFragment StoreEntitySet="RestrictedPageNames">
                 <ScalarProperty Name="RestrictedPageNameId" ColumnName="RestrictedPageNameId" />
                 <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
@@ -547,24 +570,36 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tags">
-            <EntityTypeMapping TypeName="TugberkUg.MvcBloggy_RC1Model.Tag">
-              <MappingFragment StoreEntitySet="Tags">
-                <ScalarProperty Name="TagId" ColumnName="TagId" />
-                <ScalarProperty Name="BlogPostId" ColumnName="BlogPostId" />
-                <ScalarProperty Name="TagName" ColumnName="TagName" />
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MvcBloggy.SqlServerModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="HashAlgorithm" ColumnName="HashAlgorithm" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="TugberkUg.MvcBloggy_RC1Model.User">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-                <ScalarProperty Name="HashAlgorithm" ColumnName="HashAlgorithm" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <EntitySetMapping Name="vw_LiveBlogPosts">
+            <EntityTypeMapping TypeName="MvcBloggy.SqlServerModel.vw_LiveBlogPosts">
+              <MappingFragment StoreEntitySet="vw$LiveBlogPosts">
+                <ScalarProperty Name="BlogPostId" ColumnName="BlogPostId" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="SecondaryId" ColumnName="SecondaryId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="BriefInfo" ColumnName="BriefInfo" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Tags" ColumnName="Tags" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="URLString" ColumnName="URLString" />
+                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Culture" ColumnName="Culture" />
+                <ScalarProperty Name="CultureOne" ColumnName="CultureOne" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -14,9 +14,16 @@ namespace MvcBloggy.Data.DataAccess.SqlServer {
             return GetAll(false).AsQueryable();
         }
 
-        public IEnumerable<BlogPost> GetAll(bool includeUnapprovedEntries = false) {
+        public IEnumerable<BlogPost> GetAll(string language) {
 
-            return includeUnapprovedEntries ? All : All.Where(x => x.IsApproved == true);
+            return AllIncluding(x => x.Language).Where(x => 
+                x.IsApproved == true && x.Language.CultureOne == language
+            );
+        }
+
+        public IEnumerable<BlogPost> GetAll(bool includeUnapprovedEntries) {
+
+            return includeUnapprovedEntries ? Context.BlogPosts : Context.BlogPosts.Where(x => x.IsApproved == true);
         }
 
         public IEnumerable<BlogPost> GetAll(int languageId, bool includeUnapprovedEntries = false) {
@@ -49,9 +56,8 @@ namespace MvcBloggy.Data.DataAccess.SqlServer {
         public BlogPost GetSingleBySecondaryID(int secondaryId, bool includeUnapprovedEntries = false) {
 
             return GetAll(includeUnapprovedEntries).FirstOrDefault(x => 
-                x.SecondaryID == secondaryId
+                x.SecondaryId == secondaryId
             );
         }
-
     }
 }

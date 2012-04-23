@@ -31,7 +31,7 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
         public DbSet<DynamicPage> DynamicPages { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<RestrictedPageName> RestrictedPageNames { get; set; }
-        public DbSet<Tag> Tags { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<vw_LiveBlogPosts> vw_LiveBlogPosts { get; set; }
     }
 }

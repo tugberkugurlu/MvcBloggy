@@ -16,7 +16,7 @@
 
 var loader = new MetadataLoader(this);
 var region = new CodeRegion(this);
-var inputFile = @"MvcBloggyModel.edmx";
+var inputFile = @"MvcBloggy.Model.edmx";
 var ItemCollection = loader.CreateEdmItemCollection(inputFile);
 
 Code = new CodeGenerationTools(this);

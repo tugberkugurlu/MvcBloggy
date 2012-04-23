@@ -12,16 +12,13 @@ namespace MvcBloggy.Web.Application {
 
         private readonly IAuthorizationService _authorizationService;
         private readonly IBlogPostRepository _blogPostRepo;
-        private readonly ITagRepository _tagRepository;
         private readonly string language;
 
         public MetaWeblog(IAuthorizationService authorizationService, 
-            IBlogPostRepository blogPostRepo,
-            ITagRepository tagRepository) {
+            IBlogPostRepository blogPostRepo) {
 
             _authorizationService = authorizationService;
             _blogPostRepo = blogPostRepo;
-            _tagRepository = tagRepository;
             
             language = HttpContext.Current.Request.RequestContext.RouteData.Values["language"].ToString();
         }

@@ -12,13 +12,8 @@ using System.Collections.Generic;
 
 namespace MvcBloggy.Data.DataAccess.SqlServer
 {
-    public partial class BlogPost
+    public partial class vw_LiveBlogPosts
     {
-        public BlogPost()
-        {
-            this.BlogPostComments = new HashSet<BlogPostComment>();
-        }
-    
         public int BlogPostId { get; set; }
         public int LanguageId { get; set; }
         public Nullable<int> SecondaryId { get; set; }
@@ -27,13 +22,13 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
         public string Content { get; set; }
         public string Tags { get; set; }
         public string ImagePath { get; set; }
-        public bool IsApproved { get; set; }
+        public string URLString { get; set; }
         public string CreationIp { get; set; }
         public System.DateTimeOffset CreatedOn { get; set; }
         public Nullable<System.DateTimeOffset> LastUpdatedOn { get; set; }
-    
-        public virtual ICollection<BlogPostComment> BlogPostComments { get; set; }
-        public virtual Language Language { get; set; }
+        public string DisplayName { get; set; }
+        public string Culture { get; set; }
+        public string CultureOne { get; set; }
     }
     
 }

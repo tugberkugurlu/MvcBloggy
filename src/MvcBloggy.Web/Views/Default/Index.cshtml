@@ -1,4 +1,7 @@
-﻿@{
+﻿@model List<MvcBloggy.Data.DataAccess.SqlServer.BlogPost>
+@{
     ViewBag.Title = "Index";
 }
 <h2>Index</h2>
+
+@Model.Count()

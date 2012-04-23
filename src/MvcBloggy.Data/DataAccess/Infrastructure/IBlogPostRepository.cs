@@ -11,6 +11,7 @@ namespace MvcBloggy.Data.DataAccess.Infrastructure {
 
     public interface IBlogPostRepository : IRepository<BlogPost> {
 
+        IEnumerable<BlogPost> GetAll(string language);
         IEnumerable<BlogPost> GetAll(bool includeUnapprovedEntries = false);
         IEnumerable<BlogPost> GetAll(int languageId, bool includeUnapprovedEntries = false);
         IEnumerable<BlogPost> GetAll(string tag, bool includeUnapprovedEntries = false);

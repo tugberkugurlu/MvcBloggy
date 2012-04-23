@@ -34,7 +34,6 @@ namespace MvcBloggy.Web.Application {
             //repositories
             builder.RegisterType<BlogPostRepository>().As<IBlogPostRepository>().InstancePerLifetimeScope();
             builder.RegisterType<BlogPostCommentRepository>().As<IBlogPostCommentRepository>().InstancePerLifetimeScope();
-            builder.RegisterType<TagRepository>().As<ITagRepository>().InstancePerLifetimeScope();
             builder.RegisterType<DynamicPageRepository>().As<IDynamicPageRepository>().InstancePerLifetimeScope();
             builder.RegisterType<LanguageRepository>().As<ILanguageRepository>().InstancePerLifetimeScope();
             builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerLifetimeScope();
