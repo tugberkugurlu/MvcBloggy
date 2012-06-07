@@ -62,22 +62,22 @@
     <Compile Include="DataAccess\Infrastructure\ILanguageRepository.cs" />
     <Compile Include="DataAccess\Infrastructure\IUserRepository.cs" />
     <Compile Include="DataAccess\SqlServer\BlogPost.cs">
-      <DependentUpon>MvcBloggy.Model.tt</DependentUpon>
+      <DependentUpon>MvcBloggyContext.Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\SqlServer\BlogPostComment.cs">
-      <DependentUpon>MvcBloggy.Model.tt</DependentUpon>
+      <DependentUpon>MvcBloggyContext.Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\SqlServer\BlogPostCommentRepository.cs" />
     <Compile Include="DataAccess\SqlServer\BlogPostRepository.cs" />
     <Compile Include="DataAccess\SqlServer\BlogRoll.cs">
-      <DependentUpon>MvcBloggy.Model.tt</DependentUpon>
+      <DependentUpon>MvcBloggyContext.Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\SqlServer\DynamicPage.cs">
-      <DependentUpon>MvcBloggy.Model.tt</DependentUpon>
+      <DependentUpon>MvcBloggyContext.Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\SqlServer\DynamicPageRepository.cs" />
     <Compile Include="DataAccess\SqlServer\Language.cs">
-      <DependentUpon>MvcBloggy.Model.tt</DependentUpon>
+      <DependentUpon>MvcBloggyContext.Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\SqlServer\LanguageRepository.cs" />
     <Compile Include="DataAccess\SqlServer\Model\BlogPost.cs" />
@@ -85,50 +85,50 @@
     <Compile Include="DataAccess\SqlServer\Model\DynamicPage.cs" />
     <Compile Include="DataAccess\SqlServer\Model\Language.cs" />
     <Compile Include="DataAccess\SqlServer\Model\RestrictedPageName.cs" />
-    <Compile Include="DataAccess\SqlServer\MvcBloggy.Model.Context.cs">
+    <Compile Include="DataAccess\SqlServer\MvcBloggyContext.Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MvcBloggy.Model.Context.tt</DependentUpon>
+      <DependentUpon>MvcBloggyContext.Model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataAccess\SqlServer\MvcBloggy.Model.cs">
+    <Compile Include="DataAccess\SqlServer\MvcBloggyContext.Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MvcBloggy.Model.tt</DependentUpon>
+      <DependentUpon>MvcBloggyContext.Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataAccess\SqlServer\MvcBloggy.Model.Designer.cs">
+    <Compile Include="DataAccess\SqlServer\MvcBloggyContext.Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MvcBloggy.Model.edmx</DependentUpon>
+      <DependentUpon>MvcBloggyContext.Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\SqlServer\RestrictedPageName.cs">
-      <DependentUpon>MvcBloggy.Model.tt</DependentUpon>
+      <DependentUpon>MvcBloggyContext.Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\SqlServer\User.cs">
-      <DependentUpon>MvcBloggy.Model.tt</DependentUpon>
+      <DependentUpon>MvcBloggyContext.Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\SqlServer\UserRepository.cs" />
     <Compile Include="DataAccess\SqlServer\vw_LiveBlogPosts.cs">
-      <DependentUpon>MvcBloggy.Model.tt</DependentUpon>
+      <DependentUpon>MvcBloggyContext.Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="App.Config" />
-    <EntityDeploy Include="DataAccess\SqlServer\MvcBloggy.Model.edmx">
+    <EntityDeploy Include="DataAccess\SqlServer\MvcBloggyContext.Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MvcBloggy.Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>MvcBloggyContext.Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DataAccess\SqlServer\MvcBloggy.Model.Context.tt">
+    <None Include="App.Config" />
+    <None Include="DataAccess\SqlServer\MvcBloggyContext.Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MvcBloggy.Model.Context.cs</LastGenOutput>
+      <LastGenOutput>MvcBloggyContext.Model.Context.cs</LastGenOutput>
     </None>
-    <None Include="DataAccess\SqlServer\MvcBloggy.Model.edmx.diagram">
-      <DependentUpon>MvcBloggy.Model.edmx</DependentUpon>
+    <None Include="DataAccess\SqlServer\MvcBloggyContext.Model.edmx.diagram">
+      <DependentUpon>MvcBloggyContext.Model.edmx</DependentUpon>
     </None>
-    <None Include="DataAccess\SqlServer\MvcBloggy.Model.tt">
+    <None Include="DataAccess\SqlServer\MvcBloggyContext.Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MvcBloggy.Model.cs</LastGenOutput>
+      <LastGenOutput>MvcBloggyContext.Model.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

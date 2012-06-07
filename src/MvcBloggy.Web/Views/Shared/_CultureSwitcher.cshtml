@@ -17,7 +17,7 @@
 @foreach (var language in appLanguages) {
     routeValueDic["language"] = language;
     <a href="@Url.RouteUrl(routeValueDic)">
-        <img src="@Url.Content(string.Format("~/content/v2/icons/flags/{0}.png", language))" alt="@language" />
+        <img src="@Url.Content(string.Format("~/content/icons/flags/{0}.png", language))" alt="@language" />
     </a>
 }
 </div>

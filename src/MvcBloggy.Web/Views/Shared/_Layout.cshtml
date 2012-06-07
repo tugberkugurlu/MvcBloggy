@@ -12,8 +12,8 @@
     
     <meta name="author" content="@ConfigurationManager.AppSettings["WebSiteAuthor"]">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl(string.Format("~/themes/{0}/globalcss", ConfigurationManager.AppSettings["AppDefaultTheme"]))" rel="stylesheet" />
-    <script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/scripts/v2/modernizr")"></script>
+    @Styles.Render(string.Format("~/themes/{0}/globalcss", ConfigurationManager.AppSettings["AppDefaultTheme"]))
+    @Scripts.Render("~/assets/js/modernizr")
     <!--[if lt IE 9]>
     <script src="@Url.Content("~/scripts/respond/respond.min.js")"></script>
     <![endif]-->
@@ -51,11 +51,8 @@
             @Html.Partial("LayoutFooter")
         </footer>
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="scripts/jquery-1.7.1.min.js"><\/script>')</script>
-    <script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/scripts/v2/globaljs")"></script>
+    @Scripts.Render("~/assets/js/globaljs")
     @RenderSection("scripts", false)
-    @MvcMiniProfiler.MiniProfiler.RenderIncludes()
     @*<script>
       window._gaq = [['_setAccount', 'UAXXXXXXXX1'], ['_trackPageview'], ['_trackPageLoadTime']];
       Modernizr.load({

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 11
+# Visual Studio 2012
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MvcBloggy.SqlServer", "src\MvcBloggy.SqlServer\MvcBloggy.SqlServer.sqlproj", "{5633AE58-CADC-45B1-9340-A78109021690}"
 EndProject
 Global

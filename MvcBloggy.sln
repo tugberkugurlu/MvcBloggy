@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 11
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcBloggy.Web", "src\MvcBloggy.Web\MvcBloggy.Web.csproj", "{6FFD39A6-1F2D-4B6E-BDA7-DF542CE88409}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcBloggy.Data", "src\MvcBloggy.Data\MvcBloggy.Data.csproj", "{607536AC-76B2-400E-B147-6A9148B4F941}"
