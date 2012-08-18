@@ -13,13 +13,16 @@ namespace MvcBloggy.Web.Application.Mvc.Filters {
 
         public override void OnActionExecuted(ActionExecutedContext filterContext) {
 
-            var response = filterContext.HttpContext.Response;
+            if (!filterContext.HttpContext.Request.IsLocal) { 
 
-            //Temp fix. I am not sure what causes this but ContentType is coming as text/html
-            if (filterContext.HttpContext.Request.RawUrl != "/sitemap.xml") {
+                var response = filterContext.HttpContext.Response;
 
-                if (response.ContentType == "text/html" && response.Filter != null) {
-                    response.Filter = new HelperClass(response.Filter);
+                //Temp fix. I am not sure what causes this but ContentType is coming as text/html
+                if (filterContext.HttpContext.Request.RawUrl != "/sitemap.xml") {
+
+                    if (response.ContentType == "text/html" && response.Filter != null) {
+                        response.Filter = new HelperClass(response.Filter);
+                    }
                 }
             }
         }

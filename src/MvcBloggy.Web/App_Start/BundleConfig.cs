@@ -14,7 +14,7 @@ namespace MvcBloggy.Web {
             var appTheme = ConfigurationManager.AppSettings["AppDefaultTheme"];
 
             bundles.Add(new ScriptBundle("~/assets/js/globaljs").Include(
-                    "~/scripts/jquery-1.7.2.js",
+                    "~/scripts/jquery-1.8.0.js",
                     "~/scripts/jquery.validate.js",
                     "~/scripts/jquery.validate.unobtrusive.js",
                     "~/scripts/bootstrap.js",
