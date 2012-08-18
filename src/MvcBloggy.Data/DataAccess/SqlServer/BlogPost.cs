@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
 namespace MvcBloggy.Data.DataAccess.SqlServer
 {
+    using System;
+    using System.Collections.Generic;
+    
     public partial class BlogPost
     {
         public BlogPost()
@@ -35,5 +35,4 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
         public virtual ICollection<BlogPostComment> BlogPostComments { get; set; }
         public virtual Language Language { get; set; }
     }
-    
 }

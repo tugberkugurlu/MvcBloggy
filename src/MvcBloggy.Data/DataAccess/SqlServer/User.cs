@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
 namespace MvcBloggy.Data.DataAccess.SqlServer
 {
+    using System;
+    using System.Collections.Generic;
+    
     public partial class User
     {
         public int UserId { get; set; }
@@ -21,5 +21,4 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
         public string HashAlgorithm { get; set; }
         public bool IsApproved { get; set; }
     }
-    
 }

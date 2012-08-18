@@ -7,7 +7,7 @@ using MvcBloggy.Data.DataAccess.Infrastructure;
 
 namespace MvcBloggy.Data.DataAccess.SqlServer {
 
-    public class UserRepository : Repository<MvcBloggyContext, User>, IUserRepository {
+    public class UserRepository : Repository<MvcBloggyEntities, User>, IUserRepository {
 
         public User GetSingle(string userName) {
 

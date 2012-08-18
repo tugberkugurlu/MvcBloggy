@@ -7,7 +7,7 @@ using MvcBloggy.Data.DataAccess.Infrastructure;
 
 namespace MvcBloggy.Data.DataAccess.SqlServer {
 
-    public class DynamicPageRepository : Repository<MvcBloggyContext, DynamicPage>, IDynamicPageRepository {
+    public class DynamicPageRepository : Repository<MvcBloggyEntities, DynamicPage>, IDynamicPageRepository {
 
     }
 }

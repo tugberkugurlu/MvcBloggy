@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
 namespace MvcBloggy.Data.DataAccess.SqlServer
 {
+    using System;
+    using System.Collections.Generic;
+    
     public partial class Language
     {
         public Language()
@@ -35,5 +35,4 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
         public virtual ICollection<DynamicPage> DynamicPages { get; set; }
         public virtual ICollection<RestrictedPageName> RestrictedPageNames { get; set; }
     }
-    
 }

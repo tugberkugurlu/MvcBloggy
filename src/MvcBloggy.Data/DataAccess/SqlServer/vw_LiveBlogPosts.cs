@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
 namespace MvcBloggy.Data.DataAccess.SqlServer
 {
+    using System;
+    using System.Collections.Generic;
+    
     public partial class vw_LiveBlogPosts
     {
         public int BlogPostId { get; set; }
@@ -30,5 +30,4 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
         public string Culture { get; set; }
         public string CultureOne { get; set; }
     }
-    
 }

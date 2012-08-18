@@ -8,8 +8,8 @@ using MvcBloggy.Data.DataAccess.Infrastructure;
 
 namespace MvcBloggy.Data.DataAccess.SqlServer {
 
-    public class BlogPostCommentRepository : 
-        Repository<MvcBloggyContext, BlogPostComment>, IBlogPostCommentRepository {
+    public class BlogPostCommentRepository :
+        Repository<MvcBloggyEntities, BlogPostComment>, IBlogPostCommentRepository {
 
         public override IQueryable<BlogPostComment> GetAll() {
 

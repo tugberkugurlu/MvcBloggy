@@ -7,7 +7,7 @@ using MvcBloggy.Data.DataAccess.Infrastructure;
 
 namespace MvcBloggy.Data.DataAccess.SqlServer {
 
-    public class BlogPostRepository : Repository<MvcBloggyContext, BlogPost>, IBlogPostRepository {
+    public class BlogPostRepository : Repository<MvcBloggyEntities, BlogPost>, IBlogPostRepository {
 
         public override IQueryable<BlogPost> GetAll() {
 

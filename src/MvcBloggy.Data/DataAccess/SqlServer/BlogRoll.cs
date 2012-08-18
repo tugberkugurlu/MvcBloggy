@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
 namespace MvcBloggy.Data.DataAccess.SqlServer
 {
+    using System;
+    using System.Collections.Generic;
+    
     public partial class BlogRoll
     {
         public int BlogRollId { get; set; }
@@ -25,5 +25,4 @@ namespace MvcBloggy.Data.DataAccess.SqlServer
     
         public virtual Language Language { get; set; }
     }
-    
 }

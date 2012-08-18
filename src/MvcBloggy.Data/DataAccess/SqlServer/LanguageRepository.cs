@@ -7,7 +7,7 @@ using MvcBloggy.Data.DataAccess.Infrastructure;
 
 namespace MvcBloggy.Data.DataAccess.SqlServer {
 
-    public class LanguageRepository : Repository<MvcBloggyContext, Language>, ILanguageRepository {
+    public class LanguageRepository : Repository<MvcBloggyEntities, Language>, ILanguageRepository {
 
         public override IQueryable<Language> GetAll() {
 
