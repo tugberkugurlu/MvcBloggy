@@ -5,8 +5,6 @@ using System.Text;
 using System.Web.Mvc;
 using GenericRepository;
 using Moq;
-using MvcBloggy.Data.DataAccess.Infrastructure;
-using MvcBloggy.Data.DataAccess.SqlServer;
 using MvcBloggy.Web.Controllers;
 using Xunit;
 

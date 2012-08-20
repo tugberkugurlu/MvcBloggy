@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Moq;
-using MvcBloggy.Data.DataAccess.Infrastructure;
-using MvcBloggy.Data.DataAccess.SqlServer;
 using MvcBloggy.Web.Application.Services;
 using Xunit;
 
