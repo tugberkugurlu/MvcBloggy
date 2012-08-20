@@ -8,7 +8,6 @@
 		bp.Title,
 		bp.BriefInfo,
 		bp.Content,
-		bp.Tags,
 		bp.ImagePath,
 		dbo.UrlReplace(bp.Title) AS URLString,
 		bp.CreationIp,

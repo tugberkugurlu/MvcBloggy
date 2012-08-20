@@ -76,7 +76,6 @@
     <Build Include="Schema\Tables\RestrictedPageNames.sql" />
     <Build Include="Schema\Tables\Keys\UK_BlogPosts_LanguageId_Title.sql" />
     <Build Include="Schema\Tables\Keys\UK_DynamicPages_PageTitle.sql" />
-    <Build Include="Schema\Tables\Constraints\CC_DynamicPages_PageTitle.sql" />
     <Build Include="Schema\Tables\Constraints\FK_BlogPostComments_BlogPosts.sql" />
     <Build Include="Schema\Tables\Constraints\FK_BlogPosts_Languages.sql" />
     <Build Include="Schema\Tables\Constraints\FK_BlogRolls_Languages.sql" />
@@ -86,6 +85,16 @@
     <Build Include="Schema\Functions\Trim.sql" />
     <Build Include="Schema\Functions\UrlReplace.sql" />
     <Build Include="Schema\Views\vw_LiveBlogPosts.sql" />
+    <Build Include="Schema\Tables\BlogPostUrls.sql" />
+    <Build Include="Schema\Tables\Constraints\FK_BlogPostUrls_BlogPosts.sql" />
+    <Build Include="Schema\Tables\Tags.sql" />
+    <Build Include="Schema\Tables\Constraints\FK_Tags_Languages.sql" />
+    <Build Include="Schema\Tables\TagsForBlogPosts.sql" />
+    <Build Include="Schema\Tables\Constraints\FK_TagsForBlogPosts_Tags.sql" />
+    <Build Include="Schema\Tables\Constraints\FK_TagsForBlogPosts_BlogPosts.sql" />
+    <Build Include="Schema\Tables\TagsForDynamicPages.sql" />
+    <Build Include="Schema\Tables\Constraints\FK_TagsForDynamicPages_Tags.sql" />
+    <Build Include="Schema\Tables\Constraints\FK_TagsForDynamicPages_DynamicPages.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Post-Deployment\Script.PostDeployment.sql" />
