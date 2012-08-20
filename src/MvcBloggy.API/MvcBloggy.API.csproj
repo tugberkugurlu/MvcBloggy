@@ -83,6 +83,12 @@
     <Folder Include="Filters\" />
     <Folder Include="MessageHandlers\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcBloggy.Domain\MvcBloggy.Domain.csproj">
+      <Project>{c7bbe95d-f06c-4e45-a239-3b677ddf61b3}</Project>
+      <Name>MvcBloggy.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

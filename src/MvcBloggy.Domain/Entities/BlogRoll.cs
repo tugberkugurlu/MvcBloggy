@@ -12,7 +12,7 @@ namespace MvcBloggy.Domain.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class BlogRoll
+    public partial class BlogRoll : IEntity
     {
         public int Key { get; set; }
         public int LanguageKey { get; set; }

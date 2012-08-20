@@ -12,7 +12,7 @@ namespace MvcBloggy.Domain.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class BlogPost
+    public partial class BlogPost : IEntity
     {
         public BlogPost()
         {

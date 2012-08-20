@@ -12,7 +12,7 @@ namespace MvcBloggy.Domain.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class User : IEntity
     {
         public int Key { get; set; }
         public string Name { get; set; }

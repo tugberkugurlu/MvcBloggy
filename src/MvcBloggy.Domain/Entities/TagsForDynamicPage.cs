@@ -12,7 +12,7 @@ namespace MvcBloggy.Domain.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class TagsForDynamicPage
+    public partial class TagsForDynamicPage : IEntity
     {
         public int Key { get; set; }
         public int DynamicPageKey { get; set; }

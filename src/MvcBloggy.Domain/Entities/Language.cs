@@ -12,7 +12,7 @@ namespace MvcBloggy.Domain.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Language
+    public partial class Language : IEntity
     {
         public Language()
         {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MvcBloggy.Domain.Entities {
 
     public class EntityRepository<T> : IEntityRepository<T>
-        where T : class, new() {
+        where T : class, IEntity, new() {
 
         readonly DbContext _entities;
 
