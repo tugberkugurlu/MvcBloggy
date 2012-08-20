@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[DynamicPages] (
-	[DynamicPageId] INT IDENTITY NOT NULL,
-	[LanguageId] INT NOT NULL,
+	[Key] INT IDENTITY NOT NULL,
+	[LanguageKey] INT NOT NULL,
 	[Title] NVARCHAR(500) NOT NULL,
 	[BriefInfo] NVARCHAR(500) NOT NULL,
 	[Content] NVARCHAR(max) NULL,
@@ -9,5 +9,5 @@
 	[CreatedOn] DATETIMEOFFSET NOT NULL,
 	[LastUpdateIp] NVARCHAR(50) NULL,
 	[LastUpdatedOn] DATETIMEOFFSET NULL,
-	CONSTRAINT [PK_DynamicPages] PRIMARY KEY ([DynamicPageId])
+	CONSTRAINT [PK_DynamicPages] PRIMARY KEY ([Key])
 )

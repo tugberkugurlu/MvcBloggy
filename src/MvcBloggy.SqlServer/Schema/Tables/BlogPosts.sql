@@ -1,7 +1,8 @@
 ﻿CREATE TABLE [dbo].[BlogPosts] (
-	[BlogPostId] INT IDENTITY NOT NULL,
-	[LanguageId] INT NOT NULL,
-	[SecondaryId] INT NULL,
+	[Key] INT IDENTITY NOT NULL,
+	[LanguageKey] INT NOT NULL,
+	[SecondaryKey] INT NULL,
+	[BlogPostGuid] UNIQUEIDENTIFIER NOT NULL,
 	[Title] NVARCHAR(300) NOT NULL,
 	[BriefInfo] NVARCHAR(200) NULL,
 	[Content] NVARCHAR(MAX) NOT NULL,
@@ -11,5 +12,5 @@
 	[CreatedOn] DATETIMEOFFSET NOT NULL,
 	[LastUpdateIp] NVARCHAR(50) NULL,
 	[LastUpdatedOn] DATETIMEOFFSET NULL,
-    CONSTRAINT [PK_BlogPosts] PRIMARY KEY ([BlogPostId])
+    CONSTRAINT [PK_BlogPosts] PRIMARY KEY ([Key])
 );

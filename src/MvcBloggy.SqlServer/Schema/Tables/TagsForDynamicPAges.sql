@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[TagsForDynamicPages] (
-	[TagsForDynamicPageId] INT IDENTITY NOT NULL,
-	[DynamicPageId] INT NOT NULL,
-	[TagId] INT NOT NULL,
-	CONSTRAINT [PK_TagsForDynamicPages] PRIMARY KEY ([TagsForDynamicPageId])
+	[Key] INT IDENTITY NOT NULL,
+	[DynamicPageKey] INT NOT NULL,
+	[TagKey] INT NOT NULL,
+	CONSTRAINT [PK_TagsForDynamicPages] PRIMARY KEY ([Key])
 );

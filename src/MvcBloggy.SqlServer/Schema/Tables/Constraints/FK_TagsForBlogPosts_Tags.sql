@@ -1,7 +1,7 @@
 ﻿ALTER TABLE [dbo].[TagsForBlogPosts]
 	ADD CONSTRAINT [FK_TagsForBlogPosts_Tags] 
-	FOREIGN KEY([TagId])
-	REFERENCES [dbo].[Tags] ([TagId])
+	FOREIGN KEY([TagKey])
+	REFERENCES [dbo].[Tags] ([Key])
 	--NOTE: Introducing FOREIGN KEY constraint 'FK_TagsForBlogPosts_Tags' on table 'TagsForBlogPosts' 
 	--      may cause cycles or multiple cascade paths. Specify ON DELETE NO ACTION 
 	--      or ON UPDATE NO ACTION, or modify other FOREIGN KEY constraints.

@@ -1,7 +1,7 @@
 ﻿ALTER TABLE [dbo].[TagsForBlogPosts]
 	ADD CONSTRAINT [FK_TagsForBlogPosts_BlogPosts] 
-	FOREIGN KEY([BlogPostId])
-	REFERENCES [dbo].[BlogPosts] ([BlogPostId])
+	FOREIGN KEY([BlogPostKey])
+	REFERENCES [dbo].[BlogPosts] ([Key])
 	ON DELETE CASCADE
 GO
 

@@ -1,8 +1,8 @@
 ﻿
 CREATE TABLE [dbo].[RestrictedPageNames] (
-	[RestrictedPageNameId] INT IDENTITY NOT NULL,
-	[LanguageId] INT NOT NULL,
+	[Key] INT IDENTITY NOT NULL,
+	[LanguageKey] INT NOT NULL,
 	[Term] NVARCHAR(300) NOT NULL,
 	[CreatedOn] DATETIMEOFFSET NULL,
-	CONSTRAINT [PK_RestrictedPageNames] PRIMARY KEY ([RestrictedPageNameId])
+	CONSTRAINT [PK_RestrictedPageNames] PRIMARY KEY ([Key])
 );

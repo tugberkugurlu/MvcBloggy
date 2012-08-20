@@ -1,7 +1,7 @@
 ﻿ALTER TABLE [dbo].[BlogRolls]  
 	ADD CONSTRAINT [FK_BlogRolls_Languages] 
-	FOREIGN KEY([LanguageId])
-	REFERENCES [dbo].[Languages] ([LanguageId])
+	FOREIGN KEY([LanguageKey])
+	REFERENCES [dbo].[Languages] ([Key])
 	ON DELETE CASCADE
 GO
 

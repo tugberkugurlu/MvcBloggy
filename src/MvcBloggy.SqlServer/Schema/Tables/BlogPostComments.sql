@@ -1,11 +1,11 @@
 ﻿CREATE TABLE [dbo].[BlogPostComments] (
-	[BlogCommentId] INT IDENTITY NOT NULL,
-	[BlogPostId] INT NOT NULL,
+	[Key] INT IDENTITY NOT NULL,
+	[BlogPostKey] INT NOT NULL,
 	[BlogCommentGuid] UNIQUEIDENTIFIER NOT NULL,
-	[CommenterName] NVARCHAR(300) NOT NULL,
-	[CommenterEmail] NVARCHAR(300) NOT NULL,
-	[CommenterWebSite] NVARCHAR(300) NULL,
-	[CommenterAuthProvider] NVARCHAR(300) NULL,
+	[Name] NVARCHAR(300) NOT NULL,
+	[Email] NVARCHAR(300) NOT NULL,
+	[WebSite] NVARCHAR(300) NULL,
+	[AuthProvider] NVARCHAR(300) NULL,
 	[IsAuthor] BIT NOT NULL,
 	[Subject] NVARCHAR(300) NULL,
 	[Content] NVARCHAR(MAX) NULL,
@@ -14,5 +14,5 @@
 	[CreatedOn] DATETIMEOFFSET NOT NULL,
 	[LastUpdateIp] NVARCHAR(50) NULL,
 	[LastUpdatedOn] DATETIMEOFFSET NULL,
-	CONSTRAINT [PK_BlogPostComments] PRIMARY KEY ([BlogCommentId])
+	CONSTRAINT [PK_BlogPostComments] PRIMARY KEY ([Key])
 );

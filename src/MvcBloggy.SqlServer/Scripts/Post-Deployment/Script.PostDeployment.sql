@@ -14,16 +14,16 @@ VALUES('English', 'en-US', 'en', 1, 1, SYSDATETIMEOFFSET());
 INSERT INTO Languages (DisplayName, Culture, CultureOne, [Order], IsApproved, CreatedOn)
 VALUES('Türkçe', 'tr-TR', 'tr', 2, 1, SYSDATETIMEOFFSET());
 
-INSERT INTO RestrictedPageNames (LanguageId, Term, CreatedOn)
+INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
 VALUES(1, 'archive', SYSDATETIMEOFFSET());
-INSERT INTO RestrictedPageNames (LanguageId, Term, CreatedOn)
+INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
 VALUES(1, 'control', SYSDATETIMEOFFSET());
-INSERT INTO RestrictedPageNames (LanguageId, Term, CreatedOn)
+INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
 VALUES(1, 'contact', SYSDATETIMEOFFSET());
 
-INSERT INTO RestrictedPageNames (LanguageId, Term, CreatedOn)
+INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
 VALUES(2, 'archive', SYSDATETIMEOFFSET());
-INSERT INTO RestrictedPageNames (LanguageId, Term, CreatedOn)
+INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
 VALUES(2, 'control', SYSDATETIMEOFFSET());
-INSERT INTO RestrictedPageNames (LanguageId, Term, CreatedOn)
+INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
 VALUES(2, 'contact', SYSDATETIMEOFFSET());

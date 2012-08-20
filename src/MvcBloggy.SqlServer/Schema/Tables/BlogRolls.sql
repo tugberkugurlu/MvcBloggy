@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[BlogRolls] (
-	[BlogRollId] INT IDENTITY NOT NULL,
-	[LanguageId] INT NOT NULL,
+	[Key] INT IDENTITY NOT NULL,
+	[LanguageKey] INT NOT NULL,
 	[BlogName] NVARCHAR(300) NOT NULL,
 	[BlogAuthor] NVARCHAR(100) NULL,
 	[BlogUrl] NVARCHAR(300) NOT NULL,
@@ -11,5 +11,5 @@
 	[CreatedOn] DATETIMEOFFSET NOT NULL,
 	[LastUpdateIp] NVARCHAR(50) NULL,
 	[LastUpdatedOn] DATETIMEOFFSET NULL,
-	CONSTRAINT [PK_BlogRolls] PRIMARY KEY ([BlogRollId])
+	CONSTRAINT [PK_BlogRolls] PRIMARY KEY ([Key])
 );

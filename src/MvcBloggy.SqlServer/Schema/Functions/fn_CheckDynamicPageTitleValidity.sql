@@ -8,7 +8,7 @@ BEGIN
 	DECLARE @retrivedVal INT;
 
 	SELECT 
-		@retrivedVal = COUNT(rpn.RestrictedPageNameId) 
+		@retrivedVal = COUNT(rpn.[Key]) 
 	FROM dbo.RestrictedPageNames rpn
 	WHERE 
 		dbo.UrlReplace(rpn.Term) = dbo.UrlReplace(@input);

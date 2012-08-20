@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Users] (
-    [UserId] INT IDENTITY NOT NULL,
+    [Key] INT IDENTITY NOT NULL,
     [Name] NVARCHAR (50) NOT NULL,
     [Email] NVARCHAR (320) NOT NULL,
     [HashedPassword] NVARCHAR (MAX) NOT NULL,
@@ -9,5 +9,5 @@
 	[CreatedOn] DATETIMEOFFSET NOT NULL,
 	[LastUpdateIp] NVARCHAR(50) NULL,
 	[LastUpdatedOn] DATETIMEOFFSET NULL,
-    CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([UserId])
+    CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED ([Key])
 );

@@ -1,7 +1,7 @@
 ﻿ALTER TABLE [dbo].[Tags]  
 	ADD CONSTRAINT [FK_Tags_Languages] 
-	FOREIGN KEY([LanguageID])
-	REFERENCES [dbo].[Languages] ([LanguageID])
+	FOREIGN KEY([LanguageKey])
+	REFERENCES [dbo].[Languages] ([Key])
 	ON DELETE CASCADE
 GO
 

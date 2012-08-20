@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Languages] (
-	[LanguageId] INT IDENTITY NOT NULL,
+	[Key] INT IDENTITY NOT NULL,
 	[DisplayName] NVARCHAR (50) NULL,
 	[Culture] NVARCHAR (10) NOT NULL,
 	[CultureOne] NVARCHAR (10) NOT NULL,
@@ -9,5 +9,5 @@
 	[CreatedOn] DATETIMEOFFSET NOT NULL,
 	[LastUpdateIp] NVARCHAR(50) NULL,
 	[LastUpdatedOn] DATETIMEOFFSET NULL,
-	CONSTRAINT [PK_Languages] PRIMARY KEY ([LanguageId])
+	CONSTRAINT [PK_Languages] PRIMARY KEY ([Key])
 );
