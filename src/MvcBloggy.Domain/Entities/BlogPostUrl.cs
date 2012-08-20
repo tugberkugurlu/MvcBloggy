@@ -14,8 +14,8 @@ namespace MvcBloggy.Domain.Entities
     
     public partial class BlogPostUrl
     {
-        public int BlogPostUrlId { get; set; }
-        public int BlogPostId { get; set; }
+        public int Key { get; set; }
+        public int BlogPostKey { get; set; }
         public string UrlPortion { get; set; }
         public string CreationIp { get; set; }
         public System.DateTimeOffset CreatedOn { get; set; }

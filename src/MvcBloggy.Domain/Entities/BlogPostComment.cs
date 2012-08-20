@@ -14,13 +14,13 @@ namespace MvcBloggy.Domain.Entities
     
     public partial class BlogPostComment
     {
-        public int BlogCommentId { get; set; }
-        public int BlogPostId { get; set; }
+        public int Key { get; set; }
+        public int BlogPostKey { get; set; }
         public System.Guid BlogCommentGuid { get; set; }
-        public string CommenterName { get; set; }
-        public string CommenterEmail { get; set; }
-        public string CommenterWebSite { get; set; }
-        public string CommenterAuthProvider { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string WebSite { get; set; }
+        public string AuthProvider { get; set; }
         public bool IsAuthor { get; set; }
         public string Subject { get; set; }
         public string Content { get; set; }

@@ -36,6 +36,5 @@ namespace MvcBloggy.Domain.Entities
         public DbSet<TagsForBlogPost> TagsForBlogPosts { get; set; }
         public DbSet<TagsForDynamicPage> TagsForDynamicPages { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<vw_LiveBlogPosts> vw_LiveBlogPosts { get; set; }
     }
 }

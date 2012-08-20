@@ -19,8 +19,8 @@ namespace MvcBloggy.Domain.Entities
             this.TagsForDynamicPages = new HashSet<TagsForDynamicPage>();
         }
     
-        public int DynamicPageId { get; set; }
-        public int LanguageId { get; set; }
+        public int Key { get; set; }
+        public int LanguageKey { get; set; }
         public string Title { get; set; }
         public string BriefInfo { get; set; }
         public string Content { get; set; }

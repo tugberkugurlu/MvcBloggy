@@ -14,8 +14,8 @@ namespace MvcBloggy.Domain.Entities
     
     public partial class BlogRoll
     {
-        public int BlogRollId { get; set; }
-        public int LanguageId { get; set; }
+        public int Key { get; set; }
+        public int LanguageKey { get; set; }
         public string BlogName { get; set; }
         public string BlogAuthor { get; set; }
         public string BlogUrl { get; set; }

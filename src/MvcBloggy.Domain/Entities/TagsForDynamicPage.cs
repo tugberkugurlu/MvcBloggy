@@ -14,9 +14,9 @@ namespace MvcBloggy.Domain.Entities
     
     public partial class TagsForDynamicPage
     {
-        public int TagsForDynamicPageId { get; set; }
-        public int DynamicPageId { get; set; }
-        public int TagId { get; set; }
+        public int Key { get; set; }
+        public int DynamicPageKey { get; set; }
+        public int TagKey { get; set; }
     
         public virtual DynamicPage DynamicPage { get; set; }
         public virtual Tag Tag { get; set; }

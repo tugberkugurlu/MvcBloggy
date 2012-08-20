@@ -14,9 +14,9 @@ namespace MvcBloggy.Domain.Entities
     
     public partial class TagsForBlogPost
     {
-        public int TagsForBlogPostId { get; set; }
-        public int BlogPostId { get; set; }
-        public int TagId { get; set; }
+        public int Key { get; set; }
+        public int BlogPostKey { get; set; }
+        public int TagKey { get; set; }
     
         public virtual BlogPost BlogPost { get; set; }
         public virtual Tag Tag { get; set; }

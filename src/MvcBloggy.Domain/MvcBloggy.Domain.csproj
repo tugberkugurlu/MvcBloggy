@@ -100,9 +100,6 @@
     <Compile Include="Entities\User.cs">
       <DependentUpon>MvcBloggyEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\vw_LiveBlogPosts.cs">
-      <DependentUpon>MvcBloggyEntities.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
