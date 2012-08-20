@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using CookComputing.XmlRpc;
-using MvcBloggy.Data.DataAccess.Infrastructure;
 using MvcBloggy.Web.Application.Services;
 
 namespace MvcBloggy.Web.Application {
@@ -11,14 +10,11 @@ namespace MvcBloggy.Web.Application {
     public class MetaWeblog : XmlRpcService, IMetaWeblog {
 
         private readonly IAuthorizationService _authorizationService;
-        private readonly IBlogPostRepository _blogPostRepo;
         private readonly string language;
 
-        public MetaWeblog(IAuthorizationService authorizationService, 
-            IBlogPostRepository blogPostRepo) {
+        public MetaWeblog(IAuthorizationService authorizationService) {
 
             _authorizationService = authorizationService;
-            _blogPostRepo = blogPostRepo;
             
             language = HttpContext.Current.Request.RequestContext.RouteData.Values["language"].ToString();
         }

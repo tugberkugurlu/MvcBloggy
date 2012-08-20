@@ -17,17 +17,17 @@ namespace MvcBloggy.Controllers.Tests {
         //home page (DefaultController Index method) should list the latest 5 posts
         //the pagination should be implemented on home page with only next and previous
 
-        private IBlogPostRepository getBlogPostRepo() {
+        //private IBlogPostRepository getBlogPostRepo() {
 
-            var blogPostRepoMock = new Mock<IBlogPostRepository>();
+        //    var blogPostRepoMock = new Mock<IBlogPostRepository>();
 
-            return blogPostRepoMock.Object;
-        }
+        //    return blogPostRepoMock.Object;
+        //}
 
         [Fact]
         public void default_controller_index_method_should_return_an_instance_of_viewresult() {
 
-            DefaultController controller = new DefaultController(getBlogPostRepo());
+            DefaultController controller = new DefaultController();
 
             var result = controller.Index("en");
             

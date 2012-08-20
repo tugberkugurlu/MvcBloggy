@@ -5,8 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
-using MvcBloggy.Data.DataAccess.Infrastructure;
-using MvcBloggy.Data.DataAccess.SqlServer;
 using MvcBloggy.Web;
 using MvcBloggy.Web.Application.Services;
 
@@ -26,17 +24,10 @@ namespace MvcBloggy.Web.Application {
 
             //services
             builder.RegisterType<FormsAuthenticationService>().As<IFormsAuthenticationService>().SingleInstance();
-            builder.RegisterType<AuthorizationService>()
-                .As<IAuthorizationService>()
-                .UsingConstructor(typeof(IUserRepository))
-                .InstancePerLifetimeScope();
-
-            //repositories
-            builder.RegisterType<BlogPostRepository>().As<IBlogPostRepository>().InstancePerLifetimeScope();
-            builder.RegisterType<BlogPostCommentRepository>().As<IBlogPostCommentRepository>().InstancePerLifetimeScope();
-            builder.RegisterType<DynamicPageRepository>().As<IDynamicPageRepository>().InstancePerLifetimeScope();
-            builder.RegisterType<LanguageRepository>().As<ILanguageRepository>().InstancePerLifetimeScope();
-            builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerLifetimeScope();
+            //builder.RegisterType<AuthorizationService>()
+            //    .As<IAuthorizationService>()
+            //    .UsingConstructor(typeof(IUserRepository))
+            //    .InstancePerLifetimeScope();
 
             //core
             builder.RegisterType<MetaWeblog>().As<IMetaWeblog>().InstancePerLifetimeScope();
