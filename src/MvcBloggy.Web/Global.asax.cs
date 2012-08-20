@@ -9,6 +9,7 @@ using System.Web.Optimization;
 using MvcBloggy.Web.Application.Mvc;
 using MvcBloggy.Web.Application;
 using MvcBloggy.Web.Application.Utility;
+using System.Web.Http;
 
 namespace MvcBloggy.Web {
 
@@ -24,6 +25,12 @@ namespace MvcBloggy.Web {
             ControllerBuilder.Current.SetControllerFactory(new LocalizedControllerFactory());
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new CSRazorViewEngine());
+
+            //WebAPIConfig
+            var config = GlobalConfiguration.Configuration;
+            MvcBloggy.API.Config.RouteConfig.RegisterRoutes(config.Routes);
+            MvcBloggy.API.Config.WebAPIConfig.Configure(config);
+            MvcBloggy.API.Config.AutofacWebAPI.Initialize(config);
         }
     }
 }
