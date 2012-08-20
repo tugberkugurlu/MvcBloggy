@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1a55de52b47b4aa78e408516d9aadceb" Name="Diagram1">
+        <EntityTypeShape EntityType="MvcBloggyModel.BlogPostComment" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBloggyModel.BlogPost" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBloggyModel.BlogPostUrl" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBloggyModel.BlogRoll" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBloggyModel.DynamicPage" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBloggyModel.Language" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBloggyModel.RestrictedPageName" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBloggyModel.Tag" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBloggyModel.TagsForBlogPost" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBloggyModel.TagsForDynamicPage" Width="1.5" PointX="5.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBloggyModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcBloggyModel.vw_LiveBlogPosts" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MvcBloggyModel.FK_BlogPostComments_BlogPosts" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcBloggyModel.FK_BlogPosts_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcBloggyModel.FK_BlogPostUrls_BlogPosts" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcBloggyModel.FK_TagsForBlogPosts_BlogPosts" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcBloggyModel.FK_BlogRolls_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcBloggyModel.FK_DynamicPages_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcBloggyModel.FK_TagsForDynamicPages_DynamicPages" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcBloggyModel.FK_RestrictedPageNames_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcBloggyModel.FK_Tags_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcBloggyModel.FK_TagsForBlogPosts_Tags" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcBloggyModel.FK_TagsForDynamicPages_Tags" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
