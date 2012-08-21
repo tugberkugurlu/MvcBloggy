@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Integration.WebApi;
 using MvcBloggy.Domain.Entities;
+using MvcBloggy.Domain.Services;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -54,6 +55,10 @@ namespace MvcBloggy.API.Config {
                 .As<IEntityRepository<User>>().InstancePerApiRequest();
 
             //Services
+            builder.RegisterType<CryptoService>()
+                .As<ICryptoService>().InstancePerApiRequest();
+            builder.RegisterType<MembershipService>()
+                .As<IMembershipService>().InstancePerApiRequest();
 
             return builder.Build();
         }

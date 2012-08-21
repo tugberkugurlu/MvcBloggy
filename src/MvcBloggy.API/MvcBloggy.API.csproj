@@ -79,6 +79,7 @@
     <Compile Include="Config\AutofacWebAPI.cs" />
     <Compile Include="Config\RouteConfig.cs" />
     <Compile Include="Config\WebAPIConfig.cs" />
+    <Compile Include="MessageHandlers\MvcBloggyBasicAuthHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -88,7 +89,6 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Filters\" />
-    <Folder Include="MessageHandlers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvcBloggy.Domain\MvcBloggy.Domain.csproj">
