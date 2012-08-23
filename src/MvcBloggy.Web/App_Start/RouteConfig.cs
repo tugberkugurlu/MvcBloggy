@@ -14,6 +14,12 @@ namespace MvcBloggy.Web {
 
         public static void RegisterRoutes(RouteCollection routes) {
 
+            routes.IgnoreRoute("content/{*pathInfo}");
+            routes.IgnoreRoute("scripts/{*pathInfo}");
+            routes.IgnoreRoute("themes/{*pathInfo}");
+            routes.IgnoreRoute("{*allico}", new { allico = @".*\.ico(/.*)?" });
+
+            routes.IgnoreRoute("{file}.txt");
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             //http://www.cookcomputing.com/blog/archives/xml-rpc-and-asp-net-mvc

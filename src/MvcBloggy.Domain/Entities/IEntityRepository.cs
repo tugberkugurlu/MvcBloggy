@@ -12,9 +12,9 @@ namespace MvcBloggy.Domain.Entities {
         IQueryable<T> AllIncluding(params Expression<Func<T, object>>[] includeProperties);
         IQueryable<T> All { get; }
         IQueryable<T> GetAll();
-        IQueryable<T> FindBy(Expression<Func<T, bool>> predicate);
         PaginatedList<T> Paginate(int pageIndex, int pageSize);
-        PaginatedList<T> Paginate(Expression<Func<T, bool>> predicate, int pageIndex, int pageSize);
+        PaginatedList<T> Paginate(Expression<Func<T, object>> keySelector, int pageIndex, int pageSize);
+        PaginatedList<T> Paginate(Expression<Func<T, bool>> predicate, Expression<Func<T, object>> keySelector, int pageIndex, int pageSize);
         void Add(T entity);
         void Delete(T entity);
         void Edit(T entity);

@@ -1,7 +1,11 @@
-﻿@model List<MvcBloggy.Data.DataAccess.SqlServer.BlogPost>
+﻿@model IEnumerable<BlogPostDto>
 @{
     ViewBag.Title = "Index";
 }
 <h2>Index</h2>
 
-@Model.Count()
+<ul>
+@foreach (var item in Model) {
+    <li>@item.Title</li>
+}
+</ul>

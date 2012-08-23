@@ -102,7 +102,9 @@
       <DependentUpon>MvcBloggyEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BlogService.cs" />
     <Compile Include="Services\CryptoService.cs" />
+    <Compile Include="Services\IBlogService.cs" />
     <Compile Include="Services\ICryptoService.cs" />
     <Compile Include="Services\IMembershipService.cs" />
     <Compile Include="Services\MembershipService.cs" />

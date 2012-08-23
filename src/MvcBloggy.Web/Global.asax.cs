@@ -17,6 +17,12 @@ namespace MvcBloggy.Web {
 
         protected void Application_Start() {
 
+            //WebAPIConfig
+            var config = GlobalConfiguration.Configuration;
+            MvcBloggy.API.Config.AutofacWebAPI.Initialize(config);
+            MvcBloggy.API.Config.RouteConfig.RegisterRoutes(config.Routes);
+            MvcBloggy.API.Config.WebAPIConfig.Configure(config);
+
             AreaRegistration.RegisterAllAreas();
             AutofacMVC3.Initialize();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -25,12 +31,6 @@ namespace MvcBloggy.Web {
             ControllerBuilder.Current.SetControllerFactory(new LocalizedControllerFactory());
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new CSRazorViewEngine());
-
-            //WebAPIConfig
-            var config = GlobalConfiguration.Configuration;
-            MvcBloggy.API.Config.RouteConfig.RegisterRoutes(config.Routes);
-            MvcBloggy.API.Config.WebAPIConfig.Configure(config);
-            MvcBloggy.API.Config.AutofacWebAPI.Initialize(config);
         }
     }
 }

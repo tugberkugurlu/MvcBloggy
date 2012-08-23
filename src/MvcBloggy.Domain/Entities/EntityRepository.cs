@@ -47,19 +47,31 @@ namespace MvcBloggy.Domain.Entities {
             return _entities.Set<T>().Where(predicate);
         }
 
-        public virtual PaginatedList<T> Paginate(int pageIndex, int pageSize) {
+        public PaginatedList<T> Paginate(int pageIndex, int pageSize) {
 
             return Paginate(null, pageIndex, pageSize);
         }
 
+        public PaginatedList<T> Paginate(Expression<Func<T, object>> keySelector, int pageIndex, int pageSize) {
+
+            return Paginate(null, keySelector, pageIndex, pageSize);
+        }
+
         public virtual PaginatedList<T> Paginate(
-            Expression<Func<T, bool>> predicate, int pageIndex, int pageSize) {
+            Expression<Func<T, bool>> predicate, 
+            Expression<Func<T, object>> keySelector,
+            int pageIndex, int pageSize) {
 
-            IQueryable<T> query = (predicate == null) ?
-                _entities.Set<T>().AsQueryable() :
-                _entities.Set<T>().Where(predicate).AsQueryable();
+            IQueryable<T> query = _entities.Set<T>()
+                .OrderBy(keySelector != null ? keySelector : x => x.Key);
 
-            return new PaginatedList<T>(query, pageIndex, pageSize);
+            query = (predicate == null) ?
+                query : query.Where(predicate);
+
+            query = query.Skip((pageIndex - 1)* pageSize).Take(pageSize);
+
+            var totalCount = _entities.Set<T>().Count();
+            return new PaginatedList<T>(pageIndex, pageSize, totalCount, query);
         }
 
         public virtual void Add(T entity) {
@@ -73,7 +85,7 @@ namespace MvcBloggy.Domain.Entities {
         }
 
         public virtual void Edit(T entity) {
-
+            
             _entities.Entry(entity).State = System.Data.EntityState.Modified;
         }
 

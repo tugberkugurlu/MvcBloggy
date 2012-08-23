@@ -39,7 +39,7 @@ namespace MvcBloggy.Domain.Services {
             var existingUser = _userRepository.GetAll().Any(
                 x => x.Name == username);
 
-            if (existingUser != null) {
+            if (!existingUser) {
                 return false;
             }
 

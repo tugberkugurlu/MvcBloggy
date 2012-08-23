@@ -1,10 +1,12 @@
-﻿using System;
+﻿using MvcBloggy.API.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Formatting;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Validation.Providers;
 using WebAPIDoodle.Http;
 
 namespace MvcBloggy.API.Config {
@@ -12,6 +14,8 @@ namespace MvcBloggy.API.Config {
     public static class WebAPIConfig {
 
         public static void Configure(HttpConfiguration config) {
+
+            config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Never;
 
             //Message Handlers
             config.MessageHandlers.Add(new RemoveServerHeaderMessageHandler());
@@ -23,6 +27,9 @@ namespace MvcBloggy.API.Config {
             //Filters
 
             //Default Services
+            config.Services.RemoveAll(
+                typeof(System.Web.Http.Validation.ModelValidatorProvider), 
+                v => v is InvalidModelValidatorProvider);
 
             // From DefaultContentNegotiator class:
             // If ExcludeMatchOnTypeOnly is true then we don't match on type only which means

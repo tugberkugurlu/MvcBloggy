@@ -55,10 +55,10 @@
       <HintPath>..\..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Autofac">
-      <HintPath>..\..\packages\Autofac.2.6.1.841\lib\NET40\Autofac.dll</HintPath>
+      <HintPath>..\..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Autofac.Configuration">
-      <HintPath>..\..\packages\Autofac.2.6.1.841\lib\NET40\Autofac.Configuration.dll</HintPath>
+      <HintPath>..\..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Autofac.Integration.Mvc">
       <HintPath>..\..\packages\Autofac.Mvc3.2.6.1.841\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
@@ -145,7 +145,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Common\CommonConstants.cs">
+      <Link>Common\CommonConstants.cs</Link>
+    </Compile>
     <Compile Include="Application\AutofacMVC3.cs" />
+    <Compile Include="Application\Http\BlogHttpClient.cs" />
+    <Compile Include="Application\Http\IBlogHttpClient.cs" />
     <Compile Include="Application\MetaWeblog\MetaWeblogRouteHandler.cs" />
     <Compile Include="Application\Mvc\Filters\RemoveWhitespacesAttribute.cs" />
     <Compile Include="Application\Application.cs" />
@@ -181,6 +186,8 @@
     <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
+    <Compile Include="Common\ICloneableExtensions.cs" />
+    <Compile Include="Common\MediaTypeConstants.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\MetaWeblogController.cs" />
     <Compile Include="Global.asax.cs">
@@ -268,6 +275,7 @@
     <Content Include="Areas\Admin\Views\Auth\LogOn.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Application\ViewModels\" />
     <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -276,6 +284,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MvcBloggy.API.Model\MvcBloggy.API.Model.csproj">
+      <Project>{491afcad-7716-4dcc-99f1-cad35646bd19}</Project>
+      <Name>MvcBloggy.API.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MvcBloggy.API\MvcBloggy.API.csproj">
       <Project>{4929e98c-0616-42af-8aae-c83e60f4b8db}</Project>
       <Name>MvcBloggy.API</Name>
