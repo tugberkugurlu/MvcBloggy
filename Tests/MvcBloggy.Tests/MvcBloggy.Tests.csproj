@@ -107,6 +107,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\MvcBloggy.API.Model\MvcBloggy.API.Model.csproj">
+      <Project>{491afcad-7716-4dcc-99f1-cad35646bd19}</Project>
+      <Name>MvcBloggy.API.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\MvcBloggy.Web\MvcBloggy.Web.csproj">
       <Project>{6ffd39a6-1f2d-4b6e-bda7-df542ce88409}</Project>
       <Name>MvcBloggy.Web</Name>

@@ -149,9 +149,12 @@
       <Link>Common\CommonConstants.cs</Link>
     </Compile>
     <Compile Include="Application\AutofacMVC3.cs" />
+    <Compile Include="Application\Http\BlogHttpResponseMessage%271.cs" />
+    <Compile Include="Application\Http\BlogHttpResponseMessage.cs" />
+    <Compile Include="Application\Http\QueryStringCollection.cs" />
     <Compile Include="App_Code\HelperPage.cs" />
-    <Compile Include="Application\Services\BlogHttpClient.cs" />
-    <Compile Include="Application\Services\IBlogHttpClient.cs" />
+    <Compile Include="Application\Http\BlogHttpClient.cs" />
+    <Compile Include="Application\Http\IBlogHttpClient.cs" />
     <Compile Include="Application\MetaWeblogItems\MetaWeblogRouteHandler.cs" />
     <Compile Include="Application\Mvc\Filters\RemoveWhitespacesAttribute.cs" />
     <Compile Include="Application\Application.cs" />
@@ -191,6 +194,7 @@
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Common\ICloneableExtensions.cs" />
+    <Compile Include="Common\IEnumerableExtensions.cs" />
     <Compile Include="Common\MediaTypeConstants.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\MetaWeblogController.cs" />

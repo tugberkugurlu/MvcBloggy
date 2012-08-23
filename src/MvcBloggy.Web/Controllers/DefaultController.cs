@@ -1,4 +1,6 @@
-﻿using MvcBloggy.Web.Application.Services;
+﻿using MvcBloggy.API.Model.Dtos;
+using MvcBloggy.Web.Application.Http;
+using MvcBloggy.Web.Application.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +13,9 @@ namespace MvcBloggy.Web.Controllers {
     public class DefaultController : Controller {
 
         private const int pageSize = 10;
-        private readonly IBlogHttpClient _httpClient;
+        private readonly IBlogHttpClient<BlogPostDto> _httpClient;
 
-        public DefaultController(IBlogHttpClient httpClient) {
+        public DefaultController(IBlogHttpClient<BlogPostDto> httpClient) {
 
             _httpClient = httpClient;
         }
@@ -22,7 +24,9 @@ namespace MvcBloggy.Web.Controllers {
 
             if (page <= 0) { page = 1; }
 
-            var blogPosts = await _httpClient.GetBlogPosts(language, page, pageSize);
+            var blogPosts = await _httpClient.GetPaginatedAsync(
+                "blogposts", new { lang = language, page = page, take = pageSize });
+
             return View(blogPosts);
         }
     }

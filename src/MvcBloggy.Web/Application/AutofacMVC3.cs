@@ -8,6 +8,8 @@ using Autofac.Integration.Mvc;
 using MvcBloggy.Web;
 using MvcBloggy.Web.Application.Services;
 using MvcBloggy.Web.Application.MetaWeblogItems;
+using MvcBloggy.Web.Application.Http;
+using MvcBloggy.API.Model.Dtos;
 
 namespace MvcBloggy.Web.Application {
 
@@ -30,6 +32,9 @@ namespace MvcBloggy.Web.Application {
 
             //core
             builder.RegisterType<MetaWeblog>().As<IMetaWeblog>().InstancePerLifetimeScope();
+
+            //httpClient
+            builder.RegisterType<BlogHttpClient<BlogPostDto>>().As<IBlogHttpClient<BlogPostDto>>();
 
             return builder.Build();
         }
