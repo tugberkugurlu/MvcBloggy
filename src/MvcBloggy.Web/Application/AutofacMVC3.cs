@@ -7,6 +7,7 @@ using Autofac;
 using Autofac.Integration.Mvc;
 using MvcBloggy.Web;
 using MvcBloggy.Web.Application.Services;
+using MvcBloggy.Web.Application.MetaWeblogItems;
 
 namespace MvcBloggy.Web.Application {
 
@@ -23,17 +24,14 @@ namespace MvcBloggy.Web.Application {
             builder.RegisterControllers(typeof(MvcApplication).Assembly).PropertiesAutowired();
 
             //services
-            builder.RegisterType<FormsAuthenticationService>().As<IFormsAuthenticationService>().SingleInstance();
-            //builder.RegisterType<AuthorizationService>()
-            //    .As<IAuthorizationService>()
-            //    .UsingConstructor(typeof(IUserRepository))
-            //    .InstancePerLifetimeScope();
+            builder.RegisterType<ApplicationSettings>().As<IApplicationSettings>().InstancePerHttpRequest().SingleInstance();
+            builder.RegisterType<FormsAuthenticationService>().As<IFormsAuthenticationService>().InstancePerHttpRequest();
+            builder.RegisterType<BlogHttpClient>().As<IBlogHttpClient>();
 
             //core
             builder.RegisterType<MetaWeblog>().As<IMetaWeblog>().InstancePerLifetimeScope();
 
-            return
-                builder.Build();
+            return builder.Build();
         }
     }
 }

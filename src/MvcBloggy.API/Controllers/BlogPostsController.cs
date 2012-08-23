@@ -27,17 +27,20 @@ namespace MvcBloggy.API.Controllers {
             _blogService = blogService;
         }
 
-        public PaginatedDto<BlogPostDto> GetBlogPosts(int page, int take) {
+        public PaginatedDto<BlogPostDto> GetBlogPosts(string lang, int page, int take) {
 
-            if (page <= 0) {
-                throw new ArgumentOutOfRangeException("page");
+            if (page <= 0) { page = 1; }
+            if (take <= 0) { take = 1; }
+
+            if (string.IsNullOrEmpty(lang)) {
+                ModelState.AddModelError("lang", "lang parameter cannot be null or empty");
+                Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
 
-            if (take <= 0) {
-                throw new ArgumentOutOfRangeException("take");
-            }
-
-            var blogPosts = _blogPostRepository.Paginate(x => x.Title, page, take);
+            var blogPosts = _blogPostRepository.Paginate(page, take, 
+                x => x.CreatedOn, 
+                x => x.Language.CultureOne == lang,
+                x => x.Language);
 
             return new PaginatedDto<BlogPostDto> { 
                 PageIndex = blogPosts.PageIndex,

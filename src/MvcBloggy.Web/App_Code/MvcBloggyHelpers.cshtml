@@ -1,0 +1,33 @@
+﻿@using MvcBloggy.API.Model.Dtos;
+@helper Pager(PaginatedDto<BlogPostDto> paginatedDto) {
+    
+    <ul class="pagination">
+        @if(paginatedDto.HasPreviousPage) { 
+            <li>
+                <a href="#">Previous</a>
+            </li>
+        }
+
+        @if (paginatedDto.TotalPageCount >= 2) {
+            int totalPageNumber = 0;
+            for (int i = 1; i <= paginatedDto.TotalPageCount; i++) {
+                if (paginatedDto.PageIndex == i) { 
+                    <li class="active">
+                        <a href="#">@i</a>
+                    </li>
+                } else { 
+                    <li>
+                        <a href="#">@i</a>
+                    </li>
+                }
+                totalPageNumber++;
+            }
+        }
+
+        @if(paginatedDto.HasNextPage) { 
+            <li>
+                <a href="#">Next</a>
+            </li>
+        }
+    </ul>
+}

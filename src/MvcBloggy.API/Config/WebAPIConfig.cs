@@ -15,7 +15,7 @@ namespace MvcBloggy.API.Config {
 
         public static void Configure(HttpConfiguration config) {
 
-            config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Never;
+            config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.LocalOnly;
 
             //Message Handlers
             config.MessageHandlers.Add(new RemoveServerHeaderMessageHandler());

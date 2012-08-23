@@ -7,25 +7,20 @@ using GenericRepository;
 using Moq;
 using MvcBloggy.Web.Controllers;
 using Xunit;
+using MvcBloggy.Web.Application.Services;
 
-namespace MvcBloggy.Controllers.Tests {
+namespace MvcBloggy.Tests.Controllers {
 
     public class DefaultControllerFacts {
 
         //home page (DefaultController Index method) should list the latest 5 posts
         //the pagination should be implemented on home page with only next and previous
 
-        //private IBlogPostRepository getBlogPostRepo() {
-
-        //    var blogPostRepoMock = new Mock<IBlogPostRepository>();
-
-        //    return blogPostRepoMock.Object;
-        //}
-
         [Fact]
         public void default_controller_index_method_should_return_an_instance_of_viewresult() {
 
-            DefaultController controller = new DefaultController();
+            var blogHttpClient = new Mock<IBlogHttpClient>();
+            DefaultController controller = new DefaultController(blogHttpClient.Object);
 
             var result = controller.Index("en");
             

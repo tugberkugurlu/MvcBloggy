@@ -1,4 +1,4 @@
-﻿using MvcBloggy.Web.Application.Http;
+﻿using MvcBloggy.Web.Application.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,18 +11,19 @@ namespace MvcBloggy.Web.Controllers {
     public class DefaultController : Controller {
 
         private const int pageSize = 10;
+        private readonly IBlogHttpClient _httpClient;
+
+        public DefaultController(IBlogHttpClient httpClient) {
+
+            _httpClient = httpClient;
+        }
 
         public async Task<ActionResult> Index(string language, int page = 1) {
 
-            if (page <= 0) {
-                page = 1;
-            }
+            if (page <= 0) { page = 1; }
 
-            using (BlogHttpClient httpClient = new BlogHttpClient()) {
-
-                var blogPosts = await httpClient.GetBlogPosts(page, pageSize);
-                return View(blogPosts);
-            }
+            var blogPosts = await _httpClient.GetBlogPosts(language, page, pageSize);
+            return View(blogPosts);
         }
     }
 }

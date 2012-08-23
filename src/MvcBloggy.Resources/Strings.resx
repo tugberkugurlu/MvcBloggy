@@ -132,4 +132,7 @@
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="NoBlogPostsFound" xml:space="preserve">
+    <value>Oh snap! We couldn't find any blog posts :(</value>
+  </data>
 </root>

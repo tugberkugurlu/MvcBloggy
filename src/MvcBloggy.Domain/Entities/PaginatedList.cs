@@ -33,7 +33,7 @@ namespace MvcBloggy.Domain.Entities {
         public bool HasNextPage {
 
             get {
-                return (PageIndex + 1 < TotalPageCount);
+                return (PageIndex < TotalPageCount);
             }
         }
     }

@@ -47,30 +47,26 @@ namespace MvcBloggy.Domain.Entities {
             return _entities.Set<T>().Where(predicate);
         }
 
-        public PaginatedList<T> Paginate(int pageIndex, int pageSize) {
+        public virtual PaginatedList<T> Paginate<TKey>(
+            int pageIndex, int pageSize, 
+            Expression<Func<T, TKey>> keySelector) {
 
-            return Paginate(null, pageIndex, pageSize);
+            return Paginate(pageIndex, pageSize, keySelector, null);
         }
 
-        public PaginatedList<T> Paginate(Expression<Func<T, object>> keySelector, int pageIndex, int pageSize) {
+        public virtual PaginatedList<T> Paginate<TKey>(
+            int pageIndex, int pageSize,
+            Expression<Func<T, TKey>> keySelector,
+            Expression<Func<T, bool>> predicate,
+            params Expression<Func<T, object>>[] includeProperties) {
 
-            return Paginate(null, keySelector, pageIndex, pageSize);
-        }
+            IQueryable<T> query = AllIncluding(includeProperties).OrderBy(keySelector);
+            query = (predicate == null) ? query : query.Where(predicate);
 
-        public virtual PaginatedList<T> Paginate(
-            Expression<Func<T, bool>> predicate, 
-            Expression<Func<T, object>> keySelector,
-            int pageIndex, int pageSize) {
-
-            IQueryable<T> query = _entities.Set<T>()
-                .OrderBy(keySelector != null ? keySelector : x => x.Key);
-
-            query = (predicate == null) ?
-                query : query.Where(predicate);
-
+            var baseQuery = query;
+            
             query = query.Skip((pageIndex - 1)* pageSize).Take(pageSize);
-
-            var totalCount = _entities.Set<T>().Count();
+            var totalCount = baseQuery.Count();
             return new PaginatedList<T>(pageIndex, pageSize, totalCount, query);
         }
 

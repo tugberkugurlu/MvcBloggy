@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using MvcBloggy.Web.Application.Mvc;
 using MvcBloggy.Web.Application.Utility;
 using MvcBloggy.Web.Application;
+using MvcBloggy.Web.Application.MetaWeblogItems;
 
 namespace MvcBloggy.Web {
 

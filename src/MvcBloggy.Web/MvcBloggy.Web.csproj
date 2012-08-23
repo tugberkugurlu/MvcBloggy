@@ -149,18 +149,18 @@
       <Link>Common\CommonConstants.cs</Link>
     </Compile>
     <Compile Include="Application\AutofacMVC3.cs" />
-    <Compile Include="Application\Http\BlogHttpClient.cs" />
-    <Compile Include="Application\Http\IBlogHttpClient.cs" />
-    <Compile Include="Application\MetaWeblog\MetaWeblogRouteHandler.cs" />
+    <Compile Include="Application\Services\BlogHttpClient.cs" />
+    <Compile Include="Application\Services\IBlogHttpClient.cs" />
+    <Compile Include="Application\MetaWeblogItems\MetaWeblogRouteHandler.cs" />
     <Compile Include="Application\Mvc\Filters\RemoveWhitespacesAttribute.cs" />
     <Compile Include="Application\Application.cs" />
     <Compile Include="Application\Mvc\CSRazorViewEngine.cs" />
     <Compile Include="Application\Mvc\Filters\CustomAuthorizeAttribute.cs" />
     <Compile Include="Application\Mvc\Filters\BypassAuthorizationAttribute.cs" />
-    <Compile Include="Application\MetaWeblog\IMetaWeblog.cs" />
+    <Compile Include="Application\MetaWeblogItems\IMetaWeblog.cs" />
     <Compile Include="Application\Mvc\LocalizedControllerFactory.cs" />
-    <Compile Include="Application\MetaWeblog\MetaWeblog.cs" />
-    <Compile Include="Application\MetaWeblog\MetaWeblogStructs.cs" />
+    <Compile Include="Application\MetaWeblogItems\MetaWeblog.cs" />
+    <Compile Include="Application\MetaWeblogItems\MetaWeblogStructs.cs" />
     <Compile Include="Application\MvcBloggy.cs" />
     <Compile Include="Application\Mvc\RouteCollectionExtensions.cs" />
     <Compile Include="Application\Mvc\LowercaseRoute.cs" />
@@ -171,14 +171,17 @@
       <DependentUpon>AppInfoStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="Application\Mvc\LanguageRouteConstraint.cs" />
+    <Compile Include="Application\Services\ApplicationSettings.cs" />
     <Compile Include="Application\Services\AuthorizationService.cs" />
     <Compile Include="Application\Services\FormsAuthenticationService.cs" />
+    <Compile Include="Application\Services\IApplicationSettings.cs" />
     <Compile Include="Application\Services\IAuthorizationService.cs" />
     <Compile Include="Application\Services\IFormsAuthenticationService.cs" />
     <Compile Include="Application\Mvc\TwoLevelViewCache.cs" />
     <Compile Include="Application\Utility\AppLanguage.cs" />
     <Compile Include="Application\Utility\AppSettings.cs" />
     <Compile Include="Application\Utility\StringExtensions.cs" />
+    <Compile Include="Application\ViewModels\HomePageViewModel.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -197,7 +200,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Application\MetaWeblog\wlwmanifest.xml" />
+    <EmbeddedResource Include="Application\MetaWeblogItems\wlwmanifest.xml" />
     <Content Include="App_Data\MvcBloggy.me.xml" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
@@ -218,6 +221,7 @@
     <Content Include="Scripts\chosen\chosen.jquery.min.js" />
     <Content Include="Scripts\chosen\chosen.proto.js" />
     <Content Include="Scripts\chosen\chosen.proto.min.js" />
+    <Content Include="App_Code\MvcBloggyHelpers.cshtml" />
     <None Include="Scripts\jquery-1.8.0.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.0.js" />
     <Content Include="Scripts\jquery-1.8.0.min.js" />
@@ -273,7 +277,6 @@
     <Content Include="Areas\Admin\Views\Auth\LogOn.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Application\ViewModels\" />
     <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>

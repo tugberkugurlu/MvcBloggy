@@ -104,5 +104,14 @@ namespace MvcBloggy.Resources {
                 return ResourceManager.GetString("Home", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oh snap! We couldn&apos;t find any blog posts :(.
+        /// </summary>
+        public static string NoBlogPostsFound {
+            get {
+                return ResourceManager.GetString("NoBlogPostsFound", resourceCulture);
+            }
+        }
     }
 }
