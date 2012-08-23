@@ -149,6 +149,7 @@
       <Link>Common\CommonConstants.cs</Link>
     </Compile>
     <Compile Include="Application\AutofacMVC3.cs" />
+    <Compile Include="App_Code\HelperPage.cs" />
     <Compile Include="Application\Services\BlogHttpClient.cs" />
     <Compile Include="Application\Services\IBlogHttpClient.cs" />
     <Compile Include="Application\MetaWeblogItems\MetaWeblogRouteHandler.cs" />

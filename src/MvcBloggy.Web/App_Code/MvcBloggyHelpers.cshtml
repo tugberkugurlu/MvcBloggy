@@ -1,4 +1,8 @@
-﻿@using MvcBloggy.API.Model.Dtos;
+﻿@inherits MvcBloggy.Web.App_Code.HelperPage
+@using MvcBloggy.API.Model.Dtos;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Html;
+
 @helper Pager(PaginatedDto<BlogPostDto> paginatedDto) {
     
     <ul class="pagination">
