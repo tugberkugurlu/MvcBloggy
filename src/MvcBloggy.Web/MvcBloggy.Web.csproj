@@ -148,44 +148,44 @@
     <Compile Include="..\Common\CommonConstants.cs">
       <Link>Common\CommonConstants.cs</Link>
     </Compile>
-    <Compile Include="Application\AutofacMVC3.cs" />
-    <Compile Include="Application\Http\BlogHttpResponseMessage%271.cs" />
-    <Compile Include="Application\Http\BlogHttpResponseMessage.cs" />
-    <Compile Include="Application\Http\QueryStringCollection.cs" />
+    <Compile Include="Infrastructure\AutofacMVC3.cs" />
+    <Compile Include="Infrastructure\Http\BlogHttpResponseMessage%271.cs" />
+    <Compile Include="Infrastructure\Http\BlogHttpResponseMessage.cs" />
+    <Compile Include="Infrastructure\Http\QueryStringCollection.cs" />
     <Compile Include="App_Code\HelperPage.cs" />
-    <Compile Include="Application\Http\BlogHttpClient.cs" />
-    <Compile Include="Application\Http\IBlogHttpClient.cs" />
-    <Compile Include="Application\MetaWeblogItems\MetaWeblogRouteHandler.cs" />
-    <Compile Include="Application\Mvc\Filters\RemoveWhitespacesAttribute.cs" />
-    <Compile Include="Application\Application.cs" />
-    <Compile Include="Application\Mvc\CSRazorViewEngine.cs" />
-    <Compile Include="Application\Mvc\Filters\CustomAuthorizeAttribute.cs" />
-    <Compile Include="Application\Mvc\Filters\BypassAuthorizationAttribute.cs" />
-    <Compile Include="Application\MetaWeblogItems\IMetaWeblog.cs" />
-    <Compile Include="Application\Mvc\LocalizedControllerFactory.cs" />
-    <Compile Include="Application\MetaWeblogItems\MetaWeblog.cs" />
-    <Compile Include="Application\MetaWeblogItems\MetaWeblogStructs.cs" />
-    <Compile Include="Application\MvcBloggy.cs" />
-    <Compile Include="Application\Mvc\RouteCollectionExtensions.cs" />
-    <Compile Include="Application\Mvc\LowercaseRoute.cs" />
-    <Compile Include="Application\Profile.cs" />
-    <Compile Include="Application\Resources\AppInfoStrings.Designer.cs">
+    <Compile Include="Infrastructure\Http\BlogHttpClient.cs" />
+    <Compile Include="Infrastructure\Http\IBlogHttpClient.cs" />
+    <Compile Include="Infrastructure\MetaWeblogItems\MetaWeblogRouteHandler.cs" />
+    <Compile Include="Infrastructure\Mvc\Filters\RemoveWhitespacesAttribute.cs" />
+    <Compile Include="Infrastructure\Application.cs" />
+    <Compile Include="Infrastructure\Mvc\CSRazorViewEngine.cs" />
+    <Compile Include="Infrastructure\Mvc\Filters\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\Mvc\Filters\BypassAuthorizationAttribute.cs" />
+    <Compile Include="Infrastructure\MetaWeblogItems\IMetaWeblog.cs" />
+    <Compile Include="Infrastructure\Mvc\LocalizedControllerFactory.cs" />
+    <Compile Include="Infrastructure\MetaWeblogItems\MetaWeblog.cs" />
+    <Compile Include="Infrastructure\MetaWeblogItems\MetaWeblogStructs.cs" />
+    <Compile Include="Infrastructure\MvcBloggy.cs" />
+    <Compile Include="Infrastructure\Mvc\RouteCollectionExtensions.cs" />
+    <Compile Include="Infrastructure\Mvc\LowercaseRoute.cs" />
+    <Compile Include="Infrastructure\Profile.cs" />
+    <Compile Include="Infrastructure\Resources\AppInfoStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppInfoStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Application\Mvc\LanguageRouteConstraint.cs" />
-    <Compile Include="Application\Services\ApplicationSettings.cs" />
-    <Compile Include="Application\Services\AuthorizationService.cs" />
-    <Compile Include="Application\Services\FormsAuthenticationService.cs" />
-    <Compile Include="Application\Services\IApplicationSettings.cs" />
-    <Compile Include="Application\Services\IAuthorizationService.cs" />
-    <Compile Include="Application\Services\IFormsAuthenticationService.cs" />
-    <Compile Include="Application\Mvc\TwoLevelViewCache.cs" />
-    <Compile Include="Application\Utility\AppLanguage.cs" />
-    <Compile Include="Application\Utility\AppSettings.cs" />
-    <Compile Include="Application\Utility\StringExtensions.cs" />
-    <Compile Include="Application\ViewModels\HomePageViewModel.cs" />
+    <Compile Include="Infrastructure\Mvc\LanguageRouteConstraint.cs" />
+    <Compile Include="Infrastructure\Services\ApplicationSettings.cs" />
+    <Compile Include="Infrastructure\Services\AuthorizationService.cs" />
+    <Compile Include="Infrastructure\Services\FormsAuthenticationService.cs" />
+    <Compile Include="Infrastructure\Services\IApplicationSettings.cs" />
+    <Compile Include="Infrastructure\Services\IAuthorizationService.cs" />
+    <Compile Include="Infrastructure\Services\IFormsAuthenticationService.cs" />
+    <Compile Include="Infrastructure\Mvc\TwoLevelViewCache.cs" />
+    <Compile Include="Infrastructure\Utility\AppLanguage.cs" />
+    <Compile Include="Infrastructure\Utility\AppSettings.cs" />
+    <Compile Include="Infrastructure\Utility\StringExtensions.cs" />
+    <Compile Include="Infrastructure\ViewModels\HomePageViewModel.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -205,7 +205,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Application\MetaWeblogItems\wlwmanifest.xml" />
+    <EmbeddedResource Include="Infrastructure\MetaWeblogItems\wlwmanifest.xml" />
     <Content Include="App_Data\MvcBloggy.me.xml" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
@@ -309,11 +309,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Application\Resources\AppInfoStrings.resx">
+    <EmbeddedResource Include="Infrastructure\Resources\AppInfoStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppInfoStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Application\Resources\AppInfoStrings.tr.resx" />
+    <EmbeddedResource Include="Infrastructure\Resources\AppInfoStrings.tr.resx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\LayoutHeaderRight.cshtml" />

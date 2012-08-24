@@ -10,15 +10,15 @@
         routeValues
     );
 
-    var appLanguages = MvcBloggy.Web.Application.Utility.AppLanguage.GetAllBut(System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+    var appLanguages = AppLanguage.GetAllBut(System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
 }
 @if (appLanguages.Count() >= 1) { 
-<div id="culture-switcher">
-@foreach (var language in appLanguages) {
-    routeValueDic["language"] = language;
-    <a href="@Url.RouteUrl(routeValueDic)">
-        <img src="@Url.Content(string.Format("~/content/icons/flags/{0}.png", language))" alt="@language" />
-    </a>
-}
-</div>
+    <div id="culture-switcher">
+        @foreach (var language in appLanguages) {
+            routeValueDic["language"] = language;
+            <a href="@Url.RouteUrl(routeValueDic)">
+                <img src="@Url.Content(string.Format("~/content/icons/flags/{0}.png", language))" alt="@language" />
+            </a>
+        }
+    </div>
 }

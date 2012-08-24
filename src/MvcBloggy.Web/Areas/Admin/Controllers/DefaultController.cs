@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MvcBloggy.Web.Application.Mvc.Filters;
+using MvcBloggy.Web.Infrastructure.Mvc.Filters;
 
 namespace MvcBloggy.Web.Areas.Admin.Controllers {
 

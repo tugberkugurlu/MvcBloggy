@@ -6,9 +6,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Optimization;
-using MvcBloggy.Web.Application.Mvc;
-using MvcBloggy.Web.Application;
-using MvcBloggy.Web.Application.Utility;
+using MvcBloggy.Web.Infrastructure.Mvc;
+using MvcBloggy.Web.Infrastructure;
+using MvcBloggy.Web.Infrastructure.Utility;
 using System.Web.Http;
 
 namespace MvcBloggy.Web {

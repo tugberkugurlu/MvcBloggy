@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Moq;
-using MvcBloggy.Web.Application.Services;
+using MvcBloggy.Web.Infrastructure.Services;
 using Xunit;
 
 namespace MvcBloggy.Tests.Services {

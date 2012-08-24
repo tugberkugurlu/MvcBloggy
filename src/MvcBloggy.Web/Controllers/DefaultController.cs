@@ -1,6 +1,6 @@
 ﻿using MvcBloggy.API.Model.Dtos;
-using MvcBloggy.Web.Application.Http;
-using MvcBloggy.Web.Application.Services;
+using MvcBloggy.Web.Infrastructure.Http;
+using MvcBloggy.Web.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ namespace MvcBloggy.Web.Controllers {
         private readonly IBlogHttpClient<BlogPostDto> _httpClient;
 
         public DefaultController(IBlogHttpClient<BlogPostDto> httpClient) {
-
+            
             _httpClient = httpClient;
         }
 

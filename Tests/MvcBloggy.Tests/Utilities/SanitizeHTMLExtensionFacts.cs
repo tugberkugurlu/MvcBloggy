@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MvcBloggy.Web.Application.Utility;
+using MvcBloggy.Web.Infrastructure.Utility;
 using Xunit;
 
 namespace MvcBloggy.Tests.Utilities {
