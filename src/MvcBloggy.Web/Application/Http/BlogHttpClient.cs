@@ -18,13 +18,13 @@ namespace MvcBloggy.Web.Application.Http {
             DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(CommonConstants.ApplicationJsonMediaType));
         }
 
-        public async Task<IEnumerable<BlogPostDto>> GetBlogPosts(int pageIndex, int take) {
+        public async Task<PaginatedDto<BlogPostDto>> GetBlogPosts(int pageIndex, int take) {
 
             var requestUri = string.Format("{0}{1}?page={2}&take={3}", _requestUri, "blogposts", pageIndex, take);
 
             var response = await GetAsync(requestUri);
             response.EnsureSuccessStatusCode();
-            var blogPosts = await response.Content.ReadAsAsync<IEnumerable<BlogPostDto>>();
+            var blogPosts = await response.Content.ReadAsAsync<PaginatedDto<BlogPostDto>>();
             return blogPosts;
         }
     }

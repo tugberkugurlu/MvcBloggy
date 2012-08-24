@@ -1,11 +1,16 @@
-﻿@model IEnumerable<BlogPostDto>
+﻿@model PaginatedDto<BlogPostDto>
 @{
     ViewBag.Title = "Index";
 }
-<h2>Index</h2>
 
-<ul>
-@foreach (var item in Model) {
-    <li>@item.Title</li>
+@if (Model.Dtos.Count() > 0) { 
+    <ul>
+        @foreach (var item in Model.Dtos) {
+            <li>@item.Title</li>
+        }
+    </ul>
+} else {
+    <div class="alert alert-block">
+        Oh snap! We couldn't find any blog posts :(
+    </div>
 }
-</ul>
