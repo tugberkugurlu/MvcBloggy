@@ -8,6 +8,6 @@ namespace MvcBloggy.Domain.Entities {
 
     public interface IEntity {
 
-        int Key { get; set; }
+        Guid Key { get; set; }
     }
 }

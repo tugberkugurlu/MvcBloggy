@@ -9,6 +9,8 @@ namespace MvcBloggy.Domain.Services {
     
     public interface IBlogService {
 
+        PaginatedList<BlogPost> GetBlogPosts(string lang, int pageIndex, int pageSize);
+
         BlogPost AddBlogPost(BlogPost blogPost);
         BlogPost AddBlogPost(BlogPost blogPost, string[] tags);
     }

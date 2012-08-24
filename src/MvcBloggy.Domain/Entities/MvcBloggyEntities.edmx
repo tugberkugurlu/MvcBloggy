@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MvcBloggyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MvcBloggyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="MvcBloggyModelStoreContainer">
           <EntitySet Name="BlogPostComments" EntityType="MvcBloggyModel.Store.BlogPostComments" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="BlogPosts" EntityType="MvcBloggyModel.Store.BlogPosts" store:Type="Tables" Schema="dbo" />
@@ -66,9 +66,8 @@
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="BlogPostKey" Type="int" Nullable="false" />
-          <Property Name="BlogCommentGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BlogPostKey" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="300" />
           <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="300" />
           <Property Name="WebSite" Type="nvarchar" MaxLength="300" />
@@ -86,10 +85,9 @@
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageKey" Type="int" Nullable="false" />
+          <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LanguageKey" Type="uniqueidentifier" Nullable="false" />
           <Property Name="SecondaryKey" Type="int" />
-          <Property Name="BlogPostGuid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="300" />
           <Property Name="BriefInfo" Type="nvarchar" MaxLength="200" />
           <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
@@ -104,8 +102,8 @@
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="BlogPostKey" Type="int" Nullable="false" />
+          <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BlogPostKey" Type="uniqueidentifier" Nullable="false" />
           <Property Name="UrlPortion" Type="nvarchar" Nullable="false" MaxLength="500" />
           <Property Name="CreationIp" Type="nvarchar" MaxLength="50" />
           <Property Name="CreatedOn" Type="datetimeoffset" Nullable="false" />
@@ -116,8 +114,8 @@
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageKey" Type="int" Nullable="false" />
+          <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LanguageKey" Type="uniqueidentifier" Nullable="false" />
           <Property Name="BlogName" Type="nvarchar" Nullable="false" MaxLength="300" />
           <Property Name="BlogAuthor" Type="nvarchar" MaxLength="100" />
           <Property Name="BlogUrl" Type="nvarchar" Nullable="false" MaxLength="300" />
@@ -133,8 +131,8 @@
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageKey" Type="int" Nullable="false" />
+          <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LanguageKey" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="500" />
           <Property Name="BriefInfo" Type="nvarchar" Nullable="false" MaxLength="500" />
           <Property Name="Content" Type="nvarchar(max)" />
@@ -148,7 +146,7 @@
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
           <Property Name="DisplayName" Type="nvarchar" MaxLength="50" />
           <Property Name="Culture" Type="nvarchar" Nullable="false" MaxLength="10" />
           <Property Name="CultureOne" Type="nvarchar" Nullable="false" MaxLength="10" />
@@ -163,8 +161,8 @@
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageKey" Type="int" Nullable="false" />
+          <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LanguageKey" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Term" Type="nvarchar" Nullable="false" MaxLength="300" />
           <Property Name="CreatedOn" Type="datetimeoffset" />
         </EntityType>
@@ -172,9 +170,8 @@
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageKey" Type="int" Nullable="false" />
-          <Property Name="TagGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LanguageKey" Type="uniqueidentifier" Nullable="false" />
           <Property Name="TagName" Type="nvarchar" Nullable="false" MaxLength="100" />
           <Property Name="CreationIp" Type="nvarchar" MaxLength="50" />
           <Property Name="CreatedOn" Type="datetimeoffset" Nullable="false" />
@@ -183,23 +180,23 @@
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="BlogPostKey" Type="int" Nullable="false" />
-          <Property Name="TagKey" Type="int" Nullable="false" />
+          <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BlogPostKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TagKey" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="TagsForDynamicPages">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="DynamicPageKey" Type="int" Nullable="false" />
-          <Property Name="TagKey" Type="int" Nullable="false" />
+          <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DynamicPageKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TagKey" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Key" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="320" />
           <Property Name="HashedPassword" Type="nvarchar(max)" Nullable="false" />
@@ -360,8 +357,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MvcBloggyModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -378,371 +374,368 @@
           <EntitySet Name="TagsForDynamicPages" EntityType="MvcBloggyModel.TagsForDynamicPage" />
           <EntitySet Name="Users" EntityType="MvcBloggyModel.User" />
           <AssociationSet Name="FK_BlogPostComments_BlogPosts" Association="MvcBloggyModel.FK_BlogPostComments_BlogPosts">
-            <End Role="BlogPosts" EntitySet="BlogPosts" />
-            <End Role="BlogPostComments" EntitySet="BlogPostComments" />
+            <End Role="BlogPost" EntitySet="BlogPosts" />
+            <End Role="BlogPostComment" EntitySet="BlogPostComments" />
           </AssociationSet>
           <AssociationSet Name="FK_BlogPosts_Languages" Association="MvcBloggyModel.FK_BlogPosts_Languages">
-            <End Role="Languages" EntitySet="Languages" />
-            <End Role="BlogPosts" EntitySet="BlogPosts" />
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="BlogPost" EntitySet="BlogPosts" />
           </AssociationSet>
           <AssociationSet Name="FK_BlogPostUrls_BlogPosts" Association="MvcBloggyModel.FK_BlogPostUrls_BlogPosts">
-            <End Role="BlogPosts" EntitySet="BlogPosts" />
-            <End Role="BlogPostUrls" EntitySet="BlogPostUrls" />
+            <End Role="BlogPost" EntitySet="BlogPosts" />
+            <End Role="BlogPostUrl" EntitySet="BlogPostUrls" />
           </AssociationSet>
           <AssociationSet Name="FK_TagsForBlogPosts_BlogPosts" Association="MvcBloggyModel.FK_TagsForBlogPosts_BlogPosts">
-            <End Role="BlogPosts" EntitySet="BlogPosts" />
-            <End Role="TagsForBlogPosts" EntitySet="TagsForBlogPosts" />
+            <End Role="BlogPost" EntitySet="BlogPosts" />
+            <End Role="TagsForBlogPost" EntitySet="TagsForBlogPosts" />
           </AssociationSet>
           <AssociationSet Name="FK_BlogRolls_Languages" Association="MvcBloggyModel.FK_BlogRolls_Languages">
-            <End Role="Languages" EntitySet="Languages" />
-            <End Role="BlogRolls" EntitySet="BlogRolls" />
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="BlogRoll" EntitySet="BlogRolls" />
           </AssociationSet>
           <AssociationSet Name="FK_DynamicPages_Languages" Association="MvcBloggyModel.FK_DynamicPages_Languages">
-            <End Role="Languages" EntitySet="Languages" />
-            <End Role="DynamicPages" EntitySet="DynamicPages" />
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="DynamicPage" EntitySet="DynamicPages" />
           </AssociationSet>
           <AssociationSet Name="FK_TagsForDynamicPages_DynamicPages" Association="MvcBloggyModel.FK_TagsForDynamicPages_DynamicPages">
-            <End Role="DynamicPages" EntitySet="DynamicPages" />
-            <End Role="TagsForDynamicPages" EntitySet="TagsForDynamicPages" />
+            <End Role="DynamicPage" EntitySet="DynamicPages" />
+            <End Role="TagsForDynamicPage" EntitySet="TagsForDynamicPages" />
           </AssociationSet>
           <AssociationSet Name="FK_RestrictedPageNames_Languages" Association="MvcBloggyModel.FK_RestrictedPageNames_Languages">
-            <End Role="Languages" EntitySet="Languages" />
-            <End Role="RestrictedPageNames" EntitySet="RestrictedPageNames" />
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="RestrictedPageName" EntitySet="RestrictedPageNames" />
           </AssociationSet>
           <AssociationSet Name="FK_Tags_Languages" Association="MvcBloggyModel.FK_Tags_Languages">
-            <End Role="Languages" EntitySet="Languages" />
-            <End Role="Tags" EntitySet="Tags" />
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Tag" EntitySet="Tags" />
           </AssociationSet>
           <AssociationSet Name="FK_TagsForBlogPosts_Tags" Association="MvcBloggyModel.FK_TagsForBlogPosts_Tags">
-            <End Role="Tags" EntitySet="Tags" />
-            <End Role="TagsForBlogPosts" EntitySet="TagsForBlogPosts" />
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="TagsForBlogPost" EntitySet="TagsForBlogPosts" />
           </AssociationSet>
           <AssociationSet Name="FK_TagsForDynamicPages_Tags" Association="MvcBloggyModel.FK_TagsForDynamicPages_Tags">
-            <End Role="Tags" EntitySet="Tags" />
-            <End Role="TagsForDynamicPages" EntitySet="TagsForDynamicPages" />
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="TagsForDynamicPage" EntitySet="TagsForDynamicPages" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="BlogPostComment">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="BlogPostKey" Type="Int32" Nullable="false" />
-          <Property Name="BlogCommentGuid" Type="Guid" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-          <Property Name="WebSite" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
-          <Property Name="AuthProvider" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
-          <Property Name="IsAuthor" Type="Boolean" Nullable="false" />
-          <Property Name="Subject" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
-          <Property Name="Content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
-          <Property Name="CreationIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CreatedOn" Type="DateTimeOffset" Nullable="false" Precision="7" />
-          <Property Name="LastUpdateIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="LastUpdatedOn" Type="DateTimeOffset" Precision="7" />
-          <NavigationProperty Name="BlogPost" Relationship="MvcBloggyModel.FK_BlogPostComments_BlogPosts" FromRole="BlogPostComments" ToRole="BlogPosts" />
+          <Property Type="Guid" Name="Key" Nullable="false" />
+          <Property Type="Guid" Name="BlogPostKey" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WebSite" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AuthProvider" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAuthor" Nullable="false" />
+          <Property Type="String" Name="Subject" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Content" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="String" Name="CreationIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="CreatedOn" Nullable="false" Precision="7" />
+          <Property Type="String" Name="LastUpdateIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="LastUpdatedOn" Precision="7" />
+          <NavigationProperty Name="BlogPost" Relationship="MvcBloggyModel.FK_BlogPostComments_BlogPosts" FromRole="BlogPostComment" ToRole="BlogPost" />
         </EntityType>
         <EntityType Name="BlogPost">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageKey" Type="Int32" Nullable="false" />
-          <Property Name="SecondaryKey" Type="Int32" />
-          <Property Name="BlogPostGuid" Type="Guid" Nullable="false" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-          <Property Name="BriefInfo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="ImagePath" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
-          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
-          <Property Name="CreationIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CreatedOn" Type="DateTimeOffset" Nullable="false" Precision="7" />
-          <Property Name="LastUpdateIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="LastUpdatedOn" Type="DateTimeOffset" Precision="7" />
-          <NavigationProperty Name="BlogPostComments" Relationship="MvcBloggyModel.FK_BlogPostComments_BlogPosts" FromRole="BlogPosts" ToRole="BlogPostComments" />
-          <NavigationProperty Name="Language" Relationship="MvcBloggyModel.FK_BlogPosts_Languages" FromRole="BlogPosts" ToRole="Languages" />
-          <NavigationProperty Name="BlogPostUrls" Relationship="MvcBloggyModel.FK_BlogPostUrls_BlogPosts" FromRole="BlogPosts" ToRole="BlogPostUrls" />
-          <NavigationProperty Name="TagsForBlogPosts" Relationship="MvcBloggyModel.FK_TagsForBlogPosts_BlogPosts" FromRole="BlogPosts" ToRole="TagsForBlogPosts" />
+          <Property Type="Guid" Name="Key" Nullable="false" />
+          <Property Type="Guid" Name="LanguageKey" Nullable="false" />
+          <Property Type="Int32" Name="SecondaryKey" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BriefInfo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImagePath" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="String" Name="CreationIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="CreatedOn" Nullable="false" Precision="7" />
+          <Property Type="String" Name="LastUpdateIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="LastUpdatedOn" Precision="7" />
+          <NavigationProperty Name="BlogPostComments" Relationship="MvcBloggyModel.FK_BlogPostComments_BlogPosts" FromRole="BlogPost" ToRole="BlogPostComment" />
+          <NavigationProperty Name="Language" Relationship="MvcBloggyModel.FK_BlogPosts_Languages" FromRole="BlogPost" ToRole="Language" />
+          <NavigationProperty Name="BlogPostUrls" Relationship="MvcBloggyModel.FK_BlogPostUrls_BlogPosts" FromRole="BlogPost" ToRole="BlogPostUrl" />
+          <NavigationProperty Name="TagsForBlogPosts" Relationship="MvcBloggyModel.FK_TagsForBlogPosts_BlogPosts" FromRole="BlogPost" ToRole="TagsForBlogPost" />
         </EntityType>
         <EntityType Name="BlogPostUrl">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="BlogPostKey" Type="Int32" Nullable="false" />
-          <Property Name="UrlPortion" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
-          <Property Name="CreationIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CreatedOn" Type="DateTimeOffset" Nullable="false" Precision="7" />
-          <Property Name="LastUpdateIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="LastUpdatedOn" Type="DateTimeOffset" Precision="7" />
-          <NavigationProperty Name="BlogPost" Relationship="MvcBloggyModel.FK_BlogPostUrls_BlogPosts" FromRole="BlogPostUrls" ToRole="BlogPosts" />
+          <Property Type="Guid" Name="Key" Nullable="false" />
+          <Property Type="Guid" Name="BlogPostKey" Nullable="false" />
+          <Property Type="String" Name="UrlPortion" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreationIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="CreatedOn" Nullable="false" Precision="7" />
+          <Property Type="String" Name="LastUpdateIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="LastUpdatedOn" Precision="7" />
+          <NavigationProperty Name="BlogPost" Relationship="MvcBloggyModel.FK_BlogPostUrls_BlogPosts" FromRole="BlogPostUrl" ToRole="BlogPost" />
         </EntityType>
         <EntityType Name="BlogRoll">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageKey" Type="Int32" Nullable="false" />
-          <Property Name="BlogName" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-          <Property Name="BlogAuthor" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="BlogUrl" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-          <Property Name="FeedUrl" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
-          <Property Name="Order" Type="Int32" />
-          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
-          <Property Name="CreationIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CreatedOn" Type="DateTimeOffset" Nullable="false" Precision="7" />
-          <Property Name="LastUpdateIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="LastUpdatedOn" Type="DateTimeOffset" Precision="7" />
-          <NavigationProperty Name="Language" Relationship="MvcBloggyModel.FK_BlogRolls_Languages" FromRole="BlogRolls" ToRole="Languages" />
+          <Property Type="Guid" Name="Key" Nullable="false" />
+          <Property Type="Guid" Name="LanguageKey" Nullable="false" />
+          <Property Type="String" Name="BlogName" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BlogAuthor" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BlogUrl" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FeedUrl" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Order" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="String" Name="CreationIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="CreatedOn" Nullable="false" Precision="7" />
+          <Property Type="String" Name="LastUpdateIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="LastUpdatedOn" Precision="7" />
+          <NavigationProperty Name="Language" Relationship="MvcBloggyModel.FK_BlogRolls_Languages" FromRole="BlogRoll" ToRole="Language" />
         </EntityType>
         <EntityType Name="DynamicPage">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageKey" Type="Int32" Nullable="false" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
-          <Property Name="BriefInfo" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
-          <Property Name="Content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
-          <Property Name="CreationIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CreatedOn" Type="DateTimeOffset" Nullable="false" Precision="7" />
-          <Property Name="LastUpdateIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="LastUpdatedOn" Type="DateTimeOffset" Precision="7" />
-          <NavigationProperty Name="Language" Relationship="MvcBloggyModel.FK_DynamicPages_Languages" FromRole="DynamicPages" ToRole="Languages" />
-          <NavigationProperty Name="TagsForDynamicPages" Relationship="MvcBloggyModel.FK_TagsForDynamicPages_DynamicPages" FromRole="DynamicPages" ToRole="TagsForDynamicPages" />
+          <Property Type="Guid" Name="Key" Nullable="false" />
+          <Property Type="Guid" Name="LanguageKey" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BriefInfo" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Content" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="String" Name="CreationIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="CreatedOn" Nullable="false" Precision="7" />
+          <Property Type="String" Name="LastUpdateIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="LastUpdatedOn" Precision="7" />
+          <NavigationProperty Name="Language" Relationship="MvcBloggyModel.FK_DynamicPages_Languages" FromRole="DynamicPage" ToRole="Language" />
+          <NavigationProperty Name="TagsForDynamicPages" Relationship="MvcBloggyModel.FK_TagsForDynamicPages_DynamicPages" FromRole="DynamicPage" ToRole="TagsForDynamicPage" />
         </EntityType>
         <EntityType Name="Language">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="DisplayName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Culture" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
-          <Property Name="CultureOne" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
-          <Property Name="Order" Type="Int32" Nullable="false" />
-          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
-          <Property Name="CreationIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CreatedOn" Type="DateTimeOffset" Nullable="false" Precision="7" />
-          <Property Name="LastUpdateIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="LastUpdatedOn" Type="DateTimeOffset" Precision="7" />
-          <NavigationProperty Name="BlogPosts" Relationship="MvcBloggyModel.FK_BlogPosts_Languages" FromRole="Languages" ToRole="BlogPosts" />
-          <NavigationProperty Name="BlogRolls" Relationship="MvcBloggyModel.FK_BlogRolls_Languages" FromRole="Languages" ToRole="BlogRolls" />
-          <NavigationProperty Name="DynamicPages" Relationship="MvcBloggyModel.FK_DynamicPages_Languages" FromRole="Languages" ToRole="DynamicPages" />
-          <NavigationProperty Name="RestrictedPageNames" Relationship="MvcBloggyModel.FK_RestrictedPageNames_Languages" FromRole="Languages" ToRole="RestrictedPageNames" />
-          <NavigationProperty Name="Tags" Relationship="MvcBloggyModel.FK_Tags_Languages" FromRole="Languages" ToRole="Tags" />
+          <Property Type="Guid" Name="Key" Nullable="false" />
+          <Property Type="String" Name="DisplayName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Culture" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CultureOne" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Order" Nullable="false" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="String" Name="CreationIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="CreatedOn" Nullable="false" Precision="7" />
+          <Property Type="String" Name="LastUpdateIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="LastUpdatedOn" Precision="7" />
+          <NavigationProperty Name="BlogPosts" Relationship="MvcBloggyModel.FK_BlogPosts_Languages" FromRole="Language" ToRole="BlogPost" />
+          <NavigationProperty Name="BlogRolls" Relationship="MvcBloggyModel.FK_BlogRolls_Languages" FromRole="Language" ToRole="BlogRoll" />
+          <NavigationProperty Name="DynamicPages" Relationship="MvcBloggyModel.FK_DynamicPages_Languages" FromRole="Language" ToRole="DynamicPage" />
+          <NavigationProperty Name="RestrictedPageNames" Relationship="MvcBloggyModel.FK_RestrictedPageNames_Languages" FromRole="Language" ToRole="RestrictedPageName" />
+          <NavigationProperty Name="Tags" Relationship="MvcBloggyModel.FK_Tags_Languages" FromRole="Language" ToRole="Tag" />
         </EntityType>
         <EntityType Name="RestrictedPageName">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageKey" Type="Int32" Nullable="false" />
-          <Property Name="Term" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-          <Property Name="CreatedOn" Type="DateTimeOffset" Precision="7" />
-          <NavigationProperty Name="Language" Relationship="MvcBloggyModel.FK_RestrictedPageNames_Languages" FromRole="RestrictedPageNames" ToRole="Languages" />
+          <Property Type="Guid" Name="Key" Nullable="false" />
+          <Property Type="Guid" Name="LanguageKey" Nullable="false" />
+          <Property Type="String" Name="Term" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="CreatedOn" Precision="7" />
+          <NavigationProperty Name="Language" Relationship="MvcBloggyModel.FK_RestrictedPageNames_Languages" FromRole="RestrictedPageName" ToRole="Language" />
         </EntityType>
         <EntityType Name="Tag">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="LanguageKey" Type="Int32" Nullable="false" />
-          <Property Name="TagGuid" Type="Guid" Nullable="false" />
-          <Property Name="TagName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-          <Property Name="CreationIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CreatedOn" Type="DateTimeOffset" Nullable="false" Precision="7" />
-          <NavigationProperty Name="Language" Relationship="MvcBloggyModel.FK_Tags_Languages" FromRole="Tags" ToRole="Languages" />
-          <NavigationProperty Name="TagsForBlogPosts" Relationship="MvcBloggyModel.FK_TagsForBlogPosts_Tags" FromRole="Tags" ToRole="TagsForBlogPosts" />
-          <NavigationProperty Name="TagsForDynamicPages" Relationship="MvcBloggyModel.FK_TagsForDynamicPages_Tags" FromRole="Tags" ToRole="TagsForDynamicPages" />
+          <Property Type="Guid" Name="Key" Nullable="false" />
+          <Property Type="Guid" Name="LanguageKey" Nullable="false" />
+          <Property Type="String" Name="TagName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreationIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="CreatedOn" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Language" Relationship="MvcBloggyModel.FK_Tags_Languages" FromRole="Tag" ToRole="Language" />
+          <NavigationProperty Name="TagsForBlogPosts" Relationship="MvcBloggyModel.FK_TagsForBlogPosts_Tags" FromRole="Tag" ToRole="TagsForBlogPost" />
+          <NavigationProperty Name="TagsForDynamicPages" Relationship="MvcBloggyModel.FK_TagsForDynamicPages_Tags" FromRole="Tag" ToRole="TagsForDynamicPage" />
         </EntityType>
         <EntityType Name="TagsForBlogPost">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="BlogPostKey" Type="Int32" Nullable="false" />
-          <Property Name="TagKey" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="BlogPost" Relationship="MvcBloggyModel.FK_TagsForBlogPosts_BlogPosts" FromRole="TagsForBlogPosts" ToRole="BlogPosts" />
-          <NavigationProperty Name="Tag" Relationship="MvcBloggyModel.FK_TagsForBlogPosts_Tags" FromRole="TagsForBlogPosts" ToRole="Tags" />
+          <Property Type="Guid" Name="Key" Nullable="false" />
+          <Property Type="Guid" Name="BlogPostKey" Nullable="false" />
+          <Property Type="Guid" Name="TagKey" Nullable="false" />
+          <NavigationProperty Name="BlogPost" Relationship="MvcBloggyModel.FK_TagsForBlogPosts_BlogPosts" FromRole="TagsForBlogPost" ToRole="BlogPost" />
+          <NavigationProperty Name="Tag" Relationship="MvcBloggyModel.FK_TagsForBlogPosts_Tags" FromRole="TagsForBlogPost" ToRole="Tag" />
         </EntityType>
         <EntityType Name="TagsForDynamicPage">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="DynamicPageKey" Type="Int32" Nullable="false" />
-          <Property Name="TagKey" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DynamicPage" Relationship="MvcBloggyModel.FK_TagsForDynamicPages_DynamicPages" FromRole="TagsForDynamicPages" ToRole="DynamicPages" />
-          <NavigationProperty Name="Tag" Relationship="MvcBloggyModel.FK_TagsForDynamicPages_Tags" FromRole="TagsForDynamicPages" ToRole="Tags" />
+          <Property Type="Guid" Name="Key" Nullable="false" />
+          <Property Type="Guid" Name="DynamicPageKey" Nullable="false" />
+          <Property Type="Guid" Name="TagKey" Nullable="false" />
+          <NavigationProperty Name="DynamicPage" Relationship="MvcBloggyModel.FK_TagsForDynamicPages_DynamicPages" FromRole="TagsForDynamicPage" ToRole="DynamicPage" />
+          <NavigationProperty Name="Tag" Relationship="MvcBloggyModel.FK_TagsForDynamicPages_Tags" FromRole="TagsForDynamicPage" ToRole="Tag" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Key" />
           </Key>
-          <Property Name="Key" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="320" Unicode="true" FixedLength="false" />
-          <Property Name="HashedPassword" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Salt" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="IsLocked" Type="Boolean" Nullable="false" />
-          <Property Name="CreationIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="CreatedOn" Type="DateTimeOffset" Nullable="false" Precision="7" />
-          <Property Name="LastUpdateIp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="LastUpdatedOn" Type="DateTimeOffset" Precision="7" />
+          <Property Type="Guid" Name="Key" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="320" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HashedPassword" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Salt" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsLocked" Nullable="false" />
+          <Property Type="String" Name="CreationIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="CreatedOn" Nullable="false" Precision="7" />
+          <Property Type="String" Name="LastUpdateIp" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTimeOffset" Name="LastUpdatedOn" Precision="7" />
         </EntityType>
         <Association Name="FK_BlogPostComments_BlogPosts">
-          <End Role="BlogPosts" Type="MvcBloggyModel.BlogPost" Multiplicity="1">
+          <End Type="MvcBloggyModel.BlogPost" Role="BlogPost" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BlogPostComments" Type="MvcBloggyModel.BlogPostComment" Multiplicity="*" />
+          <End Type="MvcBloggyModel.BlogPostComment" Role="BlogPostComment" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="BlogPosts">
+            <Principal Role="BlogPost">
               <PropertyRef Name="Key" />
             </Principal>
-            <Dependent Role="BlogPostComments">
+            <Dependent Role="BlogPostComment">
               <PropertyRef Name="BlogPostKey" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BlogPosts_Languages">
-          <End Role="Languages" Type="MvcBloggyModel.Language" Multiplicity="1">
+          <End Type="MvcBloggyModel.Language" Role="Language" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BlogPosts" Type="MvcBloggyModel.BlogPost" Multiplicity="*" />
+          <End Type="MvcBloggyModel.BlogPost" Role="BlogPost" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Languages">
+            <Principal Role="Language">
               <PropertyRef Name="Key" />
             </Principal>
-            <Dependent Role="BlogPosts">
+            <Dependent Role="BlogPost">
               <PropertyRef Name="LanguageKey" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BlogPostUrls_BlogPosts">
-          <End Role="BlogPosts" Type="MvcBloggyModel.BlogPost" Multiplicity="1">
+          <End Type="MvcBloggyModel.BlogPost" Role="BlogPost" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BlogPostUrls" Type="MvcBloggyModel.BlogPostUrl" Multiplicity="*" />
+          <End Type="MvcBloggyModel.BlogPostUrl" Role="BlogPostUrl" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="BlogPosts">
+            <Principal Role="BlogPost">
               <PropertyRef Name="Key" />
             </Principal>
-            <Dependent Role="BlogPostUrls">
+            <Dependent Role="BlogPostUrl">
               <PropertyRef Name="BlogPostKey" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TagsForBlogPosts_BlogPosts">
-          <End Role="BlogPosts" Type="MvcBloggyModel.BlogPost" Multiplicity="1">
+          <End Type="MvcBloggyModel.BlogPost" Role="BlogPost" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="TagsForBlogPosts" Type="MvcBloggyModel.TagsForBlogPost" Multiplicity="*" />
+          <End Type="MvcBloggyModel.TagsForBlogPost" Role="TagsForBlogPost" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="BlogPosts">
+            <Principal Role="BlogPost">
               <PropertyRef Name="Key" />
             </Principal>
-            <Dependent Role="TagsForBlogPosts">
+            <Dependent Role="TagsForBlogPost">
               <PropertyRef Name="BlogPostKey" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BlogRolls_Languages">
-          <End Role="Languages" Type="MvcBloggyModel.Language" Multiplicity="1">
+          <End Type="MvcBloggyModel.Language" Role="Language" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="BlogRolls" Type="MvcBloggyModel.BlogRoll" Multiplicity="*" />
+          <End Type="MvcBloggyModel.BlogRoll" Role="BlogRoll" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Languages">
+            <Principal Role="Language">
               <PropertyRef Name="Key" />
             </Principal>
-            <Dependent Role="BlogRolls">
+            <Dependent Role="BlogRoll">
               <PropertyRef Name="LanguageKey" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_DynamicPages_Languages">
-          <End Role="Languages" Type="MvcBloggyModel.Language" Multiplicity="1">
+          <End Type="MvcBloggyModel.Language" Role="Language" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="DynamicPages" Type="MvcBloggyModel.DynamicPage" Multiplicity="*" />
+          <End Type="MvcBloggyModel.DynamicPage" Role="DynamicPage" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Languages">
+            <Principal Role="Language">
               <PropertyRef Name="Key" />
             </Principal>
-            <Dependent Role="DynamicPages">
+            <Dependent Role="DynamicPage">
               <PropertyRef Name="LanguageKey" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TagsForDynamicPages_DynamicPages">
-          <End Role="DynamicPages" Type="MvcBloggyModel.DynamicPage" Multiplicity="1">
+          <End Type="MvcBloggyModel.DynamicPage" Role="DynamicPage" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="TagsForDynamicPages" Type="MvcBloggyModel.TagsForDynamicPage" Multiplicity="*" />
+          <End Type="MvcBloggyModel.TagsForDynamicPage" Role="TagsForDynamicPage" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="DynamicPages">
+            <Principal Role="DynamicPage">
               <PropertyRef Name="Key" />
             </Principal>
-            <Dependent Role="TagsForDynamicPages">
+            <Dependent Role="TagsForDynamicPage">
               <PropertyRef Name="DynamicPageKey" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_RestrictedPageNames_Languages">
-          <End Role="Languages" Type="MvcBloggyModel.Language" Multiplicity="1">
+          <End Type="MvcBloggyModel.Language" Role="Language" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="RestrictedPageNames" Type="MvcBloggyModel.RestrictedPageName" Multiplicity="*" />
+          <End Type="MvcBloggyModel.RestrictedPageName" Role="RestrictedPageName" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Languages">
+            <Principal Role="Language">
               <PropertyRef Name="Key" />
             </Principal>
-            <Dependent Role="RestrictedPageNames">
+            <Dependent Role="RestrictedPageName">
               <PropertyRef Name="LanguageKey" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tags_Languages">
-          <End Role="Languages" Type="MvcBloggyModel.Language" Multiplicity="1">
+          <End Type="MvcBloggyModel.Language" Role="Language" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Tags" Type="MvcBloggyModel.Tag" Multiplicity="*" />
+          <End Type="MvcBloggyModel.Tag" Role="Tag" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Languages">
+            <Principal Role="Language">
               <PropertyRef Name="Key" />
             </Principal>
-            <Dependent Role="Tags">
+            <Dependent Role="Tag">
               <PropertyRef Name="LanguageKey" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TagsForBlogPosts_Tags">
-          <End Role="Tags" Type="MvcBloggyModel.Tag" Multiplicity="1" />
-          <End Role="TagsForBlogPosts" Type="MvcBloggyModel.TagsForBlogPost" Multiplicity="*" />
+          <End Type="MvcBloggyModel.Tag" Role="Tag" Multiplicity="1" />
+          <End Type="MvcBloggyModel.TagsForBlogPost" Role="TagsForBlogPost" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Tags">
+            <Principal Role="Tag">
               <PropertyRef Name="Key" />
             </Principal>
-            <Dependent Role="TagsForBlogPosts">
+            <Dependent Role="TagsForBlogPost">
               <PropertyRef Name="TagKey" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TagsForDynamicPages_Tags">
-          <End Role="Tags" Type="MvcBloggyModel.Tag" Multiplicity="1" />
-          <End Role="TagsForDynamicPages" Type="MvcBloggyModel.TagsForDynamicPage" Multiplicity="*" />
+          <End Type="MvcBloggyModel.Tag" Role="Tag" Multiplicity="1" />
+          <End Type="MvcBloggyModel.TagsForDynamicPage" Role="TagsForDynamicPage" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Tags">
+            <Principal Role="Tag">
               <PropertyRef Name="Key" />
             </Principal>
-            <Dependent Role="TagsForDynamicPages">
+            <Dependent Role="TagsForDynamicPage">
               <PropertyRef Name="TagKey" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -751,159 +744,156 @@
           <EntitySetMapping Name="BlogPostComments">
             <EntityTypeMapping TypeName="MvcBloggyModel.BlogPostComment">
               <MappingFragment StoreEntitySet="BlogPostComments">
-                <ScalarProperty Name="Key" ColumnName="Key" />
-                <ScalarProperty Name="BlogPostKey" ColumnName="BlogPostKey" />
-                <ScalarProperty Name="BlogCommentGuid" ColumnName="BlogCommentGuid" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
-                <ScalarProperty Name="AuthProvider" ColumnName="AuthProvider" />
-                <ScalarProperty Name="IsAuthor" ColumnName="IsAuthor" />
-                <ScalarProperty Name="Subject" ColumnName="Subject" />
-                <ScalarProperty Name="Content" ColumnName="Content" />
-                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
                 <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="IsAuthor" ColumnName="IsAuthor" />
+                <ScalarProperty Name="AuthProvider" ColumnName="AuthProvider" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BlogPostKey" ColumnName="BlogPostKey" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BlogPosts">
             <EntityTypeMapping TypeName="MvcBloggyModel.BlogPost">
               <MappingFragment StoreEntitySet="BlogPosts">
-                <ScalarProperty Name="Key" ColumnName="Key" />
-                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
-                <ScalarProperty Name="SecondaryKey" ColumnName="SecondaryKey" />
-                <ScalarProperty Name="BlogPostGuid" ColumnName="BlogPostGuid" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="BriefInfo" ColumnName="BriefInfo" />
-                <ScalarProperty Name="Content" ColumnName="Content" />
-                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
                 <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="BriefInfo" ColumnName="BriefInfo" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SecondaryKey" ColumnName="SecondaryKey" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BlogPostUrls">
             <EntityTypeMapping TypeName="MvcBloggyModel.BlogPostUrl">
               <MappingFragment StoreEntitySet="BlogPostUrls">
-                <ScalarProperty Name="Key" ColumnName="Key" />
-                <ScalarProperty Name="BlogPostKey" ColumnName="BlogPostKey" />
-                <ScalarProperty Name="UrlPortion" ColumnName="UrlPortion" />
-                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
                 <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
+                <ScalarProperty Name="UrlPortion" ColumnName="UrlPortion" />
+                <ScalarProperty Name="BlogPostKey" ColumnName="BlogPostKey" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BlogRolls">
             <EntityTypeMapping TypeName="MvcBloggyModel.BlogRoll">
               <MappingFragment StoreEntitySet="BlogRolls">
-                <ScalarProperty Name="Key" ColumnName="Key" />
-                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
-                <ScalarProperty Name="BlogName" ColumnName="BlogName" />
-                <ScalarProperty Name="BlogAuthor" ColumnName="BlogAuthor" />
-                <ScalarProperty Name="BlogUrl" ColumnName="BlogUrl" />
-                <ScalarProperty Name="FeedUrl" ColumnName="FeedUrl" />
-                <ScalarProperty Name="Order" ColumnName="Order" />
-                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
                 <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="FeedUrl" ColumnName="FeedUrl" />
+                <ScalarProperty Name="BlogUrl" ColumnName="BlogUrl" />
+                <ScalarProperty Name="BlogAuthor" ColumnName="BlogAuthor" />
+                <ScalarProperty Name="BlogName" ColumnName="BlogName" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DynamicPages">
             <EntityTypeMapping TypeName="MvcBloggyModel.DynamicPage">
               <MappingFragment StoreEntitySet="DynamicPages">
-                <ScalarProperty Name="Key" ColumnName="Key" />
-                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="BriefInfo" ColumnName="BriefInfo" />
-                <ScalarProperty Name="Content" ColumnName="Content" />
-                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
                 <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="BriefInfo" ColumnName="BriefInfo" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Languages">
             <EntityTypeMapping TypeName="MvcBloggyModel.Language">
               <MappingFragment StoreEntitySet="Languages">
-                <ScalarProperty Name="Key" ColumnName="Key" />
-                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
-                <ScalarProperty Name="Culture" ColumnName="Culture" />
-                <ScalarProperty Name="CultureOne" ColumnName="CultureOne" />
-                <ScalarProperty Name="Order" ColumnName="Order" />
-                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
                 <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="CultureOne" ColumnName="CultureOne" />
+                <ScalarProperty Name="Culture" ColumnName="Culture" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RestrictedPageNames">
             <EntityTypeMapping TypeName="MvcBloggyModel.RestrictedPageName">
               <MappingFragment StoreEntitySet="RestrictedPageNames">
-                <ScalarProperty Name="Key" ColumnName="Key" />
-                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
-                <ScalarProperty Name="Term" ColumnName="Term" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tags">
             <EntityTypeMapping TypeName="MvcBloggyModel.Tag">
               <MappingFragment StoreEntitySet="Tags">
-                <ScalarProperty Name="Key" ColumnName="Key" />
-                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
-                <ScalarProperty Name="TagGuid" ColumnName="TagGuid" />
-                <ScalarProperty Name="TagName" ColumnName="TagName" />
-                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
+                <ScalarProperty Name="TagName" ColumnName="TagName" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TagsForBlogPosts">
             <EntityTypeMapping TypeName="MvcBloggyModel.TagsForBlogPost">
               <MappingFragment StoreEntitySet="TagsForBlogPosts">
-                <ScalarProperty Name="Key" ColumnName="Key" />
-                <ScalarProperty Name="BlogPostKey" ColumnName="BlogPostKey" />
                 <ScalarProperty Name="TagKey" ColumnName="TagKey" />
+                <ScalarProperty Name="BlogPostKey" ColumnName="BlogPostKey" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TagsForDynamicPages">
             <EntityTypeMapping TypeName="MvcBloggyModel.TagsForDynamicPage">
               <MappingFragment StoreEntitySet="TagsForDynamicPages">
-                <ScalarProperty Name="Key" ColumnName="Key" />
-                <ScalarProperty Name="DynamicPageKey" ColumnName="DynamicPageKey" />
                 <ScalarProperty Name="TagKey" ColumnName="TagKey" />
+                <ScalarProperty Name="DynamicPageKey" ColumnName="DynamicPageKey" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="MvcBloggyModel.User">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="Key" ColumnName="Key" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="HashedPassword" ColumnName="HashedPassword" />
-                <ScalarProperty Name="Salt" ColumnName="Salt" />
-                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
-                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
                 <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+                <ScalarProperty Name="LastUpdateIp" ColumnName="LastUpdateIp" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreationIp" ColumnName="CreationIp" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+                <ScalarProperty Name="HashedPassword" ColumnName="HashedPassword" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

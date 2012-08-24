@@ -23,7 +23,7 @@ namespace MvcBloggy.Domain.Entities
             this.Tags = new HashSet<Tag>();
         }
     
-        public int Key { get; set; }
+        public System.Guid Key { get; set; }
         public string DisplayName { get; set; }
         public string Culture { get; set; }
         public string CultureOne { get; set; }

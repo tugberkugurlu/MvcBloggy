@@ -63,11 +63,12 @@ namespace MvcBloggy.Domain.Entities {
             IQueryable<T> query = AllIncluding(includeProperties).OrderBy(keySelector);
             query = (predicate == null) ? query : query.Where(predicate);
 
-            var baseQuery = query;
-            
-            query = query.Skip((pageIndex - 1)* pageSize).Take(pageSize);
-            var totalCount = baseQuery.Count();
-            return new PaginatedList<T>(pageIndex, pageSize, totalCount, query);
+            return query.ToPaginatedList(pageIndex, pageSize);
+        }
+
+        public T GetSingle(Guid key) {
+
+            return GetAll().FirstOrDefault(x => x.Key == key);
         }
 
         public virtual void Add(T entity) {

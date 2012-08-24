@@ -14,8 +14,8 @@ namespace MvcBloggy.Domain.Entities
     
     public partial class RestrictedPageName : IEntity
     {
-        public int Key { get; set; }
-        public int LanguageKey { get; set; }
+        public System.Guid Key { get; set; }
+        public System.Guid LanguageKey { get; set; }
         public string Term { get; set; }
         public Nullable<System.DateTimeOffset> CreatedOn { get; set; }
     

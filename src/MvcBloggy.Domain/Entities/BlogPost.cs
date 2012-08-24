@@ -21,10 +21,9 @@ namespace MvcBloggy.Domain.Entities
             this.TagsForBlogPosts = new HashSet<TagsForBlogPost>();
         }
     
-        public int Key { get; set; }
-        public int LanguageKey { get; set; }
+        public System.Guid Key { get; set; }
+        public System.Guid LanguageKey { get; set; }
         public Nullable<int> SecondaryKey { get; set; }
-        public System.Guid BlogPostGuid { get; set; }
         public string Title { get; set; }
         public string BriefInfo { get; set; }
         public string Content { get; set; }

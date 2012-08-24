@@ -14,9 +14,8 @@ namespace MvcBloggy.Domain.Entities
     
     public partial class BlogPostComment : IEntity
     {
-        public int Key { get; set; }
-        public int BlogPostKey { get; set; }
-        public System.Guid BlogCommentGuid { get; set; }
+        public System.Guid Key { get; set; }
+        public System.Guid BlogPostKey { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string WebSite { get; set; }

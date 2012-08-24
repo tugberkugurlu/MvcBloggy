@@ -10,7 +10,7 @@ namespace MvcBloggy.API.Model.RequestModels {
     public class BlogPostRequestModel {
 
         [Required]
-        public int LanguageKey { get; set; }
+        public Guid LanguageKey { get; set; }
 
         [Required]
         [StringLength(300)]

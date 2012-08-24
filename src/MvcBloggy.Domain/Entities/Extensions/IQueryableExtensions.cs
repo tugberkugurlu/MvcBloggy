@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MvcBloggy.Domain.Entities.Extensions {
+namespace MvcBloggy.Domain.Entities {
     
     public static class IQueryableExtensions {
 

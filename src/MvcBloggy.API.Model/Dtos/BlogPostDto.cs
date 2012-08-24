@@ -20,7 +20,6 @@ namespace MvcBloggy.API.Model.Dtos {
             Key = blogPost.Key;
             LanguageKey = blogPost.LanguageKey;
             SecondaryKey = blogPost.SecondaryKey;
-            BlogPostGuid = blogPost.BlogPostGuid;
             Title = blogPost.Title;
             BriefInfo = blogPost.BriefInfo;
             Content = blogPost.Content;
@@ -32,10 +31,9 @@ namespace MvcBloggy.API.Model.Dtos {
             LastUpdatedOn = blogPost.LastUpdatedOn;
         }
 
-        public int Key { get; set; }
-        public int LanguageKey { get; set; }
+        public Guid Key { get; set; }
+        public Guid LanguageKey { get; set; }
         public int? SecondaryKey { get; set; }
-        public Guid BlogPostGuid { get; set; }
         public string Title { get; set; }
         public string BriefInfo { get; set; }
         public string Content { get; set; }

@@ -38,10 +38,7 @@ namespace MvcBloggy.API.Controllers {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
 
-            var blogPosts = _blogPostRepository.Paginate(page, take, 
-                x => x.CreatedOn, 
-                x => x.Language.CultureOne == lang,
-                x => x.Language);
+            var blogPosts = _blogService.GetBlogPosts(lang, page, take);
 
             return Request.CreateResponse(HttpStatusCode.OK, new PaginatedDto<BlogPostDto> {
                 PageIndex = blogPosts.PageIndex,

@@ -14,7 +14,7 @@ namespace MvcBloggy.Domain.Entities
     
     public partial class User : IEntity
     {
-        public int Key { get; set; }
+        public System.Guid Key { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string HashedPassword { get; set; }

@@ -20,6 +20,7 @@ namespace MvcBloggy.Domain.Entities {
             Expression<Func<T, TKey>> keySelector,
             Expression<Func<T, bool>> predicate,
             params Expression<Func<T, object>>[] includeProperties);
+        T GetSingle(Guid key);
         void Add(T entity);
         void Delete(T entity);
         void Edit(T entity);
