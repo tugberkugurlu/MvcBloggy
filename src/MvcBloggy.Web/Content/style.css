@@ -1,5 +1,4 @@
-body
-{
+body {
     font-size: .85em;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     color: #232323;
@@ -16,72 +15,50 @@ section {
 /* Styles for basic forms
 -----------------------------------------------------------*/
 
-fieldset 
-{
+fieldset {
     border:1px solid #ddd;
     padding:0 1.4em 1.4em 1.4em;
     margin:0 0 1.5em 0;
 }
 
-legend 
-{
+legend {
     font-size:1.2em;
     font-weight: bold;
 }
 
-textarea 
-{
+textarea {
     min-height: 75px;
 }
 
-.editor-label 
-{
+.editor-label {
     margin: 1em 0 0 0;
 }
 
-.editor-field 
-{
+.editor-field {
     margin:0.5em 0 0 0;
 }
 
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/
-.field-validation-error
-{
+.field-validation-error {
     color: #ff0000;
 }
 
-.field-validation-valid
-{
+.field-validation-valid {
     display: none;
 }
 
-.input-validation-error
-{
+.input-validation-error {
     border: 1px solid #ff0000;
     background-color: #ffeeee;
 }
 
-.validation-summary-errors
-{
+.validation-summary-errors {
     font-weight: bold;
     color: #ff0000;
 }
 
-.validation-summary-valid
-{
+.validation-summary-valid {
     display: none;
 }
-
-/* ==|== mvcbloggy styles ========================================
-   ========================================================================== */
-
-#mvcbloggy-wrapper{position:relative;}
-#mvcbloggy-innerwrapper{}
-
-#header-left{float:left;}
-#header-right{float:right;}
-#mvcbloggy-title{}
-#mvcbloggy-slogan{}
-#mvcbloggy-feedburner{}

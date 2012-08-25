@@ -1,91 +1,102 @@
-﻿/* ==|== primary styles =====================================================
-   Author: Tugberk Ugurlu, http://www.tugberkugurlu.com
-   ========================================================================== */
-
-/*Elements*/
-body{
-    /*font-family: Arial, Helvetica, sans-serif;*/
+﻿body{
     font-family: Segoe UI, Tahoma, Arial, Helvetica, sans-serif;
     font-size:14px;
     line-height:22px;
     background-image: url('img/bg_gray.png');
     background-color:#F8F2DA;
 }
-a img{
-    border:none;
-}
-img{
-    width: auto !important;
-    height: auto !important;
-    max-width: 100%;
-}
-h1, h2, h3{
-    color:#293852;
-}
-/*Elements*/
 
-#mvcbloggy-wrapper{
-    width:99%;
+#main-wrapper {
     margin:10px auto 20px auto;
-    max-width: 1250px;
+    max-width: 1225px;
 }
-#mvcbloggy-innerwrapper{
-    background-color:#fff;
-    padding:1%;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+#main, header, footer {
+}
+#main, header {
+    margin-bottom:25px;
 }
 
-/*Header*/
-header{width:96%;margin:20px 0;padding:2%;border:1px solid gray;border-top:2px solid #D0D0D0;
+header {
     background-image:url('img/SDC11882.jpg');
+    border:1px solid #95a5b2;
+    border-top:2px solid #95a5b2;
+    border-bottom:2px solid #95a5b2;
 }
-#header-left{width:78%;padding:10px 1%;}
-#header-right{width:18%;}
+#inner-header, #inner-main, #inner-footer {
+    padding:1%;
+}
+#header-left {
+    float:left;
+    width:70%;
+    padding:10px 1%;
+}
+#header-right {
+    float:right;
+    width:18%;
+}
 #mvcbloggy-title{
-    padding:0;margin:0;font-size:30px;
+    padding:0;
+    margin:0;
+    font-size:30px;
     font-family: Georgia, "Times New Roman", Times, serif;
 }
-#mvcbloggy-slogan{
-    font-style:italic;
-    text-shadow: gray -1px 1px 2px;font: normal 13px Georgia, "Times New Roman", Times, serif;
+#mvcbloggy-slogan {
+    font-style: italic;
+    -webkit-text-shadow: gray -1px 1px 2px;
+    text-shadow: gray -1px 1px 2px;
+    font: normal 13px Georgia, "Times New Roman", Times, serif;
 }
-#mvcbloggy-feedburner{float:right;padding:10px 1%;}
-#mvcbloggy-cultureswitcher{float:right;margin-left:5%;}
-/*Header*/
+#mvcbloggy-feedburner{
+    float:right;
+    padding:10px 1%;
+}
+#mvcbloggy-cultureswitcher{
+    float:right;
+    margin-left:5%;
+}
 
-/* Menu */
-nav {height:40px;margin:10px auto;padding:0;}
-nav ul{margin: 0;padding: 0px 0px 0px 4px;list-style: none;line-height: normal;margin:0 0.5%;}
-nav li {float:left;border-top:2px solid #D0D0D0;border-bottom:2px solid #D0D0D0;background-color:rgba(255, 255, 255, 0.55)}
-nav li.mvcbloggy-current, nav li:hover{
-    border-top:2px solid #293852;
-    border-bottom:2px solid #293852;                                   
+#mvcbloggy-nav {
+    height:40px;
+    margin:10px auto;
+    padding:0;
 }
-nav a {
+#mvcbloggy-nav ul{
+    margin: 0 0.5%;
+    padding: 0px 0px 0px 4px;
+    list-style:none;
+    line-height: normal;
+}
+#mvcbloggy-nav ul li {
+    float:left;border-top:2px solid #D0D0D0;
+    border-bottom:2px solid #D0D0D0;
+    background-color:rgba(255, 255, 255, 0.55)}
+#mvcbloggy-nav ul li.mvcbloggy-current, #mvcbloggy-nav ul li:hover{
+    border-top:2px solid #293852;
+    border-bottom:2px solid #293852;
+}
+#mvcbloggy-nav a {
     display: block;
     margin-right: 1px;
     padding: 13px 20px 10px 20px;
     text-decoration: none;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;font-weight: normal;
-    color:#4E5B64;border:none;font-weight:bold;
+    font-size: 12px;
+    color:#4E5B64;border:none;
+    font-weight:bold;
 }
-nav a:hover{color:#4E5B64;text-decoration: none;}
-nav a:visited{color:#4E5B64;text-decoration:none;}
-/* Menu */
+#mvcbloggy-nav a:hover{color:#4E5B64;text-decoration: none;}
+#mvcbloggy-nav a:visited{color:#4E5B64;text-decoration:none;}
 
-/*Content*/
-#mainbar{float:left;border-right:1px solid #D0D0D0;width:69%;padding:10px 2% 10px 1%;}
-#sidebar{float:right;width:26%;padding:10px 0.5%;}
-#mainbar h2 a{color:#293852;}
-/*Content*/
-
-footer{margin:10px 0;padding:1% 0;border-top:1px solid #D0D0D0;}
-#mvcbloggy-footerLeft{float:left;}
-#mvcbloggy-footerRight{float:right;}
-
-/*Misc*/
-/*Misc*/
+#main {
+    background-color: #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+#main-content, #sidebar {
+}
+#main-content {
+}
+#sidebar {
+}

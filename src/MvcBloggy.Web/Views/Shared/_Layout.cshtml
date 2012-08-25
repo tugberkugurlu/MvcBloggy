@@ -21,35 +21,48 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-    <div id="mvcbloggy-wrapper">
-        <header>
-            <section id="header-left">
-                @Html.Partial("LayoutHeaderLeft")
-            </section>
-            <section id="header-right">
-                @Html.Partial("LayoutHeaderRight")
-            </section>
-            <div class="clearfix"></div>
-            <nav>
-                <ul>
-                    <li class="mvcbloggy-current">@Html.ActionLink(Strings.Home, "index", new { controller = "default", area = string.Empty })</li>
-                    <li>@Html.ActionLink(Strings.Archive, "index", new { controller = "archive", area = string.Empty })</li>
-                    <li>@Html.ActionLink(Strings.AboutMe, "index", new { controller = "dynamicPage", page = "about", area = string.Empty })</li>
-                    <li>@Html.ActionLink(Strings.ContactMe, "index", new { controller = "contact", area = string.Empty })</li>
-                </ul>
-            </nav>
-            <div class="clearfix"></div>
-        </header>
-        <div id="mvcbloggy-innerwrapper">
-            <div id="sidebar"></div>
-            <div id="mainbar">
-                @RenderBody()
+
+    <div id="main-wrapper" class="container-fluid">
+
+        <header class="row-fluid">
+            <div id="inner-header" class="span12">
+                <section id="header-left">
+                    @Html.Partial("LayoutHeaderLeft")
+                </section>
+                <section id="header-right">
+                    @Html.Partial("LayoutHeaderRight")
+                </section>
+                <div class="clearfix"></div>
+                <div id="mvcbloggy-nav">
+                    <ul>
+                        <li class="mvcbloggy-current">@Html.ActionLink(Strings.Home, "index", new { controller = "default", area = string.Empty })</li>
+                        <li>@Html.ActionLink(Strings.Archive, "index", new { controller = "archive", area = string.Empty })</li>
+                        <li>@Html.ActionLink(Strings.AboutMe, "index", new { controller = "dynamicPage", page = "about", area = string.Empty })</li>
+                        <li>@Html.ActionLink(Strings.ContactMe, "index", new { controller = "contact", area = string.Empty })</li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="clearfix"></div>
+        </header>
+
+        <div id="main" class="row-fluid" role="main">
+            <div id="inner-main" class="span12">
+                <div id="main-content" class="span9">
+                    <hr />
+                    @RenderBody()
+                </div>
+                <div id="sidebar" class="span3">
+                    <hr />
+                </div>
+            </div>
         </div>
-        <footer>
-            @Html.Partial("LayoutFooter")
+
+        <footer class="row-fluid">
+            <div id="inner-footer" class="span12">
+                @Html.Partial("LayoutFooter")
+            </div>
         </footer>
+
     </div>
     @Scripts.Render("~/assets/js/globaljs")
     @RenderSection("scripts", false)

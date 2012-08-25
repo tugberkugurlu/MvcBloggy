@@ -37,7 +37,7 @@
             }
                         
             if(_windowWidth >= _designatedWindowWidthForNav &&
-                $("nav:hidden").length === 1) { 
+                $("#mvcbloggy-nav:hidden").length === 1) {
                             
                 reverseNavSelectListFromUlList();
             }
@@ -61,10 +61,14 @@
                     
         function buildNavSelectListFromUlList() { 
                         
-            var markUp = ["<select id='mvcbloggy-navselect'>"], $nav = $("nav"), $li, $a;
+            var markUp = ["<select id='mvcbloggy-navselect'>"],
+                $nav = $("#mvcbloggy-nav"),
+                $li,
+                $a;
+
             markUp.push("<option value='' selected='selected'>Go to...</option>");
                         
-            $("nav ul li").each(function() { 
+            $("#mvcbloggy-nav ul li").each(function () {
                 $li = $(this);
                 $a = $li.find("a");
                 markUp.push("<option value='"+$a.attr("href")+"'>"+$a.text()+"</option>");
@@ -81,10 +85,10 @@
             $nav.hide();
         }
                     
-        function  reverseNavSelectListFromUlList() { 
+        function reverseNavSelectListFromUlList() { 
                         
             $("#mvcbloggy-navselect").hide();
-            $("nav").show();
+            $("#mvcbloggy-nav").show();
         }
                     
         function isNavSelectListExists() { 
