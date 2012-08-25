@@ -28,6 +28,22 @@ namespace MvcBloggy.Web {
             routes.Add(new Route("{weblog}", new RouteValueDictionary(new { language = AppLanguage.GetDefault() }), new RouteValueDictionary(new { weblog = "blogapi" }), new MetaWeblogRouteHandler()));
             routes.Add(new Route("{weblog}/{language}", null, new RouteValueDictionary(new { weblog = "blogapi", language = new LanguageRouteConstraint() }), new MetaWeblogRouteHandler()));
 
+            routes.MapRoute(
+                "BlogRoute",
+                "{language}/archive/{action}",
+                new { controller = "blog", action = "index" },
+                new { language = new LanguageRouteConstraint() },
+                new string[] { "MvcBloggy.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                "BlogLangRoute",
+                "archive/{action}",
+                new { controller = "blog", action = "index", language = AppLanguage.GetDefault() },
+                new { },
+                new string[] { "MvcBloggy.Web.Controllers" }
+            );
+
             //default routes
             routes.MapRoute(
                 "DefaultRoute",

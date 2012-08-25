@@ -148,6 +148,9 @@
     <Compile Include="..\Common\CommonConstants.cs">
       <Link>Common\CommonConstants.cs</Link>
     </Compile>
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DynamicPageController.cs" />
     <Compile Include="Infrastructure\AutofacMVC3.cs" />
     <Compile Include="Infrastructure\Http\BlogHttpResponseMessage%271.cs" />
     <Compile Include="Infrastructure\Http\BlogHttpResponseMessage.cs" />
@@ -280,6 +283,9 @@
     <Content Include="Areas\Admin\Views\Default\Index.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Auth\LogOn.cshtml" />
+    <Content Include="Views\DynamicPage\Index.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
