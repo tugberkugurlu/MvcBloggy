@@ -29,8 +29,8 @@ namespace MvcBloggy.Web.Infrastructure.Http {
 
             var response = await GetAsync(BuildRequestUri(path, queryParameters));
             response.EnsureSuccessStatusCode();
-            var blogPosts = await response.Content.ReadAsAsync<PaginatedDto<T>>();
-            return blogPosts;
+            var content = await response.Content.ReadAsAsync<PaginatedDto<T>>();
+            return content;
         }
 
         public Task<BlogHttpResponseMessage<T>> GetSingleAsync(string path, Guid key) {
