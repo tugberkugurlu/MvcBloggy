@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -23,14 +24,16 @@ namespace MvcBloggy.Web.Infrastructure.Http {
             _password = appSettings.BlogApiPassword;
 
             DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(CommonConstants.ApplicationJsonMediaType));
+            DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
+                "Basic", EncodeToBase64(string.Format("{0}:{1}", _userName, _password)));
         }
 
         public async Task<PaginatedDto<T>> GetPaginatedAsync(string path, object queryParameters) {
 
             var response = await GetAsync(BuildRequestUri(path, queryParameters));
-            response.EnsureSuccessStatusCode();
-            var content = await response.Content.ReadAsAsync<PaginatedDto<T>>();
-            return content;
+
+            var blogResponse = await response.GetBlogHttpResponseAsync<PaginatedDto<T>>();
+            return blogResponse.Model;
         }
 
         public Task<BlogHttpResponseMessage<T>> GetSingleAsync(string path, Guid key) {
@@ -87,6 +90,12 @@ namespace MvcBloggy.Web.Infrastructure.Http {
                 requestUri = string.Format("{0}?{1}", requestUri, queryString);
 
             return requestUri;
+        }
+
+        private static string EncodeToBase64(string value) {
+
+            byte[] toEncodeAsBytes = Encoding.UTF8.GetBytes(value);
+            return Convert.ToBase64String(toEncodeAsBytes);
         }
     }
 }

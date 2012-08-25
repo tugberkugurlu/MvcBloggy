@@ -8,6 +8,10 @@ namespace MvcBloggy.Web.Infrastructure.Http {
     
     public class BlogHttpResponseMessage {
 
-        public HttpResponseMessage Response { get; set; }
+        public BlogHttpResponseMessage(HttpResponseMessage response) {
+            Response = response;
+        }
+
+        public HttpResponseMessage Response { get; private set; }
     }
 }

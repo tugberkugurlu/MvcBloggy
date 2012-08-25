@@ -28,7 +28,7 @@ namespace MvcBloggy.API.Controllers {
         }
 
         public HttpResponseMessage GetBlogPosts(string lang, int page, int take) {
-
+            
             if (page <= 0) { page = 1; }
             if (take <= 0) { take = 1; }
 

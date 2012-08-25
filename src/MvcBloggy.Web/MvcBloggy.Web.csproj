@@ -154,6 +154,7 @@
     <Compile Include="Infrastructure\AutofacMVC3.cs" />
     <Compile Include="Infrastructure\Http\BlogHttpResponseMessage%271.cs" />
     <Compile Include="Infrastructure\Http\BlogHttpResponseMessage.cs" />
+    <Compile Include="Infrastructure\Http\HttpResponseMessageExtensions.cs" />
     <Compile Include="Infrastructure\Http\QueryStringCollection.cs" />
     <Compile Include="App_Code\HelperPage.cs" />
     <Compile Include="Infrastructure\Http\BlogHttpClient.cs" />
@@ -180,9 +181,11 @@
     <Compile Include="Infrastructure\Mvc\LanguageRouteConstraint.cs" />
     <Compile Include="Infrastructure\Services\ApplicationSettings.cs" />
     <Compile Include="Infrastructure\Services\AuthorizationService.cs" />
+    <Compile Include="Infrastructure\Services\BlogPostService.cs" />
     <Compile Include="Infrastructure\Services\FormsAuthenticationService.cs" />
     <Compile Include="Infrastructure\Services\IApplicationSettings.cs" />
     <Compile Include="Infrastructure\Services\IAuthorizationService.cs" />
+    <Compile Include="Infrastructure\Services\IBlogPostService.cs" />
     <Compile Include="Infrastructure\Services\IFormsAuthenticationService.cs" />
     <Compile Include="Infrastructure\Mvc\TwoLevelViewCache.cs" />
     <Compile Include="Infrastructure\Utility\AppLanguage.cs" />
