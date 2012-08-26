@@ -6,6 +6,7 @@ using System.Net.Http.Formatting;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.ModelBinding;
 using System.Web.Http.Validation.Providers;
 using WebAPIDoodle.Http;
 
@@ -21,15 +22,15 @@ namespace MvcBloggy.API.Config {
             config.MessageHandlers.Add(new RemoveServerHeaderMessageHandler());
 
             //Formatters
+            var jqueryFormatter = config.Formatters.FirstOrDefault(x => x.GetType() == typeof(JQueryMvcFormUrlEncodedFormatter));
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.Formatters.Remove(config.Formatters.FormUrlEncodedFormatter);
+            config.Formatters.Remove(jqueryFormatter);
 
             //Filters
 
             //Default Services
-            config.Services.RemoveAll(
-                typeof(System.Web.Http.Validation.ModelValidatorProvider), 
-                v => v is InvalidModelValidatorProvider);
+            config.Services.RemoveAll(typeof(System.Web.Http.Validation.ModelValidatorProvider), v => v is InvalidModelValidatorProvider);
 
             // From DefaultContentNegotiator class:
             // If ExcludeMatchOnTypeOnly is true then we don't match on type only which means
