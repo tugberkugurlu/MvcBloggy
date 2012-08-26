@@ -132,7 +132,13 @@
   <data name="Home" xml:space="preserve">
     <value>Ana Sayfa</value>
   </data>
+  <data name="Next" xml:space="preserve">
+    <value>Sonraki</value>
+  </data>
   <data name="NoBlogPostsFound" xml:space="preserve">
     <value>Nayır, nolamaz! Hiçbir blog yazısı bulunamadı :(</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Önceki</value>
   </data>
 </root>

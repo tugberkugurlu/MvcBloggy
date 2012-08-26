@@ -156,7 +156,7 @@
     <Compile Include="Infrastructure\Http\BlogHttpResponseMessage.cs" />
     <Compile Include="Infrastructure\Http\HttpResponseMessageExtensions.cs" />
     <Compile Include="Infrastructure\Http\QueryStringCollection.cs" />
-    <Compile Include="App_Code\HelperPage.cs" />
+    <Compile Include="Infrastructure\Mvc\HelperPage.cs" />
     <Compile Include="Infrastructure\Http\BlogHttpClient.cs" />
     <Compile Include="Infrastructure\Http\IBlogHttpClient.cs" />
     <Compile Include="Infrastructure\MetaWeblogItems\MetaWeblogRouteHandler.cs" />

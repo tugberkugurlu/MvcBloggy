@@ -11,7 +11,7 @@ using System.Web;
 
 namespace MvcBloggy.Web.Infrastructure.Http {
 
-    public class BlogHttpClient<T> : HttpClient, IBlogHttpClient<T> {
+    public class BlogHttpClient<TDto> : HttpClient, IBlogHttpClient<TDto> where TDto : IDto {
 
         private readonly string _requestUri;
         private readonly string _userName;
@@ -28,35 +28,35 @@ namespace MvcBloggy.Web.Infrastructure.Http {
                 "Basic", EncodeToBase64(string.Format("{0}:{1}", _userName, _password)));
         }
 
-        public async Task<PaginatedDto<T>> GetPaginatedAsync(string path, object queryParameters) {
+        public async Task<PaginatedDto<TDto>> GetPaginatedAsync(string path, object queryParameters) {
 
             var response = await GetAsync(BuildRequestUri(path, queryParameters));
 
-            var blogResponse = await response.GetBlogHttpResponseAsync<PaginatedDto<T>>();
+            var blogResponse = await response.GetBlogHttpResponseAsync<PaginatedDto<TDto>>();
             return blogResponse.Model;
         }
 
-        public Task<BlogHttpResponseMessage<T>> GetSingleAsync(string path, Guid key) {
+        public Task<BlogHttpResponseMessage<TDto>> GetSingleAsync(string path, Guid key) {
             throw new NotImplementedException();
         }
 
-        public Task<BlogHttpResponseMessage<T>> GetSingleAsync(string path, Guid key, object queryParameters) {
+        public Task<BlogHttpResponseMessage<TDto>> GetSingleAsync(string path, Guid key, object queryParameters) {
             throw new NotImplementedException();
         }
 
-        public Task<BlogHttpResponseMessage<T>> PostAsync<TEntity>(string path, TEntity requestModel) {
+        public Task<BlogHttpResponseMessage<TDto>> PostAsync<TEntity>(string path, TEntity requestModel) {
             throw new NotImplementedException();
         }
 
-        public Task<BlogHttpResponseMessage<T>> PostAsync<TEntity>(string path, TEntity requestModel, object queryParameters) {
+        public Task<BlogHttpResponseMessage<TDto>> PostAsync<TEntity>(string path, TEntity requestModel, object queryParameters) {
             throw new NotImplementedException();
         }
 
-        public Task<BlogHttpResponseMessage<T>> PutAsync<TEntity>(string path, Guid key, TEntity requestModel) {
+        public Task<BlogHttpResponseMessage<TDto>> PutAsync<TEntity>(string path, Guid key, TEntity requestModel) {
             throw new NotImplementedException();
         }
 
-        public Task<BlogHttpResponseMessage<T>> PutAsync<TEntity>(string path, Guid key, TEntity requestModel, object queryParameters) {
+        public Task<BlogHttpResponseMessage<TDto>> PutAsync<TEntity>(string path, Guid key, TEntity requestModel, object queryParameters) {
             throw new NotImplementedException();
         }
 

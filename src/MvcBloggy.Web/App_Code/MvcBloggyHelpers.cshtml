@@ -1,36 +1,54 @@
-﻿@inherits MvcBloggy.Web.App_Code.HelperPage
+﻿@inherits MvcBloggy.Web.Infrastructure.Mvc.HelperPage
 @using MvcBloggy.API.Model.Dtos;
 @using System.Web.Mvc;
 @using System.Web.Mvc.Html;
+@using MvcBloggy.Resources;
 
-@helper Pager(PaginatedDto<BlogPostDto> paginatedDto) {
+@helper Pager(IPaginatedDto<IDto> paginatedDto) {
     
     <ul class="pagination">
         @if(paginatedDto.HasPreviousPage) { 
             <li>
-                <a href="#">Previous</a>
+                @Html.ActionLink(
+                    Strings.Previous,
+                    RouteData.Values["action"].ToString(), 
+                    new { 
+                        controller = RouteData.Values["controller"], 
+                        page = paginatedDto.PageIndex - 1
+                    }
+                )
             </li>
         }
 
         @if (paginatedDto.TotalPageCount >= 2) {
             int totalPageNumber = 0;
-            for (int i = 1; i <= paginatedDto.TotalPageCount; i++) {
-                if (paginatedDto.PageIndex == i) { 
-                    <li class="active">
-                        <a href="#">@i</a>
-                    </li>
-                } else { 
-                    <li>
-                        <a href="#">@i</a>
-                    </li>
-                }
+            for (int index = 1; index <= paginatedDto.TotalPageCount; index++) {
+                
+                string cssClass = (paginatedDto.PageIndex == index) ? "active" : null;
+                <li class="@cssClass">
+                    @Html.ActionLink(
+                        index.ToString(),
+                        RouteData.Values["action"].ToString(), 
+                        new { 
+                            controller = RouteData.Values["controller"], 
+                            page = index
+                        }
+                    )
+                </li>
                 totalPageNumber++;
             }
         }
 
         @if(paginatedDto.HasNextPage) { 
             <li>
-                <a href="#">Next</a>
+                @Html.ActionLink(
+                    Strings.Next,
+                    RouteData.Values["action"].ToString(), 
+                    new { 
+                        controller = RouteData.Values["controller"], 
+                        page = paginatedDto.PageIndex + 1
+                    }
+                )
             </li>
         }
     </ul>

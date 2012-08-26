@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MvcBloggy.API.Model.Dtos {
 
-    public class BlogPostDto {
+    public class BlogPostDto : IDto {
 
         public BlogPostDto() { }
 

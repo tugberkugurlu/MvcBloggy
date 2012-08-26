@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using System.Web.WebPages;
 
-namespace MvcBloggy.Web.App_Code {
+namespace MvcBloggy.Web.Infrastructure.Mvc {
 
     //http://stackoverflow.com/questions/4710853/using-mvc-htmlhelper-extensions-from-razor-declarative-views
     public class HelperPage : System.Web.WebPages.HelperPage {
@@ -14,6 +15,16 @@ namespace MvcBloggy.Web.App_Code {
         public static new HtmlHelper Html {
 
             get { return ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Html; }
+        }
+
+        public static UrlHelper Url {
+
+            get { return ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Url; }
+        }
+
+        public static RouteData RouteData {
+
+            get { return ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Url.RequestContext.RouteData; }
         }
     }
 }
