@@ -1,4 +1,5 @@
 ﻿using MvcBloggy.API.Filters;
+using MvcBloggy.API.Model;
 using MvcBloggy.API.Model.Dtos;
 using MvcBloggy.API.Model.RequestModels;
 using MvcBloggy.Domain.Entities;
@@ -47,7 +48,7 @@ namespace MvcBloggy.API.Controllers {
                 TotalPageCount = blogPosts.TotalPageCount,
                 HasNextPage = blogPosts.HasNextPage,
                 HasPreviousPage = blogPosts.HasPreviousPage,
-                Dtos = blogPosts.Select(blogPost => new BlogPostDto(blogPost))
+                Items = blogPosts.Select(blogPost => blogPost.ToBlogPostDto())
             });
         }
 
@@ -55,11 +56,8 @@ namespace MvcBloggy.API.Controllers {
         [InvalidModelStateFilter]
         public HttpResponseMessage PostBlogPost(BlogPostRequestModel blogPost) {
 
-            var blogPostEntity = _blogService.AddBlogPost(
-                blogPost.ToBlogPost(), blogPost.Tags);
-
-            return Request.CreateResponse(
-                HttpStatusCode.Created, new BlogPostDto(blogPostEntity));
+            var blogPostEntity = _blogService.AddBlogPost(blogPost.ToBlogPost(), blogPost.Tags);
+            return Request.CreateResponse(HttpStatusCode.Created, blogPostEntity.ToBlogPostDto());
         }
     }
 }

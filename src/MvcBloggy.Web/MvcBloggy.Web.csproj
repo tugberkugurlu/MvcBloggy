@@ -148,6 +148,9 @@
     <Compile Include="..\Common\CommonConstants.cs">
       <Link>Common\CommonConstants.cs</Link>
     </Compile>
+    <Compile Include="..\Common\Error.cs">
+      <Link>Common\Error.cs</Link>
+    </Compile>
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DynamicPageController.cs" />
@@ -338,6 +341,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Services\MetaWeblogAPI.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Common\CommonResources.Designer.cs">
+      <Link>Properties\CommonResources.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\Common\CommonResources.resx">
+      <Link>Properties\CommonResources.resx</Link>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>MvcBloggy</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

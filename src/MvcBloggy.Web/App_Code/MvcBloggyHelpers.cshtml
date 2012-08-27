@@ -6,49 +6,78 @@
 
 @helper Pager(IPaginatedDto<IDto> paginatedDto) {
     
+    var routeDictionary = RouteData.Values;
+    if(Url.RequestContext.HttpContext.Request.QueryString.AllKeys.Any()) {
+        foreach (var key in Url.RequestContext.HttpContext.Request.QueryString.AllKeys) {
+            routeDictionary.Add(key, Url.RequestContext.HttpContext.Request.QueryString[key]);
+        }
+    }
+    
     <ul class="pagination">
-        @if(paginatedDto.HasPreviousPage) { 
+        @if(paginatedDto.HasPreviousPage) {
+            var tempRouteDataDictionary = new System.Web.Routing.RouteValueDictionary(routeDictionary);
+            tempRouteDataDictionary.Remove("page");
+            tempRouteDataDictionary.Add("page", (paginatedDto.PageIndex - 1).ToString());
             <li>
-                @Html.ActionLink(
+                @Html.RouteLink(
+                    Strings.Previous,
+                    tempRouteDataDictionary
+                )
+                @*@Html.ActionLink(
                     Strings.Previous,
                     RouteData.Values["action"].ToString(), 
                     new { 
                         controller = RouteData.Values["controller"], 
                         page = paginatedDto.PageIndex - 1
                     }
-                )
+                )*@
             </li>
         }
 
         @if (paginatedDto.TotalPageCount >= 2) {
             int totalPageNumber = 0;
             for (int index = 1; index <= paginatedDto.TotalPageCount; index++) {
+
+                var tempRouteDataDictionary = new System.Web.Routing.RouteValueDictionary(routeDictionary);
+                tempRouteDataDictionary.Remove("page");
+                tempRouteDataDictionary.Add("page", index.ToString());
                 
                 string cssClass = (paginatedDto.PageIndex == index) ? "active" : null;
                 <li class="@cssClass">
-                    @Html.ActionLink(
+                    @Html.RouteLink(
+                        index.ToString(),
+                        tempRouteDataDictionary
+                    )
+                    @*@Html.ActionLink(
                         index.ToString(),
                         RouteData.Values["action"].ToString(), 
                         new { 
                             controller = RouteData.Values["controller"], 
                             page = index
                         }
-                    )
+                    )*@
                 </li>
                 totalPageNumber++;
             }
         }
 
-        @if(paginatedDto.HasNextPage) { 
+        @if(paginatedDto.HasNextPage) {
+            var tempRouteDataDictionary = new System.Web.Routing.RouteValueDictionary(routeDictionary);
+            tempRouteDataDictionary.Remove("page");
+            tempRouteDataDictionary.Add("page", (paginatedDto.PageIndex + 1).ToString());
             <li>
-                @Html.ActionLink(
+                @Html.RouteLink(
+                    Strings.Next,
+                    tempRouteDataDictionary
+                )
+                @*@Html.ActionLink(
                     Strings.Next,
                     RouteData.Values["action"].ToString(), 
                     new { 
                         controller = RouteData.Values["controller"], 
                         page = paginatedDto.PageIndex + 1
                     }
-                )
+                )*@
             </li>
         }
     </ul>

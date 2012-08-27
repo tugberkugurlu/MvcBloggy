@@ -1,5 +1,4 @@
-﻿using MvcBloggy.Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +16,6 @@ namespace MvcBloggy.API.Model.Dtos {
         public bool HasNextPage { get; set; }
         public bool HasPreviousPage { get; set; }
 
-        public IEnumerable<TDto> Dtos { get; set; }
+        public IEnumerable<TDto> Items { get; set; }
     }
 }

@@ -16,6 +16,6 @@ namespace MvcBloggy.API.Model.Dtos {
         bool HasNextPage { get; set; }
         bool HasPreviousPage { get; set; }
 
-        IEnumerable<TDto> Dtos { get; }
+        IEnumerable<TDto> Items { get; }
     }
 }
