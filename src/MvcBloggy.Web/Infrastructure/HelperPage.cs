@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.WebPages;
 
-namespace MvcBloggy.Web.Infrastructure.Mvc {
+namespace MvcBloggy.Web.Infrastructure {
 
     //http://stackoverflow.com/questions/4710853/using-mvc-htmlhelper-extensions-from-razor-declarative-views
     public class HelperPage : System.Web.WebPages.HelperPage {

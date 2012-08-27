@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace MvcBloggy.Web.Infrastructure.Mvc {
+namespace MvcBloggy.Web.Infrastructure.Routes {
 
     public static class RouteCollectionExtensions {
 

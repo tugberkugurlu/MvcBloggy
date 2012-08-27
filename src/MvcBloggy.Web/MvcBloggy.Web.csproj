@@ -154,34 +154,34 @@
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DynamicPageController.cs" />
-    <Compile Include="Infrastructure\AutofacMVC3.cs" />
+    <Compile Include="App_Start\AutofacMVC3.cs" />
     <Compile Include="Infrastructure\Http\BlogHttpResponseMessage%271.cs" />
     <Compile Include="Infrastructure\Http\BlogHttpResponseMessage.cs" />
     <Compile Include="Infrastructure\Http\HttpResponseMessageExtensions.cs" />
     <Compile Include="Infrastructure\Http\QueryStringCollection.cs" />
-    <Compile Include="Infrastructure\Mvc\HelperPage.cs" />
+    <Compile Include="Infrastructure\HelperPage.cs" />
     <Compile Include="Infrastructure\Http\BlogHttpClient.cs" />
     <Compile Include="Infrastructure\Http\IBlogHttpClient.cs" />
     <Compile Include="Infrastructure\MetaWeblogItems\MetaWeblogRouteHandler.cs" />
-    <Compile Include="Infrastructure\Mvc\Filters\RemoveWhitespacesAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\RemoveWhitespacesAttribute.cs" />
     <Compile Include="Infrastructure\Application.cs" />
-    <Compile Include="Infrastructure\Mvc\CSRazorViewEngine.cs" />
-    <Compile Include="Infrastructure\Mvc\Filters\CustomAuthorizeAttribute.cs" />
-    <Compile Include="Infrastructure\Mvc\Filters\BypassAuthorizationAttribute.cs" />
+    <Compile Include="Infrastructure\CSRazorViewEngine.cs" />
+    <Compile Include="Infrastructure\Filters\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\Filters\BypassAuthorizationAttribute.cs" />
     <Compile Include="Infrastructure\MetaWeblogItems\IMetaWeblog.cs" />
-    <Compile Include="Infrastructure\Mvc\LocalizedControllerFactory.cs" />
+    <Compile Include="Infrastructure\LocalizedControllerFactory.cs" />
     <Compile Include="Infrastructure\MetaWeblogItems\MetaWeblog.cs" />
     <Compile Include="Infrastructure\MetaWeblogItems\MetaWeblogStructs.cs" />
     <Compile Include="Infrastructure\MvcBloggy.cs" />
-    <Compile Include="Infrastructure\Mvc\RouteCollectionExtensions.cs" />
-    <Compile Include="Infrastructure\Mvc\LowercaseRoute.cs" />
+    <Compile Include="Infrastructure\Routes\RouteCollectionExtensions.cs" />
+    <Compile Include="Infrastructure\Routes\LowercaseRoute.cs" />
     <Compile Include="Infrastructure\Profile.cs" />
     <Compile Include="Infrastructure\Resources\AppInfoStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppInfoStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\Mvc\LanguageRouteConstraint.cs" />
+    <Compile Include="Infrastructure\Routes\LanguageRouteConstraint.cs" />
     <Compile Include="Infrastructure\Services\ApplicationSettings.cs" />
     <Compile Include="Infrastructure\Services\AuthorizationService.cs" />
     <Compile Include="Infrastructure\Services\BlogPostService.cs" />
@@ -190,7 +190,7 @@
     <Compile Include="Infrastructure\Services\IAuthorizationService.cs" />
     <Compile Include="Infrastructure\Services\IBlogPostService.cs" />
     <Compile Include="Infrastructure\Services\IFormsAuthenticationService.cs" />
-    <Compile Include="Infrastructure\Mvc\TwoLevelViewCache.cs" />
+    <Compile Include="Infrastructure\TwoLevelViewCache.cs" />
     <Compile Include="Infrastructure\Utility\AppLanguage.cs" />
     <Compile Include="Infrastructure\Utility\AppSettings.cs" />
     <Compile Include="Infrastructure\Utility\StringExtensions.cs" />
@@ -235,7 +235,7 @@
     <Content Include="Scripts\chosen\chosen.jquery.min.js" />
     <Content Include="Scripts\chosen\chosen.proto.js" />
     <Content Include="Scripts\chosen\chosen.proto.min.js" />
-    <Content Include="App_Code\MvcBloggyHelpers.cshtml" />
+    <Content Include="App_Code\CustomHelpers.cshtml" />
     <None Include="Scripts\jquery-1.8.0.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.0.js" />
     <Content Include="Scripts\jquery-1.8.0.min.js" />
@@ -295,6 +295,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Infrastructure\Controllers\" />
+    <Folder Include="Infrastructure\HtmlHelpers\" />
+    <Folder Include="Infrastructure\RequestModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

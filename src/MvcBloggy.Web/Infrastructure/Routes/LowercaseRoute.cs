@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Routing;
 
-namespace MvcBloggy.Web.Infrastructure.Mvc {
+namespace MvcBloggy.Web.Infrastructure.Routes {
 
     //ref: https://bitbucket.org/FunnelWeb/dev/
     public class LowercaseRoute : Route {

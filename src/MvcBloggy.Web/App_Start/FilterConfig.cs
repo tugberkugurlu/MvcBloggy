@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MvcBloggy.Web.Infrastructure.Mvc.Filters;
+using MvcBloggy.Web.Infrastructure.Filters;
 
 namespace MvcBloggy.Web {
 

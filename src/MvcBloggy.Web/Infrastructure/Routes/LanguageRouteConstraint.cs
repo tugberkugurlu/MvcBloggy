@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Routing;
 
-namespace MvcBloggy.Web.Infrastructure.Mvc
-{
+namespace MvcBloggy.Web.Infrastructure.Routes {
+
     public class LanguageRouteConstraint : IRouteConstraint {
 
         private readonly string[] appLanguagesButDefault = Utility.AppLanguage.GetAllButDefault();

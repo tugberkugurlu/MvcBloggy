@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Routing;
 using System.Web.Mvc;
-using MvcBloggy.Web.Infrastructure.Mvc;
+using MvcBloggy.Web.Infrastructure.Routes;
 using MvcBloggy.Web.Infrastructure.Utility;
 using MvcBloggy.Web.Infrastructure;
 using MvcBloggy.Web.Infrastructure.MetaWeblogItems;

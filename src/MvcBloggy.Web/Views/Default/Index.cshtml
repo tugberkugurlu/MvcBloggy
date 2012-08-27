@@ -3,13 +3,13 @@
     ViewBag.Title = "Index";
 }
 
-@if (Model.Dtos.Count() > 0) { 
+@if (Model.Items.Count() > 0) { 
     
-    foreach (var item in Model.Dtos) {
+    foreach (var item in Model.Items) {
         <h1>@item.Title</h1>
     }
     
-    @MvcBloggyHelpers.Pager(Model)
+    @CustomHelpers.Pager(Model)
     
 } else {
     

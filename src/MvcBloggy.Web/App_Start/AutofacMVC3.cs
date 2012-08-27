@@ -5,13 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
-using MvcBloggy.Web;
 using MvcBloggy.Web.Infrastructure.Services;
 using MvcBloggy.Web.Infrastructure.MetaWeblogItems;
 using MvcBloggy.Web.Infrastructure.Http;
 using MvcBloggy.API.Model.Dtos;
 
-namespace MvcBloggy.Web.Infrastructure {
+namespace MvcBloggy.Web {
 
     internal class AutofacMVC3 {
 

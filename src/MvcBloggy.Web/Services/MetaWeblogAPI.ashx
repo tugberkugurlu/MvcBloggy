@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" Class="MvcBloggy.Web.Application.MetaWeblog" %>
+﻿<%@ WebHandler Language="C#" Class="MvcBloggy.Web.Infrastructure.MetaWeblogItems.MetaWeblog" %>
