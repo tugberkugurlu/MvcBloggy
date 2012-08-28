@@ -3,6 +3,7 @@
 @using System.Web.Mvc;
 @using System.Web.Mvc.Html;
 @using MvcBloggy.Resources;
+@using System.Web.Routing;
 
 @helper Pager(IPaginatedDto<IDto> paginatedDto) {
     
@@ -15,9 +16,11 @@
     
     <ul class="pagination">
         @if(paginatedDto.HasPreviousPage) {
-            var tempRouteDataDictionary = new System.Web.Routing.RouteValueDictionary(routeDictionary);
+            
+            var tempRouteDataDictionary = new RouteValueDictionary(routeDictionary);
             tempRouteDataDictionary.Remove("page");
             tempRouteDataDictionary.Add("page", (paginatedDto.PageIndex - 1).ToString());
+            
             <li>
                 @Html.RouteLink(
                     Strings.Previous,
@@ -37,8 +40,8 @@
         @if (paginatedDto.TotalPageCount >= 2) {
             int totalPageNumber = 0;
             for (int index = 1; index <= paginatedDto.TotalPageCount; index++) {
-
-                var tempRouteDataDictionary = new System.Web.Routing.RouteValueDictionary(routeDictionary);
+                
+                var tempRouteDataDictionary = new RouteValueDictionary(routeDictionary);
                 tempRouteDataDictionary.Remove("page");
                 tempRouteDataDictionary.Add("page", index.ToString());
                 
@@ -62,9 +65,11 @@
         }
 
         @if(paginatedDto.HasNextPage) {
-            var tempRouteDataDictionary = new System.Web.Routing.RouteValueDictionary(routeDictionary);
+            
+            var tempRouteDataDictionary = new RouteValueDictionary(routeDictionary);
             tempRouteDataDictionary.Remove("page");
             tempRouteDataDictionary.Add("page", (paginatedDto.PageIndex + 1).ToString());
+            
             <li>
                 @Html.RouteLink(
                     Strings.Next,
