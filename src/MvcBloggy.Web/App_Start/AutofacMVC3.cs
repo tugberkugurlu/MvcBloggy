@@ -32,7 +32,7 @@ namespace MvcBloggy.Web {
             builder.RegisterType<MetaWeblog>().As<IMetaWeblog>().InstancePerLifetimeScope();
 
             //httpClient
-            builder.RegisterType<BlogHttpClient<BlogPostDto>>().As<IBlogHttpClient<BlogPostDto>>();
+            builder.RegisterType<BlogHttpClient<BlogPostDto>>().As<IHttpApiClient<BlogPostDto, Guid>>();
 
             return builder.Build();
         }

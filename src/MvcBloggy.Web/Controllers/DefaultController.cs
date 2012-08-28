@@ -13,9 +13,9 @@ namespace MvcBloggy.Web.Controllers {
     public class DefaultController : Controller {
 
         private const int pageSize = 10;
-        private readonly IBlogHttpClient<BlogPostDto> _httpClient;
+        private readonly IHttpApiClient<BlogPostDto, Guid> _httpClient;
 
-        public DefaultController(IBlogHttpClient<BlogPostDto> httpClient) {
+        public DefaultController(IHttpApiClient<BlogPostDto, Guid> httpClient) {
             
             _httpClient = httpClient;
         }
@@ -24,10 +24,14 @@ namespace MvcBloggy.Web.Controllers {
 
             if (page <= 0) { page = 1; }
 
-            var blogPosts = await _httpClient.GetPaginatedAsync(
+            var apiResponse = await _httpClient.GetPaginatedAsync(
                 "blogposts", new { lang = language, page = page, take = pageSize });
 
-            return View(blogPosts);
+            if (apiResponse.Response.IsSuccessStatusCode) {
+                return View(apiResponse.Model);
+            }
+
+            throw new InvalidOperationException("Could connect to the HTTP API successfully");
         }
     }
 }

@@ -5,14 +5,14 @@ using System.Net.Http;
 using System.Web;
 
 namespace MvcBloggy.Web.Infrastructure.Http {
+    
+    public class HttpApiResponseMessage<T> : HttpApiResponseMessage {
 
-    public class BlogHttpResponseMessage<T> : BlogHttpResponseMessage {
-
-        public BlogHttpResponseMessage(HttpResponseMessage response) 
+        public HttpApiResponseMessage(HttpResponseMessage response) 
             : base(response) { 
         }
 
-        public BlogHttpResponseMessage(HttpResponseMessage response, T model) :
+        public HttpApiResponseMessage(HttpResponseMessage response, T model) :
             base(response) {
 
             Model = model;

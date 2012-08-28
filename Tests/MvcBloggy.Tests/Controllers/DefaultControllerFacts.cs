@@ -21,7 +21,7 @@ namespace MvcBloggy.Tests.Controllers {
         [Fact]
         public void default_controller_index_method_should_return_an_instance_of_viewresult() {
 
-            var blogHttpClient = new Mock<IBlogHttpClient<BlogPostDto>>();
+            var blogHttpClient = new Mock<IHttpApiClient<BlogPostDto, Guid>>();
             DefaultController controller = new DefaultController(blogHttpClient.Object);
 
             var result = controller.Index("en");

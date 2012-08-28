@@ -155,13 +155,15 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DynamicPageController.cs" />
     <Compile Include="App_Start\AutofacMVC3.cs" />
-    <Compile Include="Infrastructure\Http\BlogHttpResponseMessage%271.cs" />
-    <Compile Include="Infrastructure\Http\BlogHttpResponseMessage.cs" />
+    <Compile Include="Infrastructure\HtmlHelpers\MenuItemHtmlHelper.cs" />
+    <Compile Include="Infrastructure\Http\HttpApiClient.cs" />
+    <Compile Include="Infrastructure\Http\HttpApiResponseMessage%271.cs" />
+    <Compile Include="Infrastructure\Http\HttpApiResponseMessage.cs" />
     <Compile Include="Infrastructure\Http\HttpResponseMessageExtensions.cs" />
+    <Compile Include="Infrastructure\Http\IHttpApiClient.cs" />
     <Compile Include="Infrastructure\Http\QueryStringCollection.cs" />
     <Compile Include="Infrastructure\HelperPage.cs" />
     <Compile Include="Infrastructure\Http\BlogHttpClient.cs" />
-    <Compile Include="Infrastructure\Http\IBlogHttpClient.cs" />
     <Compile Include="Infrastructure\MetaWeblogItems\MetaWeblogRouteHandler.cs" />
     <Compile Include="Infrastructure\Filters\RemoveWhitespacesAttribute.cs" />
     <Compile Include="Infrastructure\Application.cs" />
@@ -296,7 +298,6 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Infrastructure\Controllers\" />
-    <Folder Include="Infrastructure\HtmlHelpers\" />
     <Folder Include="Infrastructure\RequestModels\" />
   </ItemGroup>
   <ItemGroup>

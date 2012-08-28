@@ -6,9 +6,9 @@ using System.Web;
 
 namespace MvcBloggy.Web.Infrastructure.Http {
     
-    public class BlogHttpResponseMessage {
+    public class HttpApiResponseMessage {
 
-        public BlogHttpResponseMessage(HttpResponseMessage response) {
+        public HttpApiResponseMessage(HttpResponseMessage response) {
             Response = response;
         }
 
