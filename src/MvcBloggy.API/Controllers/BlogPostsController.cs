@@ -30,7 +30,7 @@ namespace MvcBloggy.API.Controllers {
         }
 
         //GET /api/blogposts?take=10&page=1&lang=en
-        public HttpResponseMessage GetBlogPosts([FromUri]PaginatedRequestCommand requestCmd) {
+        public HttpResponseMessage GetBlogPosts(PaginatedRequestCommand requestCmd) {
 
             var blogPosts = _blogService.GetBlogPosts(requestCmd.Lang, requestCmd.Page, requestCmd.Take);
 

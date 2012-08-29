@@ -11,6 +11,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Validation.Providers;
 using MvcBloggy.API.Infrastructure.Controllers;
 using WebAPIDoodle.Http;
+using MvcBloggy.API.Model.RequestCommands;
 
 namespace MvcBloggy.API.Config {
     
@@ -47,6 +48,10 @@ namespace MvcBloggy.API.Config {
             //Binding Rules
             config.ParameterBindingRules.Add(typeof(string[]), 
                 descriptor => new CatchAllRouteParameterBinding(descriptor, '/'));
+
+            config.ParameterBindingRules.Insert(0,
+                descriptor => typeof(IRequestCommand).IsAssignableFrom(descriptor.ParameterType)
+                    ? new FromUriAttribute().GetBinding(descriptor) : null);
         }
     }
 }
