@@ -1,6 +1,7 @@
 ﻿using MvcBloggy.API.Filters;
 using MvcBloggy.API.Model;
 using MvcBloggy.API.Model.Dtos;
+using MvcBloggy.API.Model.RequestCommands;
 using MvcBloggy.API.Model.RequestModels;
 using MvcBloggy.Domain.Entities;
 using MvcBloggy.Domain.Services;
@@ -28,18 +29,10 @@ namespace MvcBloggy.API.Controllers {
             _blogService = blogService;
         }
 
-        public HttpResponseMessage GetBlogPosts(string lang, int page, int take) {
+        //GET /api/blogposts?take=10&page=1&lang=en
+        public HttpResponseMessage GetBlogPosts([FromUri]PaginatedRequestCommand requestCmd) {
 
-            if (page <= 0) { page = 1; }
-            if (take <= 0) { take = 1; }
-
-            if (string.IsNullOrEmpty(lang)) {
-
-                ModelState.AddModelError("lang", "lang parameter cannot be null or empty");
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-            }
-
-            var blogPosts = _blogService.GetBlogPosts(lang, page, take);
+            var blogPosts = _blogService.GetBlogPosts(requestCmd.Lang, requestCmd.Page, requestCmd.Take);
 
             return Request.CreateResponse(HttpStatusCode.OK, new PaginatedDto<BlogPostDto> {
                 PageIndex = blogPosts.PageIndex,
@@ -52,8 +45,8 @@ namespace MvcBloggy.API.Controllers {
             });
         }
 
-        //POST {"LanguageKey": 1, "Title": "Foo Bar Title", "Content": "Foo", "IsApproved": true, "CreatedOn": "8/23/2012 12:27:17 PM +03:00"}
-        [InvalidModelStateFilter]
+        //POST /api/blogposts
+        //{"LanguageKey": 1, "Title": "Foo Bar Title", "Content": "Foo", "IsApproved": true, "CreatedOn": "8/23/2012 12:27:17 PM +03:00"}
         public HttpResponseMessage PostBlogPost(BlogPostRequestModel blogPost) {
 
             var blogPostEntity = _blogService.AddBlogPost(blogPost.ToBlogPost(), blogPost.Tags);

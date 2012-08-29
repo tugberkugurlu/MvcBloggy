@@ -95,6 +95,7 @@
     <Compile Include="Config\AutofacWebAPI.cs" />
     <Compile Include="Config\RouteConfig.cs" />
     <Compile Include="Config\WebAPIConfig.cs" />
+    <Compile Include="Controllers\BlogPostCommentsController.cs" />
     <Compile Include="Controllers\BlogPostsController.cs" />
     <Compile Include="Filters\ErrorHandlerAttribute.cs" />
     <Compile Include="Filters\InvalidModelStateFilterAttribute.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Model\BlogPostExtensions.cs" />
     <Compile Include="Model\BlogPostRequestModelExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Routes\GuidRouteConstraint.cs" />
     <Compile Include="Tracers\NLogTracer.cs" />
   </ItemGroup>
   <ItemGroup>

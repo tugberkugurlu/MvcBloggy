@@ -1,4 +1,5 @@
-﻿using MvcBloggy.API.Filters;
+﻿using CacheCow.Server;
+using MvcBloggy.API.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace MvcBloggy.API.Config {
             config.Formatters.Remove(jqueryFormatter);
 
             //Filters
+            config.Filters.Add(new InvalidModelStateFilterAttribute());
 
             //Default Services
             config.Services.RemoveAll(typeof(System.Web.Http.Validation.ModelValidatorProvider), v => v is InvalidModelValidatorProvider);
