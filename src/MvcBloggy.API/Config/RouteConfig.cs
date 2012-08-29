@@ -1,4 +1,4 @@
-﻿using MvcBloggy.API.Routes;
+﻿using MvcBloggy.API.Infrastructure.Routes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,13 @@ namespace MvcBloggy.API.Config {
         public static void RegisterRoutes(HttpRouteCollection routes) {
 
             routes.MapHttpRoute(
-                "BlogpostHttpApiRoute",
+                "BlogpostTagsHttpApiRoute",
+                "api/blogposts/tags/{*tags}",
+                new { controller = "blogposttags" }
+            );
+
+            routes.MapHttpRoute(
+                "BlogpostCommentsHttpApiRoute",
                 "api/blogposts/{blogpostkey}/comments",
                 new { controller = "blogpostcomments" },
                 new { blogpostkey = new GuidRouteConstraint() }

@@ -1,5 +1,4 @@
-﻿using CacheCow.Server;
-using MvcBloggy.API.Filters;
+﻿using MvcBloggy.API.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
+using System.Web.Http.Controllers;
 using System.Web.Http.Validation.Providers;
+using MvcBloggy.API.Infrastructure.Controllers;
 using WebAPIDoodle.Http;
 
 namespace MvcBloggy.API.Config {
@@ -42,6 +43,10 @@ namespace MvcBloggy.API.Config {
                 typeof(IContentNegotiator),
                 new DefaultContentNegotiator(excludeMatchOnTypeOnly: true)
             );
+
+            //Binding Rules
+            config.ParameterBindingRules.Add(typeof(string[]), 
+                descriptor => new CatchAllRouteParameterBinding(descriptor, '/'));
         }
     }
 }

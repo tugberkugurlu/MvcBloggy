@@ -41,12 +41,6 @@
     <Reference Include="Autofac.Integration.WebApi">
       <HintPath>..\..\packages\Autofac.WebApi.2.6.2.859\lib\NET40\Autofac.Integration.WebApi.dll</HintPath>
     </Reference>
-    <Reference Include="CacheCow.Common">
-      <HintPath>..\..\packages\CacheCow.Common.0.2.1\lib\net40\CacheCow.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="CacheCow.Server">
-      <HintPath>..\..\packages\CacheCow.Server.0.2.1\lib\net40\CacheCow.Server.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
@@ -92,19 +86,25 @@
     <Compile Include="..\Common\Error.cs">
       <Link>Common\Error.cs</Link>
     </Compile>
+    <Compile Include="..\Common\TaskHelpers.cs">
+      <Link>Common\TaskHelpers.cs</Link>
+    </Compile>
     <Compile Include="Config\AutofacWebAPI.cs" />
     <Compile Include="Config\RouteConfig.cs" />
     <Compile Include="Config\WebAPIConfig.cs" />
     <Compile Include="Controllers\BlogPostCommentsController.cs" />
     <Compile Include="Controllers\BlogPostsController.cs" />
+    <Compile Include="Controllers\BlogPostTagsController.cs" />
     <Compile Include="Filters\ErrorHandlerAttribute.cs" />
     <Compile Include="Filters\InvalidModelStateFilterAttribute.cs" />
+    <Compile Include="Infrastructure\Controllers\BindCatchAllRouteAttribute.cs" />
+    <Compile Include="Infrastructure\Controllers\CatchAllRouteParameterBinding.cs" />
     <Compile Include="Infrastructure\HttpRequestMessageExtensions.cs" />
     <Compile Include="MessageHandlers\MvcBloggyBasicAuthHandler.cs" />
     <Compile Include="Model\BlogPostExtensions.cs" />
     <Compile Include="Model\BlogPostRequestModelExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Routes\GuidRouteConstraint.cs" />
+    <Compile Include="Infrastructure\Routes\GuidRouteConstraint.cs" />
     <Compile Include="Tracers\NLogTracer.cs" />
   </ItemGroup>
   <ItemGroup>

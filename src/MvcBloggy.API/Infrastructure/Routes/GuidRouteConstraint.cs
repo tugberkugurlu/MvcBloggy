@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http.Routing;
 
-namespace MvcBloggy.API.Routes {
+namespace MvcBloggy.API.Infrastructure.Routes {
 
     public class GuidRouteConstraint : IHttpRouteConstraint {
 
