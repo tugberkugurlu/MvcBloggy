@@ -168,8 +168,6 @@
     <Compile Include="Infrastructure\Filters\RemoveWhitespacesAttribute.cs" />
     <Compile Include="Infrastructure\Application.cs" />
     <Compile Include="Infrastructure\CSRazorViewEngine.cs" />
-    <Compile Include="Infrastructure\Filters\CustomAuthorizeAttribute.cs" />
-    <Compile Include="Infrastructure\Filters\BypassAuthorizationAttribute.cs" />
     <Compile Include="Infrastructure\MetaWeblogItems\IMetaWeblog.cs" />
     <Compile Include="Infrastructure\LocalizedControllerFactory.cs" />
     <Compile Include="Infrastructure\MetaWeblogItems\MetaWeblog.cs" />
@@ -200,10 +198,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
-    <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
-    <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Common\ICloneableExtensions.cs" />
     <Compile Include="Common\IEnumerableExtensions.cs" />
     <Compile Include="Common\MediaTypeConstants.cs" />
@@ -286,17 +280,11 @@
     </Content>
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Admin\Views\Web.config" />
-    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Admin\Views\Default\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Admin\Views\Auth\LogOn.cshtml" />
     <Content Include="Views\DynamicPage\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Infrastructure\Controllers\" />
     <Folder Include="Infrastructure\RequestModels\" />
   </ItemGroup>
