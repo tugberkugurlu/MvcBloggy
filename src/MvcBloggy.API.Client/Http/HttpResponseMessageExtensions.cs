@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace MvcBloggy.Web.Infrastructure.Http {
+namespace MvcBloggy.API.Client.Http {
 
     internal static class HttpResponseMessageExtensions {
 

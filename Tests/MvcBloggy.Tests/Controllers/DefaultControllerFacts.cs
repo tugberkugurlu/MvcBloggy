@@ -8,7 +8,7 @@ using Moq;
 using MvcBloggy.Web.Controllers;
 using Xunit;
 using MvcBloggy.Web.Infrastructure.Services;
-using MvcBloggy.Web.Infrastructure.Http;
+using MvcBloggy.API.Client.Http;
 using MvcBloggy.API.Model.Dtos;
 
 namespace MvcBloggy.Tests.Controllers {

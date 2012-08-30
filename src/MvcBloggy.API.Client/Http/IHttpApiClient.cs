@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace MvcBloggy.Web.Infrastructure.Http {
+namespace MvcBloggy.API.Client.Http {
     
     public interface IHttpApiClient<TEntity, TKey> where TEntity : IDto {
 

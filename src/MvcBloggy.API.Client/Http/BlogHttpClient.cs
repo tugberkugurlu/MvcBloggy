@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace MvcBloggy.Web.Infrastructure.Http {
+namespace MvcBloggy.API.Client.Http {
 
     public class BlogHttpClient<TDto> : HttpApiClient<TDto, Guid>, IHttpApiClient<TDto, Guid> where TDto : IDto {
 

@@ -1,6 +1,7 @@
 ﻿using MvcBloggy.API.Model.Dtos;
 using MvcBloggy.Web.Infrastructure;
-using MvcBloggy.Web.Infrastructure.Http;
+using MvcBloggy.Web.Infrastructure;
+using MvcBloggy.API.Client.Http;
 using MvcBloggy.Web.Infrastructure.Services;
 using System;
 using System.Collections.Generic;

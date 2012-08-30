@@ -151,20 +151,16 @@
     <Compile Include="..\Common\Error.cs">
       <Link>Common\Error.cs</Link>
     </Compile>
+    <Compile Include="..\Common\IEnumerableExtensions.cs">
+      <Link>Common\IEnumerableExtensions.cs</Link>
+    </Compile>
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DynamicPageController.cs" />
     <Compile Include="App_Start\AutofacMVC3.cs" />
     <Compile Include="Infrastructure\BaseController.cs" />
     <Compile Include="Infrastructure\HtmlHelpers\MenuItemHtmlHelper.cs" />
-    <Compile Include="Infrastructure\Http\HttpApiClient.cs" />
-    <Compile Include="Infrastructure\Http\HttpApiResponseMessage%271.cs" />
-    <Compile Include="Infrastructure\Http\HttpApiResponseMessage.cs" />
-    <Compile Include="Infrastructure\Http\HttpResponseMessageExtensions.cs" />
-    <Compile Include="Infrastructure\Http\IHttpApiClient.cs" />
-    <Compile Include="Infrastructure\Http\QueryStringCollection.cs" />
     <Compile Include="Infrastructure\HelperPage.cs" />
-    <Compile Include="Infrastructure\Http\BlogHttpClient.cs" />
     <Compile Include="Infrastructure\MetaWeblogItems\MetaWeblogRouteHandler.cs" />
     <Compile Include="Infrastructure\Filters\RemoveWhitespacesAttribute.cs" />
     <Compile Include="Infrastructure\Application.cs" />
@@ -184,10 +180,7 @@
     </Compile>
     <Compile Include="Infrastructure\Routes\LanguageRouteConstraint.cs" />
     <Compile Include="Infrastructure\Services\ApplicationSettings.cs" />
-    <Compile Include="Infrastructure\Services\BlogPostService.cs" />
     <Compile Include="Infrastructure\Services\FormsAuthenticationService.cs" />
-    <Compile Include="Infrastructure\Services\IApplicationSettings.cs" />
-    <Compile Include="Infrastructure\Services\IBlogPostService.cs" />
     <Compile Include="Infrastructure\Services\IFormsAuthenticationService.cs" />
     <Compile Include="Infrastructure\Services\IMembershipService.cs" />
     <Compile Include="Infrastructure\TwoLevelViewCache.cs" />
@@ -199,7 +192,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Common\ICloneableExtensions.cs" />
-    <Compile Include="Common\IEnumerableExtensions.cs" />
     <Compile Include="Common\MediaTypeConstants.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\MetaWeblogController.cs" />
@@ -293,6 +285,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MvcBloggy.API.Client\MvcBloggy.API.Client.csproj">
+      <Project>{6301b2ce-f776-4909-ae9c-6f0694e2bbe0}</Project>
+      <Name>MvcBloggy.API.Client</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MvcBloggy.API.Model\MvcBloggy.API.Model.csproj">
       <Project>{491afcad-7716-4dcc-99f1-cad35646bd19}</Project>
       <Name>MvcBloggy.API.Model</Name>

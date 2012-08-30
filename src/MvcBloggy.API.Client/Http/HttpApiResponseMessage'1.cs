@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web;
 
-namespace MvcBloggy.Web.Infrastructure.Http {
+namespace MvcBloggy.API.Client.Http {
     
     public class HttpApiResponseMessage<T> : HttpApiResponseMessage {
 

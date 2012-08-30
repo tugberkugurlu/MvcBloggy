@@ -7,7 +7,8 @@ using Autofac;
 using Autofac.Integration.Mvc;
 using MvcBloggy.Web.Infrastructure.Services;
 using MvcBloggy.Web.Infrastructure.MetaWeblogItems;
-using MvcBloggy.Web.Infrastructure.Http;
+using MvcBloggy.API.Client.Http;
+using MvcBloggy.API.Client.Services;
 using MvcBloggy.API.Model.Dtos;
 
 namespace MvcBloggy.Web {

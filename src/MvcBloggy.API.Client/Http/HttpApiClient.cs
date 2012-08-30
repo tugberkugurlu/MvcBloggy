@@ -9,7 +9,7 @@ using MvcBloggy.API.Model.Dtos;
 using System.Collections;
 using System.Net.Http.Headers;
 
-namespace MvcBloggy.Web.Infrastructure.Http {
+namespace MvcBloggy.API.Client.Http {
 
     public abstract class HttpApiClient<TEntity, TKey> : HttpClient, IHttpApiClient<TEntity, TKey> where TEntity : IDto where TKey : struct {
 

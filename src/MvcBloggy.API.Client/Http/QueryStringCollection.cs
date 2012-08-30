@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace MvcBloggy.Web.Infrastructure.Http {
+namespace MvcBloggy.API.Client.Http {
 
     public class QueryStringCollection : ICollection<KeyValuePair<string, string>> {
 

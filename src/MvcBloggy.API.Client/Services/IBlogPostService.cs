@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MvcBloggy.Web.Infrastructure.Services {
+namespace MvcBloggy.API.Client.Services {
     
     public interface IBlogPostService {
 
