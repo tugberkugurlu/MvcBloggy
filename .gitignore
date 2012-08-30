@@ -23,4 +23,4 @@ desktop.ini
 *.publish.xml
 *.refactorlog
 *webapi.log
-info
+_docs
