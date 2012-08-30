@@ -9,13 +9,12 @@ namespace MvcBloggy.Web.Infrastructure.MetaWeblogItems {
 
     public class MetaWeblog : XmlRpcService, IMetaWeblog {
 
-        private readonly IAuthorizationService _authorizationService;
+        private readonly IMembershipService _membershipService;
         private readonly string language;
 
-        public MetaWeblog(IAuthorizationService authorizationService) {
+        public MetaWeblog(IMembershipService membershipService) {
 
-            _authorizationService = authorizationService;
-            
+            _membershipService = membershipService;
             language = HttpContext.Current.Request.RequestContext.RouteData.Values["language"].ToString();
         }
 

@@ -155,6 +155,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DynamicPageController.cs" />
     <Compile Include="App_Start\AutofacMVC3.cs" />
+    <Compile Include="Infrastructure\BaseController.cs" />
     <Compile Include="Infrastructure\HtmlHelpers\MenuItemHtmlHelper.cs" />
     <Compile Include="Infrastructure\Http\HttpApiClient.cs" />
     <Compile Include="Infrastructure\Http\HttpApiResponseMessage%271.cs" />
@@ -183,13 +184,12 @@
     </Compile>
     <Compile Include="Infrastructure\Routes\LanguageRouteConstraint.cs" />
     <Compile Include="Infrastructure\Services\ApplicationSettings.cs" />
-    <Compile Include="Infrastructure\Services\AuthorizationService.cs" />
     <Compile Include="Infrastructure\Services\BlogPostService.cs" />
     <Compile Include="Infrastructure\Services\FormsAuthenticationService.cs" />
     <Compile Include="Infrastructure\Services\IApplicationSettings.cs" />
-    <Compile Include="Infrastructure\Services\IAuthorizationService.cs" />
     <Compile Include="Infrastructure\Services\IBlogPostService.cs" />
     <Compile Include="Infrastructure\Services\IFormsAuthenticationService.cs" />
+    <Compile Include="Infrastructure\Services\IMembershipService.cs" />
     <Compile Include="Infrastructure\TwoLevelViewCache.cs" />
     <Compile Include="Infrastructure\Utility\AppLanguage.cs" />
     <Compile Include="Infrastructure\Utility\AppSettings.cs" />
@@ -285,7 +285,6 @@
     <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Infrastructure\Controllers\" />
     <Folder Include="Infrastructure\RequestModels\" />
   </ItemGroup>
   <ItemGroup>

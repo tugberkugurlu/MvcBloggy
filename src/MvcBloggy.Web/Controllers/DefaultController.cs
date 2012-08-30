@@ -1,4 +1,5 @@
 ﻿using MvcBloggy.API.Model.Dtos;
+using MvcBloggy.Web.Infrastructure;
 using MvcBloggy.Web.Infrastructure.Http;
 using MvcBloggy.Web.Infrastructure.Services;
 using System;
@@ -10,7 +11,7 @@ using System.Web.Mvc;
 
 namespace MvcBloggy.Web.Controllers {
 
-    public class DefaultController : Controller {
+    public class DefaultController : BaseController {
 
         private const int pageSize = 10;
         private readonly IHttpApiClient<BlogPostDto, Guid> _httpClient;
