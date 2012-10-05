@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -11,16 +13,16 @@ namespace MvcBloggy.Domain.Entities {
     public class EntityRepository<T> : IEntityRepository<T>
         where T : class, IEntity, new() {
 
-        readonly DbContext _entities;
+        readonly DbContext _entitiesContext;
 
-        public EntityRepository(DbContext entities) {
+        public EntityRepository(DbContext entitiesContext) {
 
-            _entities = entities;
+            _entitiesContext = entitiesContext;
         }
 
         public virtual IQueryable<T> GetAll() {
 
-            return _entities.Set<T>();
+            return _entitiesContext.Set<T>();
         }
 
         public virtual IQueryable<T> All {
@@ -33,7 +35,7 @@ namespace MvcBloggy.Domain.Entities {
         public virtual IQueryable<T> AllIncluding(
             params Expression<Func<T, object>>[] includeProperties) {
 
-            IQueryable<T> query = _entities.Set<T>();
+            IQueryable<T> query = _entitiesContext.Set<T>();
             foreach (var includeProperty in includeProperties) {
 
                 query = query.Include(includeProperty);
@@ -44,7 +46,7 @@ namespace MvcBloggy.Domain.Entities {
 
         public virtual IQueryable<T> FindBy(Expression<Func<T, bool>> predicate) {
 
-            return _entities.Set<T>().Where(predicate);
+            return _entitiesContext.Set<T>().Where(predicate);
         }
 
         public virtual PaginatedList<T> Paginate<TKey>(
@@ -73,22 +75,46 @@ namespace MvcBloggy.Domain.Entities {
 
         public virtual void Add(T entity) {
 
-            _entities.Set<T>().Add(entity);
+            DbEntityEntry dbEntityEntry = _entitiesContext.Entry<T>(entity);
+            if (dbEntityEntry.State != EntityState.Detached) {
+
+                dbEntityEntry.State = EntityState.Added;
+            }
+            else {
+
+                _entitiesContext.Set<T>().Add(entity);
+            }
+        }
+
+        public virtual void Edit(T entity) {
+
+            DbEntityEntry dbEntityEntry = _entitiesContext.Entry<T>(entity);
+            if (dbEntityEntry.State == EntityState.Detached) {
+
+                _entitiesContext.Set<T>().Attach(entity);
+            }
+
+            dbEntityEntry.State = EntityState.Modified;
         }
 
         public virtual void Delete(T entity) {
 
-            _entities.Set<T>().Remove(entity);
-        }
+            DbEntityEntry dbEntityEntry = _entitiesContext.Entry<T>(entity);
+            if (dbEntityEntry.State != EntityState.Detached) {
 
-        public virtual void Edit(T entity) {
-            
-            _entities.Entry(entity).State = System.Data.EntityState.Modified;
+                dbEntityEntry.State = EntityState.Deleted;
+            }
+            else {
+
+                DbSet dbSet = _entitiesContext.Set<T>();
+                dbSet.Attach(entity);
+                dbSet.Remove(entity);
+            }
         }
 
         public virtual void Save() {
 
-            _entities.SaveChanges();
+            _entitiesContext.SaveChanges();
         }
     }
 }
