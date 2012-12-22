@@ -17,6 +17,7 @@ build
 TestResult.xml
 TestResults
 packages
+artifacts
 
 *.dropbox
 desktop.ini
