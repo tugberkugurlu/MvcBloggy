@@ -9,27 +9,35 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-INSERT INTO Languages (DisplayName, Culture, CultureOne, [Order], IsApproved, CreatedOn)
-VALUES('English', 'en-US', 'en', 1, 1, SYSDATETIMEOFFSET());
-INSERT INTO Languages (DisplayName, Culture, CultureOne, [Order], IsApproved, CreatedOn)
-VALUES('Türkçe', 'tr-TR', 'tr', 2, 1, SYSDATETIMEOFFSET());
+DECLARE @languagesCount AS INT;
+SELECT @languagesCount = COUNT(*) FROM Languages;
 
-DECLARE @enLangId AS UNIQUEIDENTIFIER;
-DECLARE @trLangId AS UNIQUEIDENTIFIER;
+IF @languagesCount <= 0
+BEGIN
 
-SELECT @enLangId = lng.[Key] FROM Languages lng WHERE lng.CultureOne = 'en';
-SELECT @trLangId = lng.[Key] FROM Languages lng WHERE lng.CultureOne = 'tr';
+	INSERT INTO Languages (DisplayName, Culture, CultureOne, [Order], IsApproved, CreatedOn)
+	VALUES('English', 'en-US', 'en', 1, 1, SYSDATETIMEOFFSET());
+	INSERT INTO Languages (DisplayName, Culture, CultureOne, [Order], IsApproved, CreatedOn)
+	VALUES('Türkçe', 'tr-TR', 'tr', 2, 1, SYSDATETIMEOFFSET());
 
-INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
-VALUES(@enLangId, 'archive', SYSDATETIMEOFFSET());
-INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
-VALUES(@enLangId, 'control', SYSDATETIMEOFFSET());
-INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
-VALUES(@enLangId, 'contact', SYSDATETIMEOFFSET());
+	DECLARE @enLangId AS UNIQUEIDENTIFIER;
+	DECLARE @trLangId AS UNIQUEIDENTIFIER;
 
-INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
-VALUES(@trLangId, 'archive', SYSDATETIMEOFFSET());
-INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
-VALUES(@trLangId, 'control', SYSDATETIMEOFFSET());
-INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
-VALUES(@trLangId, 'contact', SYSDATETIMEOFFSET());
+	SELECT @enLangId = lng.[Key] FROM Languages lng WHERE lng.CultureOne = 'en';
+	SELECT @trLangId = lng.[Key] FROM Languages lng WHERE lng.CultureOne = 'tr';
+
+	INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
+	VALUES(@enLangId, 'archive', SYSDATETIMEOFFSET());
+	INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
+	VALUES(@enLangId, 'control', SYSDATETIMEOFFSET());
+	INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
+	VALUES(@enLangId, 'contact', SYSDATETIMEOFFSET());
+
+	INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
+	VALUES(@trLangId, 'archive', SYSDATETIMEOFFSET());
+	INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
+	VALUES(@trLangId, 'control', SYSDATETIMEOFFSET());
+	INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
+	VALUES(@trLangId, 'contact', SYSDATETIMEOFFSET());
+
+END

@@ -5,6 +5,7 @@
     [HashedPassword] NVARCHAR (MAX) NOT NULL,
     [Salt] NVARCHAR (MAX) NOT NULL,
     [IsLocked] BIT NOT NULL,
+	[LastLockedOutOn] DATETIMEOFFSET NOT NULL,
 	[CreationIp] NVARCHAR(50) NULL,
 	[CreatedOn] DATETIMEOFFSET NOT NULL,
 	[LastUpdateIp] NVARCHAR(50) NULL,
