@@ -7,19 +7,29 @@
   <ItemGroup>
     <AppProjFiles Include="$(SolutionDir)\src\**\*.csproj" />
     <TestProjFiles Include="$(SolutionDir)\tests\**\*.csproj" />
+    <SqlProjFiles Include="$(SolutionDir)\src\**\*.sqlproj" />
   </ItemGroup>
   
-  <Target Name="Default" DependsOnTargets="UnitTest" />
-  
+  <Target Name="Default" DependsOnTargets="UnitTest;CompileDb" />
+  <Target Name="Initial" DependsOnTargets="UnitTest;DeployDb" />
+
   <Target Name="Clean">
     <RemoveDir Directories="$(BuildArtifactsDir)" />
   </Target>
   <Target Name="Init" DependsOnTargets="Clean">
-    <MakeDir Directories="$(BuildArtifactsDir);$(NuGetPackageOutputDir)" />
+    <!--<MakeDir Directories="$(BuildArtifactsDir);$(NuGetPackageOutputDir)" />-->
+    <MakeDir Directories="$(NuGetPackageOutputDir)" />
   </Target>
   <Target Name="Compile" DependsOnTargets="Init">
     <MSBuild Projects="@(AppProjFiles)" Targets="Rebuild" Properties="OutDir=$(BuildArtifactsDir);Configuration=$(Configuration)" />
     <MSBuild Projects="@(TestProjFiles)" Targets="Rebuild" Properties="OutDir=$(BuildTestArtifactsDir);Configuration=$(Configuration)" />
+  </Target>
+  <Target Name="CompileDb">
+    <MSBuild Projects="@(SqlProjFiles)" Targets="Rebuild" Properties="OutDir=$(BuildSqlDbArtifactsDir);Configuration=$(Configuration)" />
+  </Target>
+  <Target Name="DeployDb">
+    <MSBuild Projects="@(SqlProjFiles)" Targets="Rebuild" Properties="Configuration=$(Configuration)" />
+    <MSBuild Projects="@(SqlProjFiles)" Targets="Publish" Properties="SqlPublishProfilePath=$(SqlDbPublishManifestPath);Configuration=$(Configuration)" />
   </Target>
   
   <Target Name="UnitTest" DependsOnTargets="Compile">
