@@ -9,18 +9,20 @@
 
 namespace MvcBloggy.Domain.Entities
 {
+    using GenericRepository;
     using System;
     using System.Collections.Generic;
     
-    public partial class DynamicPage : IEntity
+    public partial class DynamicPage : IEntity<Guid>
     {
         public DynamicPage()
         {
             this.TagsForDynamicPages = new HashSet<TagsForDynamicPage>();
         }
     
-        public System.Guid Key { get; set; }
-        public System.Guid LanguageKey { get; set; }
+        public System.Guid Id { get; set; }
+        public System.Guid LanguageId { get; set; }
+        public System.Guid AuthorId { get; set; }
         public string Title { get; set; }
         public string BriefInfo { get; set; }
         public string Content { get; set; }
@@ -30,6 +32,7 @@ namespace MvcBloggy.Domain.Entities
         public string LastUpdateIp { get; set; }
         public Nullable<System.DateTimeOffset> LastUpdatedOn { get; set; }
     
+        public virtual Author Author { get; set; }
         public virtual Language Language { get; set; }
         public virtual ICollection<TagsForDynamicPage> TagsForDynamicPages { get; set; }
     }

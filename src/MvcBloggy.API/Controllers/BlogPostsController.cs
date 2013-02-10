@@ -1,4 +1,5 @@
-﻿using MvcBloggy.API.Filters;
+﻿using GenericRepository.EntityFramework;
+using MvcBloggy.API.Filters;
 using MvcBloggy.API.Model;
 using MvcBloggy.API.Model.Dtos;
 using MvcBloggy.API.Model.RequestCommands;
@@ -18,14 +19,11 @@ namespace MvcBloggy.API.Controllers {
     
     public class BlogPostsController : ApiController {
 
-        private readonly IEntityRepository<BlogPost> _blogPostRepository;
         private readonly IBlogService _blogService;
 
         public BlogPostsController(
-            IEntityRepository<BlogPost> blogPostRepository,
             IBlogService blogService) {
 
-            _blogPostRepository = blogPostRepository;
             _blogService = blogService;
         }
 

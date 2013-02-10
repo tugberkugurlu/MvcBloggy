@@ -13,24 +13,25 @@ namespace MvcBloggy.Domain.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class BlogPostComment : IEntity<Guid>
+    public partial class Author : IEntity<Guid>
     {
+        public Author()
+        {
+            this.BlogPosts = new HashSet<BlogPost>();
+            this.DynamicPages = new HashSet<DynamicPage>();
+        }
+    
         public System.Guid Id { get; set; }
-        public System.Guid BlogPostId { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string WebSite { get; set; }
-        public string AuthProvider { get; set; }
-        public bool IsByAuthor { get; set; }
-        public string Subject { get; set; }
-        public string Content { get; set; }
-        public bool IsMarkedAsSpam { get; set; }
-        public bool IsApproved { get; set; }
+        public string AuthorName { get; set; }
+        public string AuthorSurname { get; set; }
+        public string TwitterHandle { get; set; }
         public string CreationIp { get; set; }
         public System.DateTimeOffset CreatedOn { get; set; }
         public string LastUpdateIp { get; set; }
         public Nullable<System.DateTimeOffset> LastUpdatedOn { get; set; }
     
-        public virtual BlogPost BlogPost { get; set; }
+        public virtual User User { get; set; }
+        public virtual ICollection<BlogPost> BlogPosts { get; set; }
+        public virtual ICollection<DynamicPage> DynamicPages { get; set; }
     }
 }

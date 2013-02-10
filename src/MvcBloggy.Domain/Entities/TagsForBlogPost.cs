@@ -9,14 +9,15 @@
 
 namespace MvcBloggy.Domain.Entities
 {
+    using GenericRepository;
     using System;
     using System.Collections.Generic;
     
-    public partial class TagsForBlogPost : IEntity
+    public partial class TagsForBlogPost : IEntity<Guid>
     {
-        public System.Guid Key { get; set; }
-        public System.Guid BlogPostKey { get; set; }
-        public System.Guid TagKey { get; set; }
+        public System.Guid Id { get; set; }
+        public System.Guid BlogPostId { get; set; }
+        public System.Guid TagId { get; set; }
     
         public virtual BlogPost BlogPost { get; set; }
         public virtual Tag Tag { get; set; }

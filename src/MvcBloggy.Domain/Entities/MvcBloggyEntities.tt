@@ -23,6 +23,7 @@ foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection)
     fileManager.StartNewFile(entity.Name + ".cs");
     BeginNamespace(code);
 #>
+using GenericRepository;
 <#=codeStringGenerator.UsingDirectives(inHeader: false)#>
 <#=codeStringGenerator.EntityClassOpening(entity)#>
 {
@@ -308,7 +309,7 @@ public class CodeStringGenerator
     {
         return string.Format(
             CultureInfo.InvariantCulture,
-            "{0} {1}partial class {2}{3} : IEntity",
+            "{0} {1}partial class {2}{3} : IEntity<Guid>",
             Accessibility.ForType(entity),
             _code.SpaceAfter(_code.AbstractOption(entity)),
             _code.Escape(entity),

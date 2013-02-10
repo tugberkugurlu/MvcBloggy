@@ -9,12 +9,13 @@
 
 namespace MvcBloggy.Domain.Entities
 {
+    using GenericRepository;
     using System;
     using System.Collections.Generic;
     
-    public partial class RestrictedPageName : IEntity
+    public partial class RestrictedPageName : IEntity<Guid>
     {
-        public System.Guid Key { get; set; }
+        public System.Guid Id { get; set; }
         public System.Guid LanguageKey { get; set; }
         public string Term { get; set; }
         public Nullable<System.DateTimeOffset> CreatedOn { get; set; }

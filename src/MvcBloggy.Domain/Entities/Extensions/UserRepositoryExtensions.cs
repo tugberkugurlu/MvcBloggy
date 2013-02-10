@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GenericRepository.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace MvcBloggy.Domain.Entities {
     public static class UserRepositoryExtensions {
 
         public static User GetSingleByUsername(
-            this IEntityRepository<User> userRepository,
+            this IEntityRepository<User, Guid> userRepository,
             string username) {
 
                 return userRepository.GetAll()

@@ -1,4 +1,5 @@
-﻿using MvcBloggy.Domain.Entities;
+﻿using GenericRepository;
+using MvcBloggy.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

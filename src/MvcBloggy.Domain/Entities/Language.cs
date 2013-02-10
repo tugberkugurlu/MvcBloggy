@@ -9,10 +9,11 @@
 
 namespace MvcBloggy.Domain.Entities
 {
+    using GenericRepository;
     using System;
     using System.Collections.Generic;
     
-    public partial class Language : IEntity
+    public partial class Language : IEntity<Guid>
     {
         public Language()
         {
@@ -23,7 +24,7 @@ namespace MvcBloggy.Domain.Entities
             this.Tags = new HashSet<Tag>();
         }
     
-        public System.Guid Key { get; set; }
+        public System.Guid Id { get; set; }
         public string DisplayName { get; set; }
         public string Culture { get; set; }
         public string CultureOne { get; set; }

@@ -9,13 +9,14 @@
 
 namespace MvcBloggy.Domain.Entities
 {
+    using GenericRepository;
     using System;
     using System.Collections.Generic;
     
-    public partial class BlogRoll : IEntity
+    public partial class BlogRoll : IEntity<Guid>
     {
-        public System.Guid Key { get; set; }
-        public System.Guid LanguageKey { get; set; }
+        public System.Guid Id { get; set; }
+        public System.Guid LanguageId { get; set; }
         public string BlogName { get; set; }
         public string BlogAuthor { get; set; }
         public string BlogUrl { get; set; }

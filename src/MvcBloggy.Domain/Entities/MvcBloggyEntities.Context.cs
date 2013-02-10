@@ -9,11 +9,12 @@
 
 namespace MvcBloggy.Domain.Entities
 {
+    using GenericRepository.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MvcBloggyEntities : DbContext
+    public partial class MvcBloggyEntities : EntitiesContext
     {
         public MvcBloggyEntities()
             : base("name=MvcBloggyEntities")
@@ -25,6 +26,7 @@ namespace MvcBloggy.Domain.Entities
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Author> Authors { get; set; }
         public DbSet<BlogPostComment> BlogPostComments { get; set; }
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<BlogPostUrl> BlogPostUrls { get; set; }

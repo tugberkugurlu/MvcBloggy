@@ -9,10 +9,11 @@
 
 namespace MvcBloggy.Domain.Entities
 {
+    using GenericRepository;
     using System;
     using System.Collections.Generic;
     
-    public partial class Tag : IEntity
+    public partial class Tag : IEntity<Guid>
     {
         public Tag()
         {
@@ -20,8 +21,8 @@ namespace MvcBloggy.Domain.Entities
             this.TagsForDynamicPages = new HashSet<TagsForDynamicPage>();
         }
     
-        public System.Guid Key { get; set; }
-        public System.Guid LanguageKey { get; set; }
+        public System.Guid Id { get; set; }
+        public System.Guid LanguageId { get; set; }
         public string TagName { get; set; }
         public string CreationIp { get; set; }
         public System.DateTimeOffset CreatedOn { get; set; }

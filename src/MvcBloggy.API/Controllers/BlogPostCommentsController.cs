@@ -14,17 +14,11 @@ namespace MvcBloggy.API.Controllers {
     
     public class BlogPostCommentsController : ApiController {
 
-        private readonly IEntityRepository<BlogPost> _blogPostRepository;
-        private readonly IEntityRepository<BlogPostComment> _blogPostCommentRepository;
         private readonly IBlogService _blogService;
 
         public BlogPostCommentsController(
-            IEntityRepository<BlogPost> blogPostRepository,
-            IEntityRepository<BlogPostComment> blogPostCommentRepository,
             IBlogService blogService) {
 
-            _blogPostRepository = blogPostRepository;
-            _blogPostCommentRepository = blogPostCommentRepository;
             _blogService = blogService;
         }
 

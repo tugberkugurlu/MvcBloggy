@@ -5,17 +5,21 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="065e2349a675465181ce751b15f4a146" Name="Diagram1">
-        <EntityTypeShape EntityType="MvcBloggyModel.BlogPostComment" Width="1.5" PointX="12" PointY="0.5" />
-        <EntityTypeShape EntityType="MvcBloggyModel.BlogPost" Width="1.5" PointX="15" PointY="2" />
-        <EntityTypeShape EntityType="MvcBloggyModel.BlogPostUrl" Width="1.5" PointX="18" PointY="3.5" />
-        <EntityTypeShape EntityType="MvcBloggyModel.BlogRoll" Width="1.5" PointX="0.5" PointY="5" />
-        <EntityTypeShape EntityType="MvcBloggyModel.DynamicPage" Width="1.5" PointX="3" PointY="6.5" />
-        <EntityTypeShape EntityType="MvcBloggyModel.Language" Width="1.5" PointX="6" PointY="8" />
-        <EntityTypeShape EntityType="MvcBloggyModel.RestrictedPageName" Width="1.5" PointX="9" PointY="9.5" />
-        <EntityTypeShape EntityType="MvcBloggyModel.Tag" Width="1.5" PointX="12" PointY="11" />
-        <EntityTypeShape EntityType="MvcBloggyModel.TagsForBlogPost" Width="1.5" PointX="15" PointY="12.5" />
-        <EntityTypeShape EntityType="MvcBloggyModel.TagsForDynamicPage" Width="1.5" PointX="18" PointY="14" />
-        <EntityTypeShape EntityType="MvcBloggyModel.User" Width="1.5" PointX="0.5" PointY="15.5" />
+        <EntityTypeShape EntityType="MvcBloggyModel.Author" Width="1.5" PointX="1.7606534742567006" PointY="29.001303120051187" />
+        <EntityTypeShape EntityType="MvcBloggyModel.BlogPostComment" Width="1.5" PointX="11.357073716519901" PointY="15.900784768117957" />
+        <EntityTypeShape EntityType="MvcBloggyModel.BlogPost" Width="1.5" PointX="10.334711411192412" PointY="29.51408657315843" />
+        <EntityTypeShape EntityType="MvcBloggyModel.BlogPostUrl" Width="1.5" PointX="5.81232861513846" PointY="11.443956440055723" />
+        <EntityTypeShape EntityType="MvcBloggyModel.BlogRoll" Width="1.5" PointX="9.9029217091868276" PointY="2.853453369277275" />
+        <EntityTypeShape EntityType="MvcBloggyModel.DynamicPage" Width="1.5" PointX="1.9951365450374485" PointY="9.8379911677157459" />
+        <EntityTypeShape EntityType="MvcBloggyModel.Language" Width="1.5" PointX="4.5775684251345545" PointY="6.4070424169334776" />
+        <EntityTypeShape EntityType="MvcBloggyModel.RestrictedPageName" Width="1.5" PointX="0.95675622716395" PointY="11.53378741980241" />
+        <EntityTypeShape EntityType="MvcBloggyModel.Tag" Width="1.5" PointX="0.28588307475945124" PointY="11.106660728858159" />
+        <EntityTypeShape EntityType="MvcBloggyModel.TagsForBlogPost" Width="1.5" PointX="7.1951184678800022" PointY="14.253366760096219" />
+        <EntityTypeShape EntityType="MvcBloggyModel.TagsForDynamicPage" Width="1.5" PointX="7.4698970408504346" PointY="19.505964824699781" />
+        <EntityTypeShape EntityType="MvcBloggyModel.User" Width="1.5" PointX="6.7108715747999366" PointY="16.830181651203979" />
+        <AssociationConnector Association="MvcBloggyModel.FK_Authors_Users" />
+        <AssociationConnector Association="MvcBloggyModel.FK_BlogPosts_Authors" />
+        <AssociationConnector Association="MvcBloggyModel.FK_DynamicPages_Authors" />
         <AssociationConnector Association="MvcBloggyModel.FK_BlogPostComments_BlogPosts" />
         <AssociationConnector Association="MvcBloggyModel.FK_BlogPosts_Languages" />
         <AssociationConnector Association="MvcBloggyModel.FK_BlogPostUrls_BlogPosts" />

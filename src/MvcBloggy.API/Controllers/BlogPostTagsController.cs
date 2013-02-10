@@ -13,20 +13,21 @@ using MvcBloggy.API.Infrastructure.Controllers;
 using System.ComponentModel.DataAnnotations;
 using MvcBloggy.Domain.Entities;
 using MvcBloggy.Domain.Services;
+using GenericRepository.EntityFramework;
 
 namespace MvcBloggy.API.Controllers {
     
     public class BlogPostTagsController : ApiController {
 
-        private readonly IEntityRepository<BlogPost> _blogPostRepository;
-        private readonly IEntityRepository<Tag> _tagRepository;
-        private readonly IEntityRepository<TagsForBlogPost> _tagForBlogPostRepository;
+        private readonly IEntityRepository<BlogPost, Guid> _blogPostRepository;
+        private readonly IEntityRepository<Tag, Guid> _tagRepository;
+        private readonly IEntityRepository<TagsForBlogPost, Guid> _tagForBlogPostRepository;
         private readonly IBlogService _blogService;
 
         public BlogPostTagsController(
-            IEntityRepository<BlogPost> blogPostRepository,
-            IEntityRepository<Tag> tagRepository,
-            IEntityRepository<TagsForBlogPost> tagForBlogPostRepository,
+            IEntityRepository<BlogPost, Guid> blogPostRepository,
+            IEntityRepository<Tag, Guid> tagRepository,
+            IEntityRepository<TagsForBlogPost, Guid> tagForBlogPostRepository,
             IBlogService blogService) {
 
             _blogPostRepository = blogPostRepository;

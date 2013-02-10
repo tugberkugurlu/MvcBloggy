@@ -40,6 +40,7 @@ namespace <#=code.EscapeNamespace(codeNamespace)#>
 }
 
 #>
+using GenericRepository.EntityFramework;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -54,7 +55,7 @@ using System.Linq;
 }
 #>
 
-<#=Accessibility.ForType(container)#> partial class <#=code.Escape(container)#> : DbContext
+<#=Accessibility.ForType(container)#> partial class <#=code.Escape(container)#> : EntitiesContext
 {
     public <#=code.Escape(container)#>()
         : base("name=<#=container.Name#>")

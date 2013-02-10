@@ -17,9 +17,9 @@ namespace MvcBloggy.API.Model {
 
             return new BlogPostDto { 
 
-                Key = blogPost.Key,
-                LanguageKey = blogPost.LanguageKey,
-                SecondaryKey = blogPost.SecondaryKey,
+                Key = blogPost.Id,
+                LanguageKey = blogPost.LanguageId,
+                SecondaryKey = blogPost.SecondaryId,
                 Title = blogPost.Title,
                 BriefInfo = blogPost.BriefInfo,
                 Content = blogPost.Content,

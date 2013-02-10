@@ -1,4 +1,5 @@
-﻿using MvcBloggy.Domain.Entities;
+﻿using GenericRepository.EntityFramework;
+using MvcBloggy.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,11 @@ namespace MvcBloggy.Domain.Services {
     public class MembershipService : IMembershipService {
 
         private readonly ICryptoService _cryptoService;
-        private readonly IEntityRepository<User> _userRepository;
+        private readonly IEntityRepository<User, Guid> _userRepository;
 
         public MembershipService(
             ICryptoService cryptoService,
-            IEntityRepository<User> userRepository) {
+            IEntityRepository<User, Guid> userRepository) {
 
             _cryptoService = cryptoService;
             _userRepository = userRepository;

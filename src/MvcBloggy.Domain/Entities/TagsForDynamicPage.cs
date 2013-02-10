@@ -9,14 +9,15 @@
 
 namespace MvcBloggy.Domain.Entities
 {
+    using GenericRepository;
     using System;
     using System.Collections.Generic;
     
-    public partial class TagsForDynamicPage : IEntity
+    public partial class TagsForDynamicPage : IEntity<Guid>
     {
-        public System.Guid Key { get; set; }
-        public System.Guid DynamicPageKey { get; set; }
-        public System.Guid TagKey { get; set; }
+        public System.Guid Id { get; set; }
+        public System.Guid DynamicPageId { get; set; }
+        public System.Guid TagId { get; set; }
     
         public virtual DynamicPage DynamicPage { get; set; }
         public virtual Tag Tag { get; set; }

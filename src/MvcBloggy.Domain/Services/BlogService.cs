@@ -1,4 +1,6 @@
-﻿using MvcBloggy.Domain.Entities;
+﻿using GenericRepository;
+using GenericRepository.EntityFramework;
+using MvcBloggy.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +12,16 @@ namespace MvcBloggy.Domain.Services {
     public class BlogService : IBlogService {
 
         private static readonly string[] _emptyArray = new string[0];
-        private readonly IEntityRepository<BlogPost> _blogPostRepository;
+        private readonly IEntityRepository<BlogPost, Guid> _blogPostRepository;
 
-        public BlogService(IEntityRepository<BlogPost> blogPostRepository) {
+        public BlogService(IEntityRepository<BlogPost, Guid> blogPostRepository) {
 
             _blogPostRepository = blogPostRepository;
         }
 
         public PaginatedList<BlogPost> GetBlogPosts(string lang, int pageIndex, int pageSize) {
 
-            return _blogPostRepository.AllIncluding(x => x.Language)
+            return _blogPostRepository.GetAllIncluding(x => x.Language)
                 .Where(x => x.Language.CultureOne == lang)
                 .OrderByDescending(x => x.CreatedOn)
                 .ToPaginatedList(pageIndex, pageSize);

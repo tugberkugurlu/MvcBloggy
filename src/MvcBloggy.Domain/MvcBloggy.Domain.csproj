@@ -35,6 +35,12 @@
     <Reference Include="EntityFramework">
       <HintPath>..\..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="GenericRepository">
+      <HintPath>..\..\packages\GenericRepository.0.3.1-pre01\lib\net40\GenericRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="GenericRepository.EntityFramework">
+      <HintPath>..\..\packages\GenericRepository.EntityFramework.0.3.1-pre01\lib\net40\GenericRepository.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -54,6 +60,9 @@
     <Compile Include="..\Common\Error.cs">
       <Link>Common\Error.cs</Link>
     </Compile>
+    <Compile Include="Entities\Author.cs">
+      <DependentUpon>MvcBloggyEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\BlogPost.cs">
       <DependentUpon>MvcBloggyEntities.tt</DependentUpon>
     </Compile>
@@ -69,11 +78,7 @@
     <Compile Include="Entities\DynamicPage.cs">
       <DependentUpon>MvcBloggyEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\EntityRepository.cs" />
-    <Compile Include="Entities\Extensions\IQueryableExtensions.cs" />
     <Compile Include="Entities\Extensions\UserRepositoryExtensions.cs" />
-    <Compile Include="Entities\IEntity.cs" />
-    <Compile Include="Entities\IEntityRepository.cs" />
     <Compile Include="Entities\Language.cs">
       <DependentUpon>MvcBloggyEntities.tt</DependentUpon>
     </Compile>
@@ -92,7 +97,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MvcBloggyEntities.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Entities\PaginatedList.cs" />
     <Compile Include="Entities\RestrictedPageName.cs">
       <DependentUpon>MvcBloggyEntities.tt</DependentUpon>
     </Compile>

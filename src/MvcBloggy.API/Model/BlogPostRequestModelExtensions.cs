@@ -19,7 +19,7 @@ namespace MvcBloggy.API.Model {
                 CreatedOn = blogPostRequestModel.CreatedOn,
                 ImagePath = blogPostRequestModel.ImagePath,
                 IsApproved = blogPostRequestModel.IsApproved,
-                LanguageKey = blogPostRequestModel.LanguageKey,
+                LanguageId = blogPostRequestModel.LanguageKey,
                 Title = blogPostRequestModel.Title
             };
         }

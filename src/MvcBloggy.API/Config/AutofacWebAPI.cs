@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.WebApi;
+using GenericRepository.EntityFramework;
 using MvcBloggy.API.Tracers;
 using MvcBloggy.Domain.Entities;
 using MvcBloggy.Domain.Services;
@@ -32,17 +33,9 @@ namespace MvcBloggy.API.Config {
             builder.RegisterType<MvcBloggyEntities>().As<DbContext>().InstancePerApiRequest();
 
             //Repositories
-            builder.RegisterType<EntityRepository<BlogPostComment>>().As<IEntityRepository<BlogPostComment>>().InstancePerApiRequest();
-            builder.RegisterType<EntityRepository<BlogPost>>().As<IEntityRepository<BlogPost>>().InstancePerApiRequest();
-            builder.RegisterType<EntityRepository<BlogPostUrl>>().As<IEntityRepository<BlogPostUrl>>().InstancePerApiRequest();
-            builder.RegisterType<EntityRepository<BlogRoll>>().As<IEntityRepository<BlogRoll>>().InstancePerApiRequest();
-            builder.RegisterType<EntityRepository<DynamicPage>>().As<IEntityRepository<DynamicPage>>().InstancePerApiRequest();
-            builder.RegisterType<EntityRepository<Language>>().As<IEntityRepository<Language>>().InstancePerApiRequest();
-            builder.RegisterType<EntityRepository<RestrictedPageName>>().As<IEntityRepository<RestrictedPageName>>().InstancePerApiRequest();
-            builder.RegisterType<EntityRepository<Tag>>().As<IEntityRepository<Tag>>().InstancePerApiRequest();
-            builder.RegisterType<EntityRepository<TagsForBlogPost>>().As<IEntityRepository<TagsForBlogPost>>().InstancePerApiRequest();
-            builder.RegisterType<EntityRepository<TagsForDynamicPage>>().As<IEntityRepository<TagsForDynamicPage>>().InstancePerApiRequest();
-            builder.RegisterType<EntityRepository<User>>().As<IEntityRepository<User>>().InstancePerApiRequest();
+            builder.RegisterGeneric(typeof(EntityRepository<>))
+                       .As(typeof(IEntityRepository<>))
+                       .InstancePerApiRequest();
 
             //Services
             builder.RegisterType<CryptoService>().As<ICryptoService>().InstancePerApiRequest();

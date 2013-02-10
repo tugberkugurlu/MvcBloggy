@@ -9,20 +9,24 @@
 
 namespace MvcBloggy.Domain.Entities
 {
+    using GenericRepository;
     using System;
     using System.Collections.Generic;
     
-    public partial class User : IEntity
+    public partial class User : IEntity<Guid>
     {
-        public System.Guid Key { get; set; }
+        public System.Guid Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string HashedPassword { get; set; }
         public string Salt { get; set; }
         public bool IsLocked { get; set; }
+        public System.DateTimeOffset LastLockedOutOn { get; set; }
         public string CreationIp { get; set; }
         public System.DateTimeOffset CreatedOn { get; set; }
         public string LastUpdateIp { get; set; }
         public Nullable<System.DateTimeOffset> LastUpdatedOn { get; set; }
+    
+        public virtual Author Author { get; set; }
     }
 }
