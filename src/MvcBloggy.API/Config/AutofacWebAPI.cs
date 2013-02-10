@@ -30,11 +30,11 @@ namespace MvcBloggy.API.Config {
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly()).PropertiesAutowired();
 
             //DbContext
-            builder.RegisterType<MvcBloggyEntities>().As<DbContext>().InstancePerApiRequest();
+            builder.RegisterType<MvcBloggyEntities>().As<IEntitiesContext>().InstancePerApiRequest();
 
             //Repositories
-            builder.RegisterGeneric(typeof(EntityRepository<>))
-                       .As(typeof(IEntityRepository<>))
+            builder.RegisterGeneric(typeof(EntityRepository<,>))
+                       .As(typeof(IEntityRepository<,>))
                        .InstancePerApiRequest();
 
             //Services
