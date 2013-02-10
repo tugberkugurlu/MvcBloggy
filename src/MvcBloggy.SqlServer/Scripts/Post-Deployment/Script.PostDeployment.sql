@@ -23,8 +23,8 @@ BEGIN
 	DECLARE @enLangId AS UNIQUEIDENTIFIER;
 	DECLARE @trLangId AS UNIQUEIDENTIFIER;
 
-	SELECT @enLangId = lng.[Key] FROM Languages lng WHERE lng.CultureOne = 'en';
-	SELECT @trLangId = lng.[Key] FROM Languages lng WHERE lng.CultureOne = 'tr';
+	SELECT @enLangId = lng.[Id] FROM Languages lng WHERE lng.CultureOne = 'en';
+	SELECT @trLangId = lng.[Id] FROM Languages lng WHERE lng.CultureOne = 'tr';
 
 	INSERT INTO RestrictedPageNames (LanguageKey, Term, CreatedOn)
 	VALUES(@enLangId, 'archive', SYSDATETIMEOFFSET());

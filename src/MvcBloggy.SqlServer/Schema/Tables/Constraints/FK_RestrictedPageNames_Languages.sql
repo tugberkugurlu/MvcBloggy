@@ -1,7 +1,7 @@
 ﻿ALTER TABLE [dbo].[RestrictedPageNames]  
 	ADD  CONSTRAINT [FK_RestrictedPageNames_Languages] 
 	FOREIGN KEY([LanguageKey])
-	REFERENCES [dbo].[Languages] ([Key])
+	REFERENCES [dbo].[Languages] ([Id])
 	ON DELETE CASCADE
 GO
 

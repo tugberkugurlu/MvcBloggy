@@ -1,4 +1,4 @@
 ﻿ALTER TABLE [dbo].[DynamicPages]
 	ADD CONSTRAINT [UK_DynamicPages_LanguageKey_Title]
-	UNIQUE (LanguageKey, Title);
+	UNIQUE ([LanguageId], Title);
 GO

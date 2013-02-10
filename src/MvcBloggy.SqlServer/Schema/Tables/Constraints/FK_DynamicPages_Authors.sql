@@ -1,7 +1,7 @@
 ﻿ALTER TABLE [dbo].[DynamicPages]  
 	ADD  CONSTRAINT [FK_DynamicPages_Authors] 
-	FOREIGN KEY([AuthorKey])
-	REFERENCES [dbo].[Authors] ([Key])
+	FOREIGN KEY([AuthorId])
+	REFERENCES [dbo].[Authors] ([Id])
 	ON DELETE CASCADE
 GO
 

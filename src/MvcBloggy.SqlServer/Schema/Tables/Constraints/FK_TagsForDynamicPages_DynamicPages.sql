@@ -1,7 +1,7 @@
 ﻿ALTER TABLE [dbo].[TagsForDynamicPages]
 	ADD CONSTRAINT [FK_TagsForDynamicPages_DynamicPages] 
-	FOREIGN KEY([DynamicPageKey])
-	REFERENCES [dbo].[DynamicPages] ([Key])
+	FOREIGN KEY([DynamicPageId])
+	REFERENCES [dbo].[DynamicPages] ([Id])
 	ON DELETE CASCADE
 GO
 

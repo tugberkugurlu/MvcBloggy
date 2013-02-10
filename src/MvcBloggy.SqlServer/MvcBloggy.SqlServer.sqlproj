@@ -118,4 +118,7 @@
   <ItemGroup>
     <None Include="MvcBloggy.SqlServer.publish.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="MvcBloggy.SqlServer.refactorlog" />
+  </ItemGroup>
 </Project>

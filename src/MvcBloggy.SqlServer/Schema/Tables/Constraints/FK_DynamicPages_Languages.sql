@@ -1,7 +1,7 @@
 ﻿ALTER TABLE [dbo].[DynamicPages]  
 	ADD  CONSTRAINT [FK_DynamicPages_Languages] 
-	FOREIGN KEY([LanguageKey])
-	REFERENCES [dbo].[Languages] ([Key])
+	FOREIGN KEY([LanguageId])
+	REFERENCES [dbo].[Languages] ([Id])
 	ON DELETE CASCADE
 GO
 

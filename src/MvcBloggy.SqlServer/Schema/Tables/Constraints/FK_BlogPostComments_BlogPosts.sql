@@ -1,7 +1,7 @@
 ﻿ALTER TABLE [dbo].[BlogPostComments]  
 	ADD  CONSTRAINT [FK_BlogPostComments_BlogPosts] 
-	FOREIGN KEY([BlogPostKey])
-	REFERENCES [dbo].[BlogPosts] ([Key])
+	FOREIGN KEY([BlogPostId])
+	REFERENCES [dbo].[BlogPosts] ([Id])
 	ON DELETE CASCADE
 GO
 
