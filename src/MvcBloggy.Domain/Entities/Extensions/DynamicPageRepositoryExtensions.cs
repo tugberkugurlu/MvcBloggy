@@ -1,14 +1,13 @@
-﻿using System;
+﻿using GenericRepository.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MvcBloggy.Domain.Entities {
 
     public static class DynamicPageRepositoryExtensions {
 
-        public static IEnumerable<MonthArchive> GetMonthArchives(this IEntityRepository<DynamicPage> dynamicPageRepository) {
+        public static IEnumerable<MonthArchive> GetMonthArchives(this IEntityRepository<DynamicPage, Guid> dynamicPageRepository) {
 
             return (from blogpost in dynamicPageRepository.GetAll()
                     where blogpost.IsApproved == true

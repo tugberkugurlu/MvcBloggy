@@ -1,4 +1,4 @@
-﻿using MvcBloggy.API.Infrastructure.Routes;
+﻿using MvcBloggy.API.Routing;
 using System;
 using System.Collections.Generic;
 using System.Linq;

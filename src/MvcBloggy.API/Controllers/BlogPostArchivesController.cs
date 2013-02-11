@@ -1,22 +1,19 @@
-﻿using MvcBloggy.API.Infrastructure.Controllers;
+﻿using GenericRepository.EntityFramework;
 using MvcBloggy.API.Model.Dtos;
 using MvcBloggy.API.Model.RequestCommands;
 using MvcBloggy.Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace MvcBloggy.API.Controllers {
     
     public class BlogPostArchivesController : ApiController {
 
-        private readonly IEntityRepository<BlogPost> _blogPostRepository;
+        private readonly IEntityRepository<BlogPost, Guid> _blogPostRepository;
 
         public BlogPostArchivesController(
-            IEntityRepository<BlogPost> blogPostRepository) {
+            IEntityRepository<BlogPost, Guid> blogPostRepository) {
 
             _blogPostRepository = blogPostRepository;
         }
@@ -26,8 +23,8 @@ namespace MvcBloggy.API.Controllers {
             return _blogPostRepository.GetMonthArchives();
         }
 
-        [UriParameter("lang", "page", "take", "month", "year")]
-        public PaginatedDto<BlogPostDto> GetBlogPostsByYearMonth(ArchiveYearMonthRequestCommand requestCmd) {
+        public PaginatedDto<BlogPostDto> GetBlogPostsByYearMonth(
+            ArchiveYearMonthRequestCommand requestCmd) {
 
             return null;
         }

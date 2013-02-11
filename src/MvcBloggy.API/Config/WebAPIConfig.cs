@@ -1,17 +1,14 @@
 ﻿using MvcBloggy.API.Filters;
-using System;
-using System.Collections.Generic;
+using MvcBloggy.API.Model.RequestCommands;
 using System.Linq;
 using System.Net.Http.Formatting;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Http.ModelBinding;
 using System.Web.Http.Controllers;
+using System.Web.Http.ModelBinding;
+using System.Web.Http.Validation;
 using System.Web.Http.Validation.Providers;
-using MvcBloggy.API.Infrastructure.Controllers;
-using WebAPIDoodle.Http;
-using MvcBloggy.API.Model.RequestCommands;
+using WebApiDoodle.Web.Controllers;
+using WebApiDoodle.Web.ModelBinding;
 
 namespace MvcBloggy.API.Config {
     
@@ -22,7 +19,6 @@ namespace MvcBloggy.API.Config {
             config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.LocalOnly;
 
             //Message Handlers
-            config.MessageHandlers.Add(new RemoveServerHeaderMessageHandler());
 
             //Formatters
             var jqueryFormatter = config.Formatters.FirstOrDefault(x => x.GetType() == typeof(JQueryMvcFormUrlEncodedFormatter));
@@ -34,7 +30,8 @@ namespace MvcBloggy.API.Config {
             config.Filters.Add(new InvalidModelStateFilterAttribute());
 
             //Default Services
-            config.Services.RemoveAll(typeof(System.Web.Http.Validation.ModelValidatorProvider), v => v is InvalidModelValidatorProvider);
+            config.Services.RemoveAll(typeof(ModelValidatorProvider), v => v is InvalidModelValidatorProvider);
+            config.Services.Replace(typeof(IHttpActionSelector), new ComplexTypeAwareActionSelector());
 
             // From DefaultContentNegotiator class:
             // If ExcludeMatchOnTypeOnly is true then we don't match on type only which means

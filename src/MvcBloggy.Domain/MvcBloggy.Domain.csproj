@@ -78,10 +78,14 @@
     <Compile Include="Entities\DynamicPage.cs">
       <DependentUpon>MvcBloggyEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Extensions\BlogPostExtensions.cs" />
+    <Compile Include="Entities\Extensions\BlogPostRepositoryExtensions.cs" />
+    <Compile Include="Entities\Extensions\DynamicPageRepositoryExtensions.cs" />
     <Compile Include="Entities\Extensions\UserRepositoryExtensions.cs" />
     <Compile Include="Entities\Language.cs">
       <DependentUpon>MvcBloggyEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\MonthArchive.cs" />
     <Compile Include="Entities\MvcBloggyEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

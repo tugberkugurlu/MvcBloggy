@@ -1,19 +1,17 @@
-﻿using MvcBloggy.Domain.Entities;
+﻿using GenericRepository.EntityFramework;
+using MvcBloggy.Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace MvcBloggy.API.Controllers {
 
     public class DynamicPageArchivesController : ApiController {
 
-        private readonly IEntityRepository<DynamicPage> _dynamicPageRepository;
+        private readonly IEntityRepository<DynamicPage, Guid> _dynamicPageRepository;
 
         public DynamicPageArchivesController(
-            IEntityRepository<DynamicPage> dynamicPageRepository) {
+            IEntityRepository<DynamicPage, Guid> dynamicPageRepository) {
 
             _dynamicPageRepository = dynamicPageRepository;
         }

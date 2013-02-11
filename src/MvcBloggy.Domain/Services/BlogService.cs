@@ -21,10 +21,19 @@ namespace MvcBloggy.Domain.Services {
 
         public PaginatedList<BlogPost> GetBlogPosts(string lang, int pageIndex, int pageSize) {
 
-            return _blogPostRepository.GetAllIncluding(x => x.Language)
-                .Where(x => x.Language.CultureOne == lang)
-                .OrderByDescending(x => x.CreatedOn)
-                .ToPaginatedList(pageIndex, pageSize);
+            PaginatedList<BlogPost> blogPosts = _blogPostRepository.GetAllByLang(lang)
+                .ToPaginatedBlogPostList(pageIndex, pageSize);
+
+            return blogPosts;
+        }
+
+        public PaginatedList<BlogPost> GetBlogPosts(string lang, int pageIndex, int pageSize, string[] tags) {
+
+            PaginatedList<BlogPost> blogPosts = _blogPostRepository.GetAllByLang(lang)
+                .Where(x => tags.All(t => x.TagsForBlogPosts.Any(y => y.Tag.TagName == t)))
+                .ToPaginatedBlogPostList(pageIndex, pageSize);
+
+            return blogPosts;
         }
 
         public BlogPost AddBlogPost(BlogPost blogPost) {
